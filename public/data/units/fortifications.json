@@ -1,0 +1,11 @@
+[
+  {
+    "id": "hammerfall_bunker",
+    "name": "Hammerfall Bunker",
+    "points": [{"size": 1, "cost": 175}],
+    "role": "Fortification",
+    "stats": {"m": "-", "t": 10, "sv": "2+", "w": 12, "ld": "7+", "oc": 3},
+    "keywords": ["FORTIFICATION", "HAMMERFALL BUNKER"],
+    "weapon_ids": []
+  }
+]

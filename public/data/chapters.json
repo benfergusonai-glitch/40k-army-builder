@@ -1,0 +1,15 @@
+[
+  { "id": "black_templars", "name": "Black Templars" },
+  { "id": "blood_angels", "name": "Blood Angels" },
+  { "id": "crimson_fists", "name": "Crimson Fists" },
+  { "id": "dark_angels", "name": "Dark Angels" },
+  { "id": "deathwatch", "name": "Deathwatch" },
+  { "id": "Flesh Tearers", "name": "Flesh Tearers" },
+  { "id": "imperial_fists", "name": "Imperial Fists" },
+  { "id": "iron_hands", "name": "Iron Hands" },
+  { "id": "raven_guard", "name": "Raven Guard" },
+  { "id": "salamanders", "name": "Salamanders" },
+  { "id": "space_wolves", "name": "Space Wolves" },
+  { "id": "ultramarines", "name": "Ultramarines" },
+  { "id": "white_scars", "name": "White Scars" }
+]

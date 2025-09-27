@@ -1,0 +1,200 @@
+[
+  {
+    "id": "aggressor_squad",
+    "name": "Aggressor Squad",
+    "points": [{"size": 3, "cost": 110}, {"size": 6, "cost": 220}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "GRAVIS", "AGGRESSOR SQUAD"],
+    "weapon_ids": ["auto_boltstorm_gauntlets", "flamestorm_gauntlets", "fragstorm_grenade_launcher_infantry", "twin_power_fists"]
+  },
+  {
+    "id": "bladeguard_veteran_squad",
+    "name": "Bladeguard Veteran Squad",
+    "points": [{"size": 3, "cost": 90}, {"size": 6, "cost": 180}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 3, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "BLADEGUARD VETERAN SQUAD"],
+    "weapon_ids": ["master_crafted_power_weapon", "heavy_bolt_pistol"]
+  },
+  {
+    "id": "centurion_assault_squad",
+    "name": "Centurion Assault Squad",
+    "points": [{"size": 3, "cost": 150}, {"size": 6, "cost": 300}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 7, "sv": "2+", "w": 4, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "CENTURION ASSAULT SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "centurion_devastator_squad",
+    "name": "Centurion Devastator Squad",
+    "points": [{"size": 3, "cost": 165}, {"size": 6, "cost": 330}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 7, "sv": "2+", "w": 4, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "CENTURION DEVASTATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "company_heroes",
+    "name": "Company Heroes",
+    "points": [{"size": 4, "cost": 95}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 3, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "COMPANY HEROES"],
+    "weapon_ids": ["master_crafted_bolt_rifle", "master_crafted_heavy_bolter", "bolt_pistol", "close_combat_weapon_infantry", "bolt_rifle", "master_crafted_power_weapon"]
+  },
+  {
+    "id": "desolation_squad",
+    "name": "Desolation Squad",
+    "points": [{"size": 5, "cost": 200}, {"size": 10, "cost": 400}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "DESOLATION SQUAD"],
+    "weapon_ids": ["superfrag_rocket_launcher", "superkrak_rocket_launcher", "vengor_launcher", "castellan_launcher", "bolt_pistol", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "devastator_squad",
+    "name": "Devastator Squad",
+    "points": [{"size": 5, "cost": 120}, {"size": 10, "cost": 200}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "DEVASTATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "eliminator_squad",
+    "name": "Eliminator Squad",
+    "points": [{"size": 3, "cost": 75}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "ELIMINATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "eradicator_squad",
+    "name": "Eradicator Squad",
+    "points": [{"size": 3, "cost": 95}, {"size": 6, "cost": 190}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "GRAVIS", "ERADICATOR SQUAD"],
+    "weapon_ids": ["melta_rifle", "bolt_pistol", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "hellblaster_squad",
+    "name": "Hellblaster Squad",
+    "points": [{"size": 5, "cost": 125}, {"size": 10, "cost": 250}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "HELLBLASTER SQUAD"],
+    "weapon_ids": ["plasma_incinerator_standard", "plasma_incinerator_supercharge", "bolt_pistol", "plasma_pistol_standard", "plasma_pistol_supercharge", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "inceptor_squad",
+    "name": "Inceptor Squad",
+    "points": [{"size": 3, "cost": 110}, {"size": 6, "cost": 220}],
+    "role": "Infantry",
+    "stats": {"m": "10\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "JUMP PACK", "INCEPTOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "incursor_squad",
+    "name": "Incursor Squad",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "INCURSOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "infernus_squad",
+    "name": "Infernus Squad",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "INFERNUS SQUAD"],
+    "weapon_ids": ["bolt_pistol", "close_combat_weapon_infantry", "pyreblaster"]
+  },
+  {
+    "id": "infiltrator_squad",
+    "name": "Infiltrator Squad",
+    "points": [{"size": 5, "cost": 100}, {"size": 10, "cost": 200}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "INFILTRATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "jump_pack_intercessors",
+    "name": "Jump Pack Intercessors",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "JUMP PACK", "ASSAULT", "INTERCESSOR", "JUMP PACK INTERCESSORS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "reiver_squad",
+    "name": "Reiver Squad",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "REIVER SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "scout_squad",
+    "name": "Scout Squad",
+    "points": [{"size": 5, "cost": 65}, {"size": 10, "cost": 130}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "4+", "w": 1, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "SCOUT SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "sternguard_veteran_squad",
+    "name": "Sternguard Veteran Squad",
+    "points": [{"size": 5, "cost": 100}, {"size": 10, "cost": 200}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "STERNGUARD VETERAN SQUAD"],
+    "weapon_ids": ["combi_weapon", "pyrecannon", "sternguard_bolt_pistol", "sternguard_bolt_rifle", "sternguard_heavy_bolter", "astartes_chainsword", "close_combat_weapon_infantry", "power_weapon", "power_fist"]
+  },
+  {
+    "id": "suppressor_squad",
+    "name": "Suppressor Squad",
+    "points": [{"size": 3, "cost": 85}],
+    "role": "Infantry",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "JUMP PACK", "SUPPRESSOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "terminator_assault_squad",
+    "name": "Terminator Assault Squad",
+    "points": [{"size": 5, "cost": 195}, {"size": 10, "cost": 390}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 3, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "TERMINATOR", "ASSAULT SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "terminator_squad",
+    "name": "Terminator Squad",
+    "points": [{"size": 5, "cost": 185}, {"size": 10, "cost": 370}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 3, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "TERMINATOR", "TERMINATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "vanguard_veteran_squad_jump_packs",
+    "name": "Vanguard Veteran Squad with Jump Packs",
+    "points": [{"size": 5, "cost": 105}, {"size": 10, "cost": 210}],
+    "role": "Infantry",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 2, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "JUMP PACK", "VANGUARD VETERAN SQUAD"],
+    "weapon_ids": []
+  }
+]

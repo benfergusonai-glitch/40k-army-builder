@@ -1,0 +1,10 @@
+[
+  "epichero.json",
+  "characters.json",
+  "battleline.json",
+  "infantry.json", 
+  "mounted.json", 
+  "vehicles.json",
+  "transports.json",
+  "fortifications.json" 
+]

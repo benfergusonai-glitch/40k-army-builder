@@ -1,0 +1,9 @@
+# Dependencies
+/node_modules
+
+# Build folder
+/build
+
+# Misc
+.DS_Store
+npm-debug.log*

@@ -1,0 +1,314 @@
+[
+  {
+    "id": "artificer_armour",
+    "name": "Artificer Armour",
+    "detachment_id": "gladius_task_force",
+    "cost": 10,
+    "rule": "The bearer has a Save characteristic of 2+ and the Feel No Pain 5+ ability.",
+    "prerequisites": []
+  },
+  {
+    "id": "the_honour_vehement",
+    "name": "The Honour Vehement",
+    "detachment_id": "gladius_task_force",
+    "cost": 15,
+    "rule": "Add +1 to the Attacks and Strength characteristics of the bearer's melee weapons. If the Assault Doctrine is active for the bearer's unit, add +2 to the Attacks and Strength characteristics instead.",
+    "prerequisites": []
+  },
+  {
+    "id": "adept_of_the_codex",
+    "name": "Adept of the Codex",
+    "detachment_id": "gladius_task_force",
+    "cost": 20,
+    "rule": "Once per turn, you can declare that the Tactical Doctrine is active for the bearer's unit, even if another Doctrine is active for your army. This effect lasts until the end of the phase.",
+    "prerequisites": ["CAPTAIN"]
+  },
+  {
+    "id": "fire_discipline",
+    "name": "Fire Discipline",
+    "detachment_id": "gladius_task_force",
+    "cost": 25,
+    "rule": "Ranged weapons equipped by models in the bearer's unit have the [SUSTAINED HITS 1] ability. If the Devastator Doctrine is active for the bearer's unit, you can re-roll Advance rolls made for that unit.",
+    "prerequisites": []
+  },
+  {
+    "id": "indomitable_fury",
+    "name": "Indomitable Fury",
+    "detachment_id": "anvil_siege_force",
+    "cost": 15,
+    "rule": "The first time the bearer is destroyed, roll one D6. On a 2+, set the bearer back up on the battlefield with its full wounds remaining, as close as possible to its previous position and not within Engagement Range of any enemy models.",
+    "prerequisites": ["GRAVIS"]
+  },
+  {
+    "id": "stoic_defender",
+    "name": "Stoic Defender",
+    "detachment_id": "anvil_siege_force",
+    "cost": 10,
+    "rule": "While the bearer is leading a unit, models in that unit have the Feel No Pain 6+ ability while they are within range of an objective marker you control. If that unit becomes Battle-shocked, halve the Objective Control characteristic of models in that unit instead of changing it to 0.",
+    "prerequisites": []
+  },
+  {
+    "id": "architect_of_war",
+    "name": "Architect of War",
+    "detachment_id": "anvil_siege_force",
+    "cost": 20,
+    "rule": "Ranged weapons equipped by models in the bearer's unit have the [IGNORES COVER] ability.",
+    "prerequisites": []
+  },
+  {
+    "id": "target_augury_web",
+    "name": "Target Augury Web",
+    "detachment_id": "ironstorm_spearhead",
+    "cost": 25,
+    "rule": "In your Command phase, select one friendly Adeptus Astartes Vehicle model within 6\" of the bearer. Until the start of your next Command phase, ranged weapons equipped by that model have the [LETHAL HITS] ability.",
+    "prerequisites": ["TECHMARINE"]
+  },
+  {
+    "id": "the_flesh_is_weak",
+    "name": "The Flesh is Weak",
+    "detachment_id": "ironstorm_spearhead",
+    "cost": 20,
+    "rule": "The bearer has the Feel No Pain 4+ ability.",
+    "prerequisites": []
+  },
+  {
+    "id": "adept_of_the_omnissiah",
+    "name": "Adept of the Omnissiah",
+    "detachment_id": "ironstorm_spearhead",
+    "cost": 15,
+    "rule": "Once per battle round, when a saving throw is failed for a friendly Vehicle model within 6\" of the bearer, you can change the Damage characteristic of that attack to 0.",
+    "prerequisites": ["TECHMARINE"]
+  },
+  {
+    "id": "master_of_machine_war",
+    "name": "Master of Machine War",
+    "detachment_id": "ironstorm_spearhead",
+    "cost": 10,
+    "rule": "In your Command phase, you can select one friendly Vehicle model within 6\" of the bearer. That model is eligible to shoot this turn even if it Advanced or Fell Back.",
+    "prerequisites": []
+  },
+  {
+    "id": "champion_of_humanity",
+    "name": "Champion of Humanity",
+    "detachment_id": "firestorm_assault_force",
+    "cost": 10,
+    "rule": "While the bearer is leading a unit, models in that unit can ignore any or all modifiers to their characteristics and to any roll or test made for them (excluding modifiers to saving throws).",
+    "prerequisites": ["TACTICUS"]
+  },
+  {
+    "id": "war_tempered_artifice",
+    "name": "War-tempered Artifice",
+    "detachment_id": "firestorm_assault_force",
+    "cost": 15,
+    "rule": "Add 3 to the Strength characteristic of the bearer’s melee weapons.",
+    "prerequisites": ["INFANTRY"]
+  },
+  {
+    "id": "forged_in_battle",
+    "name": "Forged in Battle",
+    "detachment_id": "firestorm_assault_force",
+    "cost": 20,
+    "rule": "While the bearer is leading a unit, once per turn, after making a Hit roll or a saving throw for a model in that unit, you can change the result of that roll to an unmodified 6.",
+    "prerequisites": []
+  },
+  {
+    "id": "adamantine_mantle",
+    "name": "Adamantine Mantle",
+    "detachment_id": "firestorm_assault_force",
+    "cost": 25,
+    "rule": "Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack. If that attack was made with a Melta or Torrent weapon, change the Damage characteristic of that attack to 1 instead.",
+    "prerequisites": []
+  },
+  {
+    "id": "fury_of_the_storm",
+    "name": "Fury of the Storm",
+    "detachment_id": "stormlance_task_force",
+    "cost": 20,
+    "rule": "Add 1 to the Strength and Armour Penetration characteristics of the bearer's melee weapons. If the bearer's unit made a Charge move this turn, add 2 to those characteristics instead.",
+    "prerequisites": ["MOUNTED"]
+  },
+  {
+    "id": "portents_of_wisdom",
+    "name": "Portents of Wisdom",
+    "detachment_id": "stormlance_task_force",
+    "cost": 15,
+    "rule": "While the bearer is leading a unit, you can re-roll Advance rolls made for that unit.",
+    "prerequisites": []
+  },
+  {
+    "id": "feinting_withdrawal",
+    "name": "Feinting Withdrawal",
+    "detachment_id": "stormlance_task_force",
+    "cost": 10,
+    "rule": "The bearer's unit is eligible to shoot in a turn in which it Fell Back.",
+    "prerequisites": []
+  },
+  {
+    "id": "hunters_instincts_stormlance",
+    "name": "Hunter’s Instincts",
+    "detachment_id": "stormlance_task_force",
+    "cost": 15,
+    "rule": "When setting up the bearer's unit from Strategic Reserves, you can treat the current battle round number as being one higher than it actually is.",
+    "prerequisites": ["MOUNTED"]
+  },
+  {
+    "id": "the_blade_driven_deep",
+    "name": "The Blade Driven Deep",
+    "detachment_id": "vanguard_spearhead",
+    "cost": 25,
+    "rule": "The bearer's unit gains the Infiltrators ability.",
+    "prerequisites": ["INFANTRY"]
+  },
+  {
+    "id": "ghostweave_cloak",
+    "name": "Ghostweave Cloak",
+    "detachment_id": "vanguard_spearhead",
+    "cost": 25,
+    "rule": "The bearer has the Stealth and Lone Operative abilities.",
+    "prerequisites": []
+  },
+  {
+    "id": "execute_and_redeploy",
+    "name": "Execute and Redeploy",
+    "detachment_id": "vanguard_spearhead",
+    "cost": 20,
+    "rule": "After the bearer's unit has shot, it can make a Normal move of up to 6\". If it does, it is not eligible to declare a charge this turn.",
+    "prerequisites": ["PHOBOS"]
+  },
+  {
+    "id": "shadow_war_veteran",
+    "name": "Shadow War Veteran",
+    "detachment_id": "vanguard_spearhead",
+    "cost": 10,
+    "rule": "Each time an opponent targets the bearer's unit with a Stratagem, increase the CP cost of that Stratagem by 1 for that activation.",
+    "prerequisites": ["PHOBOS"]
+  },
+  {
+    "id": "the_imperiums_sword",
+    "name": "The Imperium’s Sword",
+    "detachment_id": "1st_company_task_force",
+    "cost": 15,
+    "rule": "Add 1 to the Attacks characteristic of the bearer's melee weapons. Once per battle, at the start of the Fight phase, you can select one friendly Adeptus Astartes unit within 12\" of the bearer; until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit.",
+    "prerequisites": []
+  },
+  {
+    "id": "fear_made_manifest",
+    "name": "Fear Made Manifest",
+    "detachment_id": "1st_company_task_force",
+    "cost": 10,
+    "rule": "Each time an enemy unit (excluding Monsters and Vehicles) fails a Battle-shock test while it is within 6\" of the bearer, one model in that enemy unit is destroyed. Once per battle, you can have D3 models destroyed instead.",
+    "prerequisites": []
+  },
+  {
+    "id": "rites_of_war",
+    "name": "Rites of War",
+    "detachment_id": "1st_company_task_force",
+    "cost": 25,
+    "rule": "Add 1 to the Objective Control characteristic of the bearer. Once per battle, at the start of your Command phase, you can select one friendly Adeptus Astartes unit within 12\" of the bearer; until the start of your next Command phase, add 1 to the Objective Control characteristic of models in that selected unit.",
+    "prerequisites": ["TERMINATOR"]
+  },
+  {
+    "id": "iron_resolve",
+    "name": "Iron Resolve",
+    "detachment_id": "1st_company_task_force",
+    "cost": 20,
+    "rule": "The bearer has the Feel No Pain 5+ ability. Once per battle, after an attack has been allocated to a model in the bearer's unit, you can declare that the unit has the Feel No Pain 5+ ability for the rest of the phase.",
+    "prerequisites": ["TERMINATOR"]
+  },
+  {
+    "id": "blackwing_shroud",
+    "name": "Blackwing Shroud",
+    "detachment_id": "shadowmark_talon",
+    "cost": 15,
+    "rule": "While the bearer is leading a unit, models in that unit have the Infiltrators ability.",
+    "prerequisites": ["INFANTRY"]
+  },
+  {
+    "id": "coronal_susurrant",
+    "name": "Coronal Susurrant",
+    "detachment_id": "shadowmark_talon",
+    "cost": 10,
+    "rule": "Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that usage of that Stratagem by 1CP.",
+    "prerequisites": ["PHOBOS"]
+  },
+  {
+    "id": "umbral_raptor",
+    "name": "Umbral Raptor",
+    "detachment_id": "shadowmark_talon",
+    "cost": 20,
+    "rule": "The bearer has the Stealth and Lone Operative abilities.",
+    "prerequisites": []
+  },
+  {
+    "id": "hunters_instincts_shadowmark",
+    "name": "Hunter’s Instincts",
+    "detachment_id": "shadowmark_talon",
+    "cost": 15,
+    "rule": "If the bearer’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is.",
+    "prerequisites": []
+  },
+  {
+    "id": "champion_of_the_feast",
+    "name": "Champion Of The Feast",
+    "detachment_id": "emperors_shield",
+    "cost": 15,
+    "rule": "Add 1 to the Attacks characteristic of the bearer’s melee weapons. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by other models in the bearer’s unit as well.",
+    "prerequisites": []
+  },
+  {
+    "id": "disciple_of_rhetoricus",
+    "name": "Disciple Of Rhetoricus",
+    "detachment_id": "emperors_shield",
+    "cost": 10,
+    "rule": "Improve the Objective Control characteristic of the bearer by 1. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Objective Control characteristic of other models in the bearer’s unit as well.",
+    "prerequisites": ["TERMINATOR"]
+  },
+  {
+    "id": "indomitable_champion",
+    "name": "Indomitable Champion",
+    "detachment_id": "emperors_shield",
+    "cost": 20,
+    "rule": "The first time the bearer is destroyed, roll one D6 at the end of the phase. On a 2+, set the bearer back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with 3 wounds remaining.",
+    "prerequisites": ["TERMINATOR"]
+  },
+  {
+    "id": "malodraxian_standard",
+    "name": "Malodraxian Standard",
+    "detachment_id": "emperors_shield",
+    "cost": 15,
+    "rule": "Each time an attack targets the bearer’s unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of the bearer’s unit, subtract 1 from the Wound roll.",
+    "prerequisites": ["ANCIENT"]
+  },
+  {
+    "id": "immolator",
+    "name": "Immolator",
+    "detachment_id": "forgefather_seekers",
+    "cost": 10,
+    "rule": "Add 1 to the Attacks characteristics of Torrent weapons equipped by models in the bearer’s unit.",
+    "prerequisites": []
+  },
+  {
+    "id": "war_tempered_artifice_seekers",
+    "name": "War‑Tempered Artifice",
+    "detachment_id": "forgefather_seekers",
+    "cost": 15,
+    "rule": "Add 3 to the Strength characteristic of the bearer’s melee weapons.",
+    "prerequisites": ["INFANTRY"]
+  },
+  {
+    "id": "forged_in_battle_seekers",
+    "name": "Forged In Battle",
+    "detachment_id": "forgefather_seekers",
+    "cost": 20,
+    "rule": "While the bearer is leading a unit, once per turn, after making a Hit roll or a saving throw for a model in that unit, you can change the result of that roll to an unmodified 6.",
+    "prerequisites": []
+  },
+  {
+    "id": "adamantine_mantle_seekers",
+    "name": "Adamantine Mantle",
+    "detachment_id": "forgefather_seekers",
+    "cost": 25,
+    "rule": "Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack. If that attack was made with a Melta or Torrent weapon, change the Damage characteristic of that attack to 1 instead.",
+    "prerequisites": []
+  }
+]

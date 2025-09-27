@@ -1,0 +1,123 @@
+[
+  {
+    "id": "adrax_agatone",
+    "name": "Adrax Agatone",
+    "points": [{"size": 1, "cost": 85}],
+    "role": "Epic Hero",
+    "chapter": "salamanders",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 6, "sv": "2+", "w": 6, "ld": "6+", "oc": 2, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CAPTAIN", "ADRAX AGATONE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "azrael",
+    "name": "Azrael",
+    "points": [{"size": 1, "cost": 105}],
+    "role": "Epic Hero",
+    "chapter": "dark_angels",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "SUPREME GRAND MASTER", "AZRAEL"],
+    "weapon_ids": []
+  },
+  {
+    "id": "darnath_lysander",
+    "name": "Darnath Lysander",
+    "points": [{"size": 1, "cost": 100}],
+    "role": "Epic Hero",
+    "chapter": "imperial_fists",
+    "isEpicHero": true,
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "TERMINATOR", "CAPTAIN", "DARNATH LYSANDER"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chief_librarian_tigurius",
+    "name": "Chief Librarian Tigurius",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Epic Hero",
+    "chapter": "ultramarines",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "PSYKER", "LIBRARIAN", "CHIEF LIBRARIAN TIGURIUS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "iron_father_feirros",
+    "name": "Iron Father Feirros",
+    "points": [{"size": 1, "cost": 95}],
+    "role": "Epic Hero",
+    "chapter": "iron_hands",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 6, "sv": "2+", "w": 6, "ld": "6+", "oc": 2},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "TECHMARINE", "GRAVIS", "MASTER OF THE FORGE", "IRON FATHER FEIRROS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "kayvaan_shrike",
+    "name": "Kayvaan Shrike",
+    "points": [{"size": 1, "cost": 100}],
+    "role": "Epic Hero",
+    "chapter": "raven_guard",
+    "isEpicHero": true,
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "JUMP PACK", "PHOBOS", "CHAPTER MASTER", "KAYVAAN SHRIKE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "kor_sarro_khan",
+    "name": "Kor'sarro Khan",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Epic Hero",
+    "chapter": "white_scars",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CAPTAIN", "KOR'SARRO KHAN"],
+    "weapon_ids": ["character_bolt_pistol", "captain_master_crafted_power_weapon_kor'sarro_khan_moonfang"]
+  },
+  {
+    "id": "marneus_calgar",
+    "name": "Marneus Calgar",
+    "points": [{"size": 3, "cost": 180}],
+    "role": "Epic Hero",
+    "chapter": "ultramarines",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 6, "sv": "2+", "w": 7, "ld": "6+", "oc": 3, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "GRAVIS", "CHAPTER MASTER", "MARNEUS CALGAR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "pedro_kantor",
+    "name": "Pedro Kantor",
+    "points": [{"size": 1, "cost": 90}],
+    "role": "Epic Hero",
+    "chapter": "crimson_fists",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CHAPTER MASTER", "PEDRO KANTOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "roboute_guilliman",
+    "name": "Roboute Guilliman",
+    "points": [{"size": 1, "cost": 340}],
+    "role": "Epic Hero",
+    "chapter": "ultramarines",
+    "isEpicHero": true,
+    "stats": {"m": "8\"", "t": 9, "sv": "2+", "w": 10, "ld": "5+", "oc": 5, "inv": "4+"},
+    "keywords": ["MONSTER", "CHARACTER", "EPIC HERO", "PRIMARCH", "ROBOUTE GUILLIMAN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "vulkan_he_stan",
+    "name": "Vulkan He'stan",
+    "points": [{"size": 1, "cost": 100}],
+    "role": "Epic Hero",
+    "chapter": "salamanders",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CAPTAIN", "VULKAN HE'STAN"],
+    "weapon_ids": []
+  }
+]

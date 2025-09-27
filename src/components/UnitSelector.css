@@ -1,0 +1,17 @@
+.selector-group {
+  margin-bottom: 15px; /* Adds space between each dropdown group */
+}
+
+.selector-group label {
+  display: block; /* Makes the label appear on its own line */
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.selector-group select {
+  width: 100%; /* Makes the dropdown fill the container */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

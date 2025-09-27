@@ -1,0 +1,29 @@
+[
+  {
+    "id": "drop_pod",
+    "name": "Drop Pod",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Dedicated Transport",
+    "stats": {"m": "-", "t": 6, "sv": "3+", "w": 8, "ld": "7+", "oc": 1},
+    "keywords": ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT", "DROP POD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "impulsor",
+    "name": "Impulsor",
+    "points": [{"size": 1, "cost": 80}],
+    "role": "Dedicated Transport",
+    "stats": {"m": "12\"", "t": 9, "sv": "3+", "w": 11, "ld": "7+", "oc": 2},
+    "keywords": ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT", "IMPULSOR"],
+    "weapon_ids": ["bellicatus_missile_array_frag", "bellicatus_missile_array_krak", "fragstorm_grenade_launcher_vehicle", "ironhail_heavy_stubber", "orbital_comms_array", "shield_dome"]
+  },
+  {
+    "id": "rhino",
+    "name": "Rhino",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Dedicated Transport",
+    "stats": {"m": "12\"", "t": 9, "sv": "3+", "w": 10, "ld": "7+", "oc": 2},
+    "keywords": ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT", "RHINO"],
+    "weapon_ids": ["armoured_hull", "hunter_killer_missile", "storm_bolter"]
+  }
+]

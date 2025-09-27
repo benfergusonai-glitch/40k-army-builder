@@ -1,0 +1,263 @@
+[ 
+  {
+    "id": "ancient",
+    "name": "Ancient",
+    "points": [{"size": 1, "cost": 50}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "ANCIENT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "ancient_in_terminator_armour",
+    "name": "Ancient in Terminator Armour",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "TERMINATOR", "ANCIENT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "apothecary",
+    "name": "Apothecary",
+    "points": [{"size": 1, "cost": 50}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "APOTHECARY"],
+    "weapon_ids": []
+  },
+  {
+    "id": "apothecary_biologis",
+    "name": "Apothecary Biologis",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "GRAVIS", "APOTHECARY BIOLOGIS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "bladeguard_ancient",
+    "name": "Bladeguard Ancient",
+    "points": [{"size": 1, "cost": 45}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "ANCIENT", "BLADEGUARD ANCIENT"],
+    "weapon_ids": []
+  },
+{
+    "id": "captain",
+    "name": "Captain",
+    "points": [{"size": 1, "cost": 80}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "TACTICUS"],
+    "weapon_ids": [],
+    "wargear_options": [
+      {
+        "loadout_id": "loadout_bolter_melee",
+        "description": "Bolt Pistol, Master-crafted Bolter, Melee Weapon",
+        "default_items": ["captain_bolt_pistol", "captain_master_crafted_boltgun"],
+        "stat_modifiers": {},
+        "sub_options": [
+          {
+            "option_id": "bolter_melee_choice",
+            "description": "Choose Melee Weapon:",
+            "type": "choose_one",
+            "choices": [
+              { "item_id": "captain_close_combat_weapon" },
+              { "item_id": "captain_master_crafted_power_weapon" },
+              { "item_id": "captain_power_fist" }
+            ]
+          }
+        ]
+      },
+      {
+        "loadout_id": "loadout_shield",
+        "description": "Heavy Bolt Pistol, Master-crafted power weapon, Relic Shield",
+        "default_items": ["captain_heavy_bolt_pistol", "captain_master_crafted_power_weapon"],
+        "stat_modifiers": { "w": 1 },
+        "sub_options": []
+      },
+      {
+        "loadout_id": "loadout_pistol_melee",
+        "description": "Pistol & Melee Weapon",
+        "default_items": [],
+        "stat_modifiers": {},
+        "sub_options": [
+          {
+            "option_id": "pistol_choice",
+            "description": "Choose Pistol:",
+            "type": "choose_one",
+            "choices": [
+              { "item_id": "captain_heavy_bolt_pistol" },
+              { "item_id": "captain_plasma_pistol_standard" },
+              { "item_id": "captain_neo_volkite_pistol" }
+            ]
+          },
+          {
+            "option_id": "melee_choice_2",
+            "description": "Choose Melee Weapon:",
+            "type": "choose_one",
+            "choices": [
+              { "item_id": "captain_master_crafted_power_weapon" },
+              { "item_id": "captain_power_fist" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "captain_in_gravis_armour",
+    "name": "Captain in Gravis Armour",
+    "points": [{"size": 1, "cost": 80}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 6, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "GRAVIS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "captain_in_phobos_armour",
+    "name": "Captain in Phobos Armour",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "captain_in_terminator_armour",
+    "name": "Captain in Terminator Armour",
+    "points": [{"size": 1, "cost": 95}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "TERMINATOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "captain_with_jump_pack",
+    "name": "Captain with Jump Pack",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "JUMP PACK"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain",
+    "name": "Chaplain",
+    "points": [{"size": 1, "cost": 60}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain_in_terminator_armour",
+    "name": "Chaplain in Terminator Armour",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN", "TERMINATOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain_on_bike",
+    "name": "Chaplain on Bike",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "12\"", "t": 5, "sv": "3+", "w": 5, "ld": "6+", "oc": 2, "inv": "4+"},
+    "keywords": ["MOUNTED", "CHARACTER", "CHAPLAIN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain_with_jump_pack",
+    "name": "Chaplain with Jump Pack",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN", "JUMP PACK"],
+    "weapon_ids": []
+  },
+  {
+    "id": "judiciar",
+    "name": "Judiciar",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "JUDICIAR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "librarian",
+    "name": "Librarian",
+    "points": [{"size": 1, "cost": 65}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "librarian_in_phobos_armour",
+    "name": "Librarian in Phobos Armour",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "librarian_in_terminator_armour",
+    "name": "Librarian in Terminator Armour",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN", "TERMINATOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant",
+    "name": "Lieutenant",
+    "points": [{"size": 1, "cost": 65}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant_in_phobos_armour",
+    "name": "Lieutenant in Phobos Armour",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant_in_reiver_armour",
+    "name": "Lieutenant in Reiver Armour",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant_with_combiweapon",
+    "name": "Lieutenant with Combi-weapon",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "techmarine",
+    "name": "Techmarine",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "TECHMARINE"],
+    "weapon_ids": []
+  }
+]

@@ -1,0 +1,140 @@
+.unit-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.unit-name {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.unit-points {
+  font-weight: normal;
+  color: #555;
+  margin-left: 8px;
+  font-size: 0.9em;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.remove-btn:hover {
+  background-color: #d32f2f;
+}
+
+.customize-btn {
+  background-color: #43a047; /* A green color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.customize-btn:hover {
+  background-color: #388e3c;
+}
+
+.duplicate-btn {
+  background-color: #0288d1; /* A nice blue color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.duplicate-btn:hover {
+  background-color: #0277bd;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.stat-item {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.stat-item strong {
+  font-size: 0.8em;
+  color: #555;
+}
+
+.stat-item p {
+  margin: 2px 0 0 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.enhancement-details {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #e3f2fd;
+  border: 1px solid #bbdefb;
+  border-radius: 4px;
+}
+
+.enhancement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95em;
+}
+
+.rule-toggle-btn {
+  background-color: #64b5f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+.rule-toggle-btn:hover {
+  background-color: #42a5f5;
+}
+
+.enhancement-rule {
+  margin: 8px 0 0 0;
+  padding-top: 8px;
+  border-top: 1px dashed #90caf9;
+  font-size: 0.9em;
+  color: #333;
+}

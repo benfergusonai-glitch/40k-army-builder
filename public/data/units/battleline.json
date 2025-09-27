@@ -1,0 +1,38 @@
+[
+  {
+    "id": "assault_intercessor_squad",
+    "name": "Assault Intercessor Squad",
+    "points": [{"size": 5, "cost": 75}, {"size": 10, "cost": 150}],
+    "role": "Battleline",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "TACTICUS", "ASSAULT INTERCESSOR SQUAD"],
+    "weapon_ids": ["astartes_chainsword", "hand_flamer", "heavy_bolt_pistol", "plasma_pistol_standard", "plasma_pistol_supercharge", "power_fist", "power_weapon", "thunder_hammer"]
+  },
+  {
+    "id": "heavy_intercessor_squad",
+    "name": "Heavy Intercessor Squad",
+    "points": [{"size": 5, "cost": 100}, {"size": 10, "cost": 200}],
+    "role": "Battleline",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "GRAVIS", "HEAVY INTERCESSOR SQUAD"],
+    "weapon_ids": ["heavy_bolt_rifle", "heavy_bolter", "bolt_pistol", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "intercessor_squad",
+    "name": "Intercessor Squad",
+    "points": [{"size": 5, "cost": 80}, {"size": 10, "cost": 160}],
+    "role": "Battleline",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "TACTICUS", "INTERCESSOR SQUAD"],
+    "weapon_ids": ["bolt_pistol", "bolt_rifle", "close_combat_weapon_infantry", "power_weapon", "power_fist"]
+  },
+  {
+    "id": "tactical_squad",
+    "name": "Tactical Squad",
+    "points": [{"size": 10, "cost": 140}],
+    "role": "Battleline",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "TACTICAL SQUAD"],
+    "weapon_ids": []
+  }
+]
