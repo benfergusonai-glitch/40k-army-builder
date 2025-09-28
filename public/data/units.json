@@ -1,0 +1,843 @@
+[
+  {
+    "id": "adrax_agatone",
+    "name": "Adrax Agatone",
+    "points": [{"size": 1, "cost": 85}],
+    "role": "Character",
+    "chapter": "salamanders",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 6, "sv": "2+", "w": 6, "ld": "6+", "oc": 2, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CAPTAIN", "ADRAX AGATONE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "aggressor_squad",
+    "name": "Aggressor Squad",
+    "points": [{"size": 3, "cost": 110}, {"size": 6, "cost": 220}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "GRAVIS", "AGGRESSOR SQUAD"],
+    "weapon_ids": ["auto_boltstorm_gauntlets", "flamestorm_gauntlets", "fragstorm_grenade_launcher_infantry", "twin_power_fists"]
+  },
+  {
+    "id": "ancient",
+    "name": "Ancient",
+    "points": [{"size": 1, "cost": 50}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "ANCIENT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "ancient_in_terminator_armour",
+    "name": "Ancient in Terminator Armour",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "TERMINATOR", "ANCIENT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "apothecary",
+    "name": "Apothecary",
+    "points": [{"size": 1, "cost": 50}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "APOTHECARY"],
+    "weapon_ids": []
+  },
+  {
+    "id": "apothecary_biologis",
+    "name": "Apothecary Biologis",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "GRAVIS", "APOTHECARY BIOLOGIS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "assault_intercessor_squad",
+    "name": "Assault Intercessor Squad",
+    "points": [{"size": 5, "cost": 75}, {"size": 10, "cost": 150}],
+    "role": "Battleline",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "TACTICUS", "ASSAULT INTERCESSOR SQUAD"],
+    "weapon_ids": ["astartes_chainsword", "hand_flamer", "heavy_bolt_pistol", "plasma_pistol_standard", "plasma_pistol_supercharge", "power_fist", "power_weapon", "thunder_hammer"]
+  },
+  {
+    "id": "astraeus",
+    "name": "Astraeus",
+    "points": [{"size": 1, "cost": 525}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 14, "sv": "2+", "w": 25, "ld": "6+", "oc": 5, "inv": "5+"},
+    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "AIRCRAFT", "ASTRAEUS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "azrael",
+    "name": "Azrael",
+    "points": [{"size": 1, "cost": 105}],
+    "role": "Character",
+    "chapter": "dark_angels",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "SUPREME GRAND MASTER", "AZRAEL"],
+    "weapon_ids": []
+  },
+  {
+    "id": "ballistus_dreadnought",
+    "name": "Ballistus Dreadnought",
+    "points": [{"size": 1, "cost": 140}],
+    "role": "Vehicle",
+    "stats": {"m": "8\"", "t": 10, "sv": "2+", "w": 12, "ld": "6+", "oc": 4},
+    "keywords": ["VEHICLE", "WALKER", "DREADNOUGHT", "BALLISTUS DREADNOUGHT"],
+    "weapon_ids": ["dreadnought_combat_weapon", "lascannon_ballistus"]
+  },
+  {
+    "id": "bladeguard_ancient",
+    "name": "Bladeguard Ancient",
+    "points": [{"size": 1, "cost": 45}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "ANCIENT", "BLADEGUARD ANCIENT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "bladeguard_veteran_squad",
+    "name": "Bladeguard Veteran Squad",
+    "points": [{"size": 3, "cost": 90}, {"size": 6, "cost": 180}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 3, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "BLADEGUARD VETERAN SQUAD"],
+    "weapon_ids": ["master_crafted_power_weapon", "heavy_bolt_pistol"]
+  },
+  {
+    "id": "brutalis_dreadnought",
+    "name": "Brutalis Dreadnought",
+    "points": [{"size": 1, "cost": 160}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 10, "sv": "2+", "w": 12, "ld": "6+", "oc": 4},
+    "keywords": ["VEHICLE", "WALKER", "DREADNOUGHT", "BRUTALIS DREADNOUGHT"],
+    "weapon_ids": ["brutalis_fists_strike", "brutalis_fists_sweep"]
+  },
+  {
+    "id": "captain",
+    "name": "Captain",
+    "points": [{"size": 1, "cost": 80}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "TACTICUS"],
+    "weapon_ids": ["heavy_bolt_pistol", "master_crafted_power_weapon", "close_combat_weapon_infantry", "master_crafted_boltgun", "neo_volkite_pistol", "plasma_pistol_standard", "plasma_pistol_supercharge", "bolt_pistol"]
+  },
+  {
+    "id": "captain_in_gravis_armour",
+    "name": "Captain in Gravis Armour",
+    "points": [{"size": 1, "cost": 80}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 6, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "GRAVIS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "captain_in_phobos_armour",
+    "name": "Captain in Phobos Armour",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "captain_in_terminator_armour",
+    "name": "Captain in Terminator Armour",
+    "points": [{"size": 1, "cost": 95}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "TERMINATOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "captain_lysandre",
+    "name": "Captain Lysander",
+    "points": [{"size": 1, "cost": 100}],
+    "role": "Character",
+    "chapter": "imperial_fists",
+    "isEpicHero": true,
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "TERMINATOR", "CAPTAIN", "CAPTAIN LYSANDER"],
+    "weapon_ids": []
+  },
+  {
+    "id": "captain_with_jump_pack",
+    "name": "Captain with Jump Pack",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "JUMP PACK"],
+    "weapon_ids": []
+  },
+  {
+    "id": "centurion_assault_squad",
+    "name": "Centurion Assault Squad",
+    "points": [{"size": 3, "cost": 150}, {"size": 6, "cost": 300}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 7, "sv": "2+", "w": 4, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "CENTURION ASSAULT SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "centurion_devastator_squad",
+    "name": "Centurion Devastator Squad",
+    "points": [{"size": 3, "cost": 165}, {"size": 6, "cost": 330}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 7, "sv": "2+", "w": 4, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "CENTURION DEVASTATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain",
+    "name": "Chaplain",
+    "points": [{"size": 1, "cost": 60}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain_in_terminator_armour",
+    "name": "Chaplain in Terminator Armour",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN", "TERMINATOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain_on_bike",
+    "name": "Chaplain on Bike",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "12\"", "t": 5, "sv": "3+", "w": 5, "ld": "6+", "oc": 2, "inv": "4+"},
+    "keywords": ["MOUNTED", "CHARACTER", "CHAPLAIN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chaplain_with_jump_pack",
+    "name": "Chaplain with Jump Pack",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN", "JUMP PACK"],
+    "weapon_ids": []
+  },
+  {
+    "id": "chief_librarian_tigurius",
+    "name": "Chief Librarian Tigurius",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "chapter": "ultramarines",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "PSYKER", "LIBRARIAN", "CHIEF LIBRARIAN TIGURIUS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "company_heroes",
+    "name": "Company Heroes",
+    "points": [{"size": 4, "cost": 95}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 3, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "COMPANY HEROES"],
+    "weapon_ids": ["master_crafted_bolt_rifle", "master_crafted_heavy_bolter", "bolt_pistol", "close_combat_weapon_infantry", "bolt_rifle", "master_crafted_power_weapon"]
+  },
+  {
+    "id": "desolation_squad",
+    "name": "Desolation Squad",
+    "points": [{"size": 5, "cost": 200}, {"size": 10, "cost": 400}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "DESOLATION SQUAD"],
+    "weapon_ids": ["superfrag_rocket_launcher", "superkrak_rocket_launcher", "vengor_launcher", "castellan_launcher", "bolt_pistol", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "devastator_squad",
+    "name": "Devastator Squad",
+    "points": [{"size": 5, "cost": 120}, {"size": 10, "cost": 200}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "DEVASTATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "dreadnought",
+    "name": "Dreadnought",
+    "points": [{"size": 1, "cost": 135}],
+    "role": "Vehicle",
+    "stats": {"m": "6\"", "t": 9, "sv": "2+", "w": 8, "ld": "6+", "oc": 3},
+    "keywords": ["VEHICLE", "WALKER", "DREADNOUGHT"],
+    "weapon_ids": ["close_combat_weapon_dreadnought", "multi_melta_vehicle", "storm_bolter_dreadnought"]
+  },
+  {
+    "id": "drop_pod",
+    "name": "Drop Pod",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Dedicated Transport",
+    "stats": {"m": "-", "t": 6, "sv": "3+", "w": 8, "ld": "7+", "oc": 1},
+    "keywords": ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT", "DROP POD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "eliminator_squad",
+    "name": "Eliminator Squad",
+    "points": [{"size": 3, "cost": 75}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "ELIMINATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "eradicator_squad",
+    "name": "Eradicator Squad",
+    "points": [{"size": 3, "cost": 95}, {"size": 6, "cost": 190}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "GRAVIS", "ERADICATOR SQUAD"],
+    "weapon_ids": ["melta_rifle", "bolt_pistol", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "gladiator_lancer",
+    "name": "Gladiator Lancer",
+    "points": [{"size": 1, "cost": 160}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 12, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "TANK", "GLADIATOR LANCER"],
+    "weapon_ids": []
+  },
+  {
+    "id": "gladiator_reaper",
+    "name": "Gladiator Reaper",
+    "points": [{"size": 1, "cost": 160}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 12, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "TANK", "GLADIATOR REAPER"],
+    "weapon_ids": ["ironhail_skytalon_array", "twin_onslaught_gatling_cannon"]
+  },
+  {
+    "id": "gladiator_valiant",
+    "name": "Gladiator Valiant",
+    "points": [{"size": 1, "cost": 150}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 12, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "TANK", "GLADIATOR VALIANT"],
+    "weapon_ids": ["multi_melta_twin"]
+  },
+  {
+    "id": "hammerfall_bunker",
+    "name": "Hammerfall Bunker",
+    "points": [{"size": 1, "cost": 175}],
+    "role": "Fortification",
+    "stats": {"m": "-", "t": 10, "sv": "2+", "w": 12, "ld": "7+", "oc": 3},
+    "keywords": ["FORTIFICATION", "HAMMERFALL BUNKER"],
+    "weapon_ids": []
+  },
+  {
+    "id": "heavy_intercessor_squad",
+    "name": "Heavy Intercessor Squad",
+    "points": [{"size": 5, "cost": 100}, {"size": 10, "cost": 200}],
+    "role": "Battleline",
+    "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "GRAVIS", "HEAVY INTERCESSOR SQUAD"],
+    "weapon_ids": ["heavy_bolt_rifle", "heavy_bolter", "bolt_pistol", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "hellblaster_squad",
+    "name": "Hellblaster Squad",
+    "points": [{"size": 5, "cost": 125}, {"size": 10, "cost": 250}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "HELLBLASTER SQUAD"],
+    "weapon_ids": ["plasma_incinerator_standard", "plasma_incinerator_supercharge", "bolt_pistol", "plasma_pistol_standard", "plasma_pistol_supercharge", "close_combat_weapon_infantry"]
+  },
+  {
+    "id": "impulsor",
+    "name": "Impulsor",
+    "points": [{"size": 1, "cost": 80}],
+    "role": "Dedicated Transport",
+    "stats": {"m": "12\"", "t": 9, "sv": "3+", "w": 11, "ld": "7+", "oc": 2},
+    "keywords": ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT", "IMPULSOR"],
+    "weapon_ids": ["bellicatus_missile_array_frag", "bellicatus_missile_array_krak", "fragstorm_grenade_launcher_vehicle", "ironhail_heavy_stubber", "orbital_comms_array", "shield_dome"]
+  },
+  {
+    "id": "inceptor_squad",
+    "name": "Inceptor Squad",
+    "points": [{"size": 3, "cost": 110}, {"size": 6, "cost": 220}],
+    "role": "Infantry",
+    "stats": {"m": "10\"", "t": 6, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "JUMP PACK", "INCEPTOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "incursor_squad",
+    "name": "Incursor Squad",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "INCURSOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "infernus_squad",
+    "name": "Infernus Squad",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "INFERNUS SQUAD"],
+    "weapon_ids": ["bolt_pistol", "close_combat_weapon_infantry", "pyreblaster"]
+  },
+  {
+    "id": "infiltrator_squad",
+    "name": "Infiltrator Squad",
+    "points": [{"size": 5, "cost": 100}, {"size": 10, "cost": 200}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "INFILTRATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "intercessor_squad",
+    "name": "Intercessor Squad",
+    "points": [{"size": 5, "cost": 80}, {"size": 10, "cost": 160}],
+    "role": "Battleline",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "TACTICUS", "INTERCESSOR SQUAD"],
+    "weapon_ids": ["bolt_rifle", "bolt_pistol", "close_combat_weapon_infantry", "power_weapon", "power_fist"]
+  },
+  {
+    "id": "invader_atv",
+    "name": "Invader ATV",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Mounted",
+    "stats": {"m": "12\"", "t": 5, "sv": "3+", "w": 4, "ld": "7+", "oc": 2},
+    "keywords": ["MOUNTED", "INVADER ATV"],
+    "weapon_ids": []
+  },
+  {
+    "id": "invictor_tactical_warsuit",
+    "name": "Invictor Tactical Warsuit",
+    "points": [{"size": 1, "cost": 140}],
+    "role": "Vehicle",
+    "stats": {"m": "8\"", "t": 7, "sv": "3+", "w": 13, "ld": "7+", "oc": 4},
+    "keywords": ["VEHICLE", "WALKER", "PHOBOS", "INVICTOR TACTICAL WARSUIT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "iron_father_feirros",
+    "name": "Iron Father Feirros",
+    "points": [{"size": 1, "cost": 95}],
+    "role": "Character",
+    "chapter": "iron_hands",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 6, "sv": "2+", "w": 6, "ld": "6+", "oc": 2},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "TECHMARINE", "GRAVIS", "MASTER OF THE FORGE", "IRON FATHER FEIRROS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "judiciar",
+    "name": "Judiciar",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "JUDICIAR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "jump_pack_intercessors",
+    "name": "Jump Pack Intercessors",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "JUMP PACK", "ASSAULT", "INTERCESSOR", "JUMP PACK INTERCESSORS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "kayvaan_shrike",
+    "name": "Kayvaan Shrike",
+    "points": [{"size": 1, "cost": 100}],
+    "role": "Character",
+    "chapter": "raven_guard",
+    "isEpicHero": true,
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "JUMP PACK", "PHOBOS", "CHAPTER MASTER", "KAYVAAN SHRIKE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "kor_sarro_khan",
+    "name": "Kor'sarro Khan",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "chapter": "white_scars",
+    "isEpicHero": true,
+    "stats": {"m": "8\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CAPTAIN", "KOR'SARRO KHAN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "land_raider",
+    "name": "Land Raider",
+    "points": [{"size": 1, "cost": 240}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "6+", "oc": 5},
+    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "LAND RAIDER"],
+    "weapon_ids": ["godhammer_lascannon", "twin_heavy_bolter"]
+  },
+  {
+    "id": "land_raider_crusader",
+    "name": "Land Raider Crusader",
+    "points": [{"size": 1, "cost": 230}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "6+", "oc": 5},
+    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "LAND RAIDER CRUSADER"],
+    "weapon_ids": ["hurricane_bolter", "soul_wrath_lascannon_twin"]
+  },
+  {
+    "id": "land_raider_redeemer",
+    "name": "Land Raider Redeemer",
+    "points": [{"size": 1, "cost": 260}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "6+", "oc": 5},
+    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "LAND RAIDER REDEEMER"],
+    "weapon_ids": ["heavy_flamer"]
+  },
+  {
+    "id": "librarian",
+    "name": "Librarian",
+    "points": [{"size": 1, "cost": 65}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "librarian_in_phobos_armour",
+    "name": "Librarian in Phobos Armour",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "librarian_in_terminator_armour",
+    "name": "Librarian in Terminator Armour",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Character",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN", "TERMINATOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant",
+    "name": "Lieutenant",
+    "points": [{"size": 1, "cost": 65}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant_in_phobos_armour",
+    "name": "Lieutenant in Phobos Armour",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant_in_reiver_armour",
+    "name": "Lieutenant in Reiver Armour",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "lieutenant_with_combiweapon",
+    "name": "Lieutenant with Combi-weapon",
+    "points": [{"size": 1, "cost": 70}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "weapon_ids": []
+  },
+  {
+    "id": "marneus_calgar",
+    "name": "Marneus Calgar",
+    "points": [{"size": 3, "cost": 180}],
+    "role": "Character",
+    "chapter": "ultramarines",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 6, "sv": "2+", "w": 7, "ld": "6+", "oc": 3, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "GRAVIS", "CHAPTER MASTER", "MARNEUS CALGAR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "outrider_squad",
+    "name": "Outrider Squad",
+    "points": [{"size": 3, "cost": 95}, {"size": 6, "cost": 190}],
+    "role": "Mounted",
+    "stats": {"m": "12\"", "t": 5, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
+    "keywords": ["MOUNTED", "OUTRIDER SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "pedro_kantor",
+    "name": "Pedro Kantor",
+    "points": [{"size": 1, "cost": 90}],
+    "role": "Character",
+    "chapter": "crimson_fists",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CHAPTER MASTER", "PEDRO KANTOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "predator_annihilator",
+    "name": "Predator Annihilator",
+    "points": [{"size": 1, "cost": 130}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 11, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "TANK", "PREDATOR ANNIHILATOR"],
+    "weapon_ids": ["lascannon", "lascannon_twin"]
+  },
+  {
+    "id": "predator_destructor",
+    "name": "Predator Destructor",
+    "points": [{"size": 1, "cost": 130}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 11, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "TANK", "PREDATOR DESTRUCTOR"],
+    "weapon_ids": ["predator_autocannon"]
+  },
+  {
+    "id": "redemptor_dreadnought",
+    "name": "Redemptor Dreadnought",
+    "points": [{"size": 1, "cost": 200}],
+    "role": "Vehicle",
+    "stats": {"m": "8\"", "t": 10, "sv": "2+", "w": 13, "ld": "6+", "oc": 4},
+    "keywords": ["VEHICLE", "WALKER", "DREADNOUGHT", "REDEMPTOR DREADNOUGHT"],
+    "weapon_ids": ["destructor_gatling_cannon", "icarus_rocket_pod", "macro_plasma_incinerator_standard", "macro_plasma_incinerator_supercharge", "onslaught_gatling_cannon", "redemptor_fist"]
+  },
+  {
+    "id": "reiver_squad",
+    "name": "Reiver Squad",
+    "points": [{"size": 5, "cost": 85}, {"size": 10, "cost": 170}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "PHOBOS", "REIVER SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "repulsor",
+    "name": "Repulsor",
+    "points": [{"size": 1, "cost": 190}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "7+", "oc": 5},
+    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "REPULSOR"],
+    "weapon_ids": ["heavy_onslaught_gatling_cannon", "repulsor_defensive_array"]
+  },
+  {
+    "id": "repulsor_executioner",
+    "name": "Repulsor Executioner",
+    "points": [{"size": 1, "cost": 220}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "7+", "oc": 5},
+    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "REPULSOR EXECUTIONER"],
+    "weapon_ids": ["las_talon"]
+  },
+  {
+    "id": "rhino",
+    "name": "Rhino",
+    "points": [{"size": 1, "cost": 75}],
+    "role": "Dedicated Transport",
+    "stats": {"m": "12\"", "t": 9, "sv": "3+", "w": 10, "ld": "7+", "oc": 2},
+    "keywords": ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT", "RHINO"],
+    "weapon_ids": ["armoured_hull", "hunter_killer_missile", "storm_bolter"]
+  },
+  {
+    "id": "roboute_guilliman",
+    "name": "Roboute Guilliman",
+    "points": [{"size": 1, "cost": 340}],
+    "role": "Character",
+    "chapter": "ultramarines",
+    "isEpicHero": true,
+    "stats": {"m": "8\"", "t": 9, "sv": "2+", "w": 10, "ld": "5+", "oc": 5, "inv": "4+"},
+    "keywords": ["MONSTER", "CHARACTER", "EPIC HERO", "PRIMARCH", "ROBOUTE GUILLIMAN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "scout_squad",
+    "name": "Scout Squad",
+    "points": [{"size": 5, "cost": 65}, {"size": 10, "cost": 130}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "4+", "w": 1, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "SCOUT SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "sternguard_veteran_squad",
+    "name": "Sternguard Veteran Squad",
+    "points": [{"size": 5, "cost": 100}, {"size": 10, "cost": 200}],
+    "role": "Infantry",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "TACTICUS", "STERNGUARD VETERAN SQUAD"],
+    "weapon_ids": ["combi_weapon", "pyrecannon", "sternguard_bolt_pistol", "sternguard_bolt_rifle", "sternguard_heavy_bolter", "astartes_chainsword", "close_combat_weapon_infantry", "power_weapon", "power_fist"]
+  },
+  {
+    "id": "storm_speeder_hailstrike",
+    "name": "Storm Speeder Hailstrike",
+    "points": [{"size": 1, "cost": 125}],
+    "role": "Vehicle",
+    "stats": {"m": "12\"", "t": 8, "sv": "3+", "w": 9, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "FLY", "STORM SPEEDER HAILSTRIKE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "storm_speeder_hammerstrike",
+    "name": "Storm Speeder Hammerstrike",
+    "points": [{"size": 1, "cost": 135}],
+    "role": "Vehicle",
+    "stats": {"m": "12\"", "t": 8, "sv": "3+", "w": 9, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "FLY", "STORM SPEEDER HAMMERSTRIKE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "storm_speeder_thunderstrike",
+    "name": "Storm Speeder Thunderstrike",
+    "points": [{"size": 1, "cost": 160}],
+    "role": "Vehicle",
+    "stats": {"m": "12\"", "t": 8, "sv": "3+", "w": 9, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "FLY", "STORM SPEEDER THUNDERSTRIKE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "stormhawk_interceptor",
+    "name": "Stormhawk Interceptor",
+    "points": [{"size": 1, "cost": 155}],
+    "role": "Vehicle",
+    "stats": {"m": "20+\"", "t": 9, "sv": "3+", "w": 10, "ld": "7+", "oc": 0},
+    "keywords": ["VEHICLE", "AIRCRAFT", "STORMHAWK INTERCEPTOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "stormraven_gunship",
+    "name": "Stormraven Gunship",
+    "points": [{"size": 1, "cost": 240}],
+    "role": "Vehicle",
+    "stats": {"m": "20+\"", "t": 10, "sv": "2+", "w": 14, "ld": "7+", "oc": 0},
+    "keywords": ["VEHICLE", "AIRCRAFT", "TRANSPORT", "STORMRAVEN GUNSHIP"],
+    "weapon_ids": []
+  },
+  {
+    "id": "stormtalon_gunship",
+    "name": "Stormtalon Gunship",
+    "points": [{"size": 1, "cost": 165}],
+    "role": "Vehicle",
+    "stats": {"m": "20+\"", "t": 9, "sv": "3+", "w": 10, "ld": "7+", "oc": 0},
+    "keywords": ["VEHICLE", "AIRCRAFT", "STORMHAWK INTERCEPTOR"],
+    "weapon_ids": []
+  },
+  {
+    "id": "suppressor_squad",
+    "name": "Suppressor Squad",
+    "points": [{"size": 3, "cost": 85}],
+    "role": "Infantry",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "JUMP PACK", "SUPPRESSOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "tactical_squad",
+    "name": "Tactical Squad",
+    "points": [{"size": 10, "cost": 140}],
+    "role": "Battleline",
+    "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 2, "ld": "7+", "oc": 2},
+    "keywords": ["INFANTRY", "BATTLELINE", "TACTICAL SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "techmarine",
+    "name": "Techmarine",
+    "points": [{"size": 1, "cost": 55}],
+    "role": "Character",
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 4, "ld": "7+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "TECHMARINE"],
+    "weapon_ids": []
+  },
+  {
+    "id": "terminator_assault_squad",
+    "name": "Terminator Assault Squad",
+    "points": [{"size": 5, "cost": 195}, {"size": 10, "cost": 390}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 3, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "TERMINATOR", "ASSAULT SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "terminator_squad",
+    "name": "Terminator Squad",
+    "points": [{"size": 5, "cost": 185}, {"size": 10, "cost": 370}],
+    "role": "Infantry",
+    "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 3, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "TERMINATOR", "TERMINATOR SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "thunderhawk_gunship",
+    "name": "Thunderhawk Gunship",
+    "points": [{"size": 1, "cost": 840}],
+    "role": "Vehicle",
+    "stats": {"m": "20+\"", "t": 13, "sv": "2+", "w": 35, "ld": "6+", "oc": 0},
+    "keywords": ["VEHICLE", "AIRCRAFT", "TRANSPORT", "THUNDERHAWK GUNSHIP"],
+    "weapon_ids": []
+  },
+  {
+    "id": "vanguard_veteran_squad_jump_packs",
+    "name": "Vanguard Veteran Squad with Jump Packs",
+    "points": [{"size": 5, "cost": 105}, {"size": 10, "cost": 210}],
+    "role": "Infantry",
+    "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 2, "ld": "6+", "oc": 1, "inv": "4+"},
+    "keywords": ["INFANTRY", "JUMP PACK", "VANGUARD VETERAN SQUAD"],
+    "weapon_ids": []
+  },
+  {
+    "id": "vindicator",
+    "name": "Vindicator",
+    "points": [{"size": 1, "cost": 190}],
+    "role": "Vehicle",
+    "stats": {"m": "10\"", "t": 11, "sv": "2+", "w": 11, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "TANK", "VINDICATOR"],
+    "weapon_ids": ["demolisher_cannon"]
+  },
+  {
+    "id": "vulkan_he_stan",
+    "name": "Vulkan He'stan",
+    "points": [{"size": 1, "cost": 100}],
+    "role": "Character",
+    "chapter": "salamanders",
+    "isEpicHero": true,
+    "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 5, "ld": "6+", "oc": 1},
+    "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "CAPTAIN", "VULKAN HE'STAN"],
+    "weapon_ids": []
+  },
+  {
+    "id": "whirlwind",
+    "name": "Whirlwind",
+    "points": [{"size": 1, "cost": 180}],
+    "role": "Vehicle",
+    "stats": {"m": "12\"", "t": 10, "sv": "3+", "w": 11, "ld": "7+", "oc": 3},
+    "keywords": ["VEHICLE", "TANK", "WHIRLWIND"],
+    "weapon_ids": []
+  }
+]

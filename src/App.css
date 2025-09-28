@@ -3,22 +3,63 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1a1d22;
   padding: 20px;
   color: white;
+  margin-bottom: 2rem;
 }
 
-.App-main {
+.container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 20px;
+  padding: 0 2rem;
+  gap: 2rem;
 }
 
-.builder-container, .list-container {
-  width: 45%;
-  border: 1px solid #ccc;
-  padding: 15px;
+.roster-selection-panel {
+  flex: 1;
+  background-color: #3a3f4a;
+  padding: 1rem;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  max-width: 400px;
+}
+
+.army-list-panel {
+  flex: 3;
+  background-color: #3a3f4a;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Unit List Styling */
+.unit-list {
+  text-align: left;
+}
+
+.unit-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #4a4f5a;
+}
+
+.unit-info h4, .unit-info p {
+  margin: 0;
+}
+
+.add-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #45a049;
 }

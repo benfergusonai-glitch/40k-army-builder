@@ -1,64 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './WargearModal.css';
+import { useArmy } from '../context/ArmyContext';
 
-function WargearModal({ unit, onClose, onWargearChange }) {
-  // State to track which top-level loadout is selected
-  const [selectedLoadoutId, setSelectedLoadoutId] = useState(unit.selected_wargear?.loadout_id || null);
+function WargearModal({ show, unit, onClose }) {
+  const [selectedOption, setSelectedOption] = useState(null);
+  const { updateUnitWargear } = useArmy();
 
-  const handleLoadoutSelect = (loadoutId) => {
-    setSelectedLoadoutId(loadoutId);
-    // When a new loadout is chosen, we pass the entire loadout object up
-    const selectedLoadout = unit.wargear_options.find(lo => lo.loadout_id === loadoutId);
-    onWargearChange(unit.instanceId, 'loadout', selectedLoadout);
+  useEffect(() => {
+    if (unit) {
+      setSelectedOption(unit.current_wargear);
+    }
+  }, [unit]);
+
+  if (!show) {
+    return null;
+  }
+
+  const handleSelectionChange = (option) => {
+    setSelectedOption(option);
   };
 
-  const handleSubOptionSelect = (subOptionId, choiceId) => {
-    onWargearChange(unit.instanceId, subOptionId, choiceId);
+  const handleConfirm = () => {
+    if (selectedOption) {
+      updateUnitWargear(unit.id, selectedOption);
+    }
+    onClose();
   };
-
-  const selectedLoadout = unit.wargear_options.find(lo => lo.loadout_id === selectedLoadoutId);
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="modal-header">
           <h3>Wargear Options for {unit.name}</h3>
-          <button onClick={onClose} className="close-btn">&times;</button>
+          <button onClick={onClose} className="close-button">&times;</button>
         </div>
         <div className="modal-body">
-          {/* Stage 1: Select a Loadout */}
-          <div className="wargear-option-group">
-            <p>Select Loadout:</p>
-            {unit.wargear_options.map(loadout => (
-              <label key={loadout.loadout_id} className="choice-label">
-                <input
-                  type="radio"
-                  name="loadout-selection"
-                  checked={selectedLoadoutId === loadout.loadout_id}
-                  onChange={() => handleLoadoutSelect(loadout.loadout_id)}
-                />
-                {loadout.description}
-              </label>
-            ))}
-          </div>
-
-          {/* Stage 2: Show Sub-Options for the selected loadout */}
-          {selectedLoadout && selectedLoadout.sub_options.map(subOption => (
-            <div key={subOption.option_id} className="wargear-option-group sub-option">
-              <p>{subOption.description}</p>
-              {subOption.choices.map(choice => (
-                <label key={choice.item_id} className="choice-label">
+          {unit.wargear_options && unit.wargear_options.length > 0 ? (
+            <div className="wargear-options-list">
+              {unit.wargear_options.map((option) => (
+                <label key={option.id} className="wargear-option">
                   <input
                     type="radio"
-                    name={subOption.option_id}
-                    checked={unit.selected_wargear?.[subOption.option_id] === choice.item_id}
-                    onChange={() => handleSubOptionSelect(subOption.option_id, choice.item_id)}
+                    name="wargear"
+                    checked={selectedOption?.id === option.id}
+                    onChange={() => handleSelectionChange(option)}
                   />
-                  {choice.item_id.replace(/_/g, ' ')}
+                  <span>{option.description}</span>
                 </label>
               ))}
             </div>
-          ))}
+          ) : (
+            <p>This unit has no wargear options.</p>
+          )}
+        </div>
+        <div className="modal-footer">
+          <button onClick={onClose} className="button-secondary">Cancel</button>
+          <button onClick={handleConfirm} className="button-primary">Confirm</button>
         </div>
       </div>
     </div>

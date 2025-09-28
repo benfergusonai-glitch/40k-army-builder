@@ -1,4 +1,4 @@
-[ 
+[
   {
     "id": "ancient",
     "name": "Ancient",
@@ -44,7 +44,7 @@
     "keywords": ["INFANTRY", "CHARACTER", "ANCIENT", "BLADEGUARD ANCIENT"],
     "weapon_ids": []
   },
-{
+  {
     "id": "captain",
     "name": "Captain",
     "points": [{"size": 1, "cost": 80}],
@@ -54,7 +54,7 @@
     "weapon_ids": [],
     "wargear_options": [
       {
-        "loadout_id": "loadout_bolter_melee",
+        "id": "loadout_bolter_melee",
         "description": "Bolt Pistol, Master-crafted Bolter, Melee Weapon",
         "default_items": ["captain_bolt_pistol", "captain_master_crafted_boltgun"],
         "stat_modifiers": {},
@@ -72,14 +72,14 @@
         ]
       },
       {
-        "loadout_id": "loadout_shield",
+        "id": "loadout_shield",
         "description": "Heavy Bolt Pistol, Master-crafted power weapon, Relic Shield",
         "default_items": ["captain_heavy_bolt_pistol", "captain_master_crafted_power_weapon"],
         "stat_modifiers": { "w": 1 },
         "sub_options": []
       },
       {
-        "loadout_id": "loadout_pistol_melee",
+        "id": "loadout_pistol_melee",
         "description": "Pistol & Melee Weapon",
         "default_items": [],
         "stat_modifiers": {},

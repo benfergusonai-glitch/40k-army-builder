@@ -612,6 +612,18 @@
     "keywords": "Melta 2"
   },
   {
+    "id": "multi_melta_infantry",
+    "name": "Multi-melta (Infantry)",
+    "range": "18\"",
+    "A": 2,
+    "BS": "3+",
+    "WS": null,
+    "S": 9,
+    "AP": -4,
+    "D": "D6",
+    "keywords": "Heavy, Melta 2"
+  },
+  {
     "id": "multi_melta_vehicle",
     "name": "Multi-melta (Vehicle)",
     "range": "18\"",

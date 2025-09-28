@@ -1,14 +1,5 @@
 [
   {
-    "id": "astraeus",
-    "name": "Astraeus",
-    "points": [{"size": 1, "cost": 525}],
-    "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 14, "sv": "2+", "w": 25, "ld": "6+", "oc": 5, "inv": "5+"},
-    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "AIRCRAFT", "ASTRAEUS"],
-    "weapon_ids": []
-  },
-  {
     "id": "ballistus_dreadnought",
     "name": "Ballistus Dreadnought",
     "points": [{"size": 1, "cost": 140}],
@@ -20,11 +11,20 @@
   {
     "id": "brutalis_dreadnought",
     "name": "Brutalis Dreadnought",
-    "points": [{"size": 1, "cost": 160}],
+    "points": [{"size":1,"cost":160}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 10, "sv": "2+", "w": 12, "ld": "6+", "oc": 4},
-    "keywords": ["VEHICLE", "WALKER", "DREADNOUGHT", "BRUTALIS DREADNOUGHT"],
-    "weapon_ids": ["brutalis_fists_strike", "brutalis_fists_sweep"]
+    "stats": {"m":"8\"","t":10,"sv":"2+","w":12,"ld":"6+","oc":4},
+    "keywords": ["VEHICLE","WALKER","DREADNOUGHT","BRUTALIS DREADNOUGHT"],
+    "weapon_ids": ["armoured_hull","brutalis_fist","heavy_bolter_twin_ir","melta_rifle","multi_melta","twin_multi_melta"]
+  },
+  {
+    "id": "corvus_blackstar",
+    "name": "Corvus Blackstar",
+    "points": [{"size":1,"cost":180}],
+    "role": "Vehicle",
+    "stats": {"m":"20+\"","t":9,"sv":"3+","w":12,"ld":"7+","oc":0},
+    "keywords": ["VEHICLE","AIRCRAFT","TRANSPORT","CORVUS BLACKSTAR"],
+    "weapon_ids": ["armoured_hull","assault_cannon","blackstar_heavy_bolter","infernum_halo_launcher","hurricane_bolter","twin_lascannon"]
   },
   {
     "id": "dreadnought",
@@ -38,29 +38,29 @@
   {
     "id": "gladiator_lancer",
     "name": "Gladiator Lancer",
-    "points": [{"size": 1, "cost": 160}],
+    "points": [{"size":1,"cost":165}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 12, "ld": "7+", "oc": 3},
-    "keywords": ["VEHICLE", "TANK", "GLADIATOR LANCER"],
-    "weapon_ids": []
+    "stats": {"m":"12\"","t":10,"sv":"3+","w":11,"ld":"7+","oc":4},
+    "keywords": ["VEHICLE","TANK","GLADIATOR"],
+    "weapon_ids": ["armoured_hull","ironhail_heavy_stubber","lancer_laser_destroyer","storm_bolter_twin"]
   },
   {
     "id": "gladiator_reaper",
     "name": "Gladiator Reaper",
-    "points": [{"size": 1, "cost": 160}],
+    "points": [{"size":1,"cost":180}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 12, "ld": "7+", "oc": 3},
-    "keywords": ["VEHICLE", "TANK", "GLADIATOR REAPER"],
-    "weapon_ids": ["ironhail_skytalon_array", "twin_onslaught_gatling_cannon"]
+    "stats": {"m":"12\"","t":10,"sv":"3+","w":11,"ld":"7+","oc":4},
+    "keywords": ["VEHICLE","TANK","GLADIATOR"],
+    "weapon_ids": ["armoured_hull","ironhail_heavy_stubber","storm_bolter","twin_heavy_onslaught_gatling_cannon","twin_icarus_rocket_pod"]
   },
   {
     "id": "gladiator_valiant",
     "name": "Gladiator Valiant",
-    "points": [{"size": 1, "cost": 150}],
+    "points": [{"size":1,"cost":170}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 12, "ld": "7+", "oc": 3},
-    "keywords": ["VEHICLE", "TANK", "GLADIATOR VALIANT"],
-    "weapon_ids": ["multi_melta_twin"]
+    "stats": {"m":"12\"","t":10,"sv":"3+","w":11,"ld":"7+","oc":4},
+    "keywords": ["VEHICLE","TANK","GLADIATOR"],
+    "weapon_ids": ["armoured_hull","ironhail_heavy_stubber","multi_melta","storm_bolter","twin_las_talon"]
   },
   {
     "id": "invictor_tactical_warsuit",
@@ -72,76 +72,76 @@
     "weapon_ids": []
   },
   {
-    "id": "land_raider",
-    "name": "Land Raider",
-    "points": [{"size": 1, "cost": 240}],
-    "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "6+", "oc": 5},
-    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "LAND RAIDER"],
-    "weapon_ids": ["godhammer_lascannon", "twin_heavy_bolter"]
-  },
-  {
     "id": "land_raider_crusader",
     "name": "Land Raider Crusader",
-    "points": [{"size": 1, "cost": 230}],
+    "points": [{"size":1,"cost":230}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "6+", "oc": 5},
-    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "LAND RAIDER CRUSADER"],
-    "weapon_ids": ["hurricane_bolter", "soul_wrath_lascannon_twin"]
+    "stats": {"m":"10\"","t":12,"sv":"2+","w":16,"ld":"6+","oc":5},
+    "keywords": ["VEHICLE","TRANSPORT","LAND RAIDER"],
+    "weapon_ids": ["armoured_hull","heavy_flamer_multi","heavy_flamer_twin","heavy_stubber_multi","hunter_killer_missile","hurricane_bolter_twin","storm_bolter","twin_heavy_bolter"]
   },
   {
     "id": "land_raider_redeemer",
     "name": "Land Raider Redeemer",
-    "points": [{"size": 1, "cost": 260}],
+    "points": [{"size":1,"cost":230}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "6+", "oc": 5},
-    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "LAND RAIDER REDEEMER"],
-    "weapon_ids": ["heavy_flamer"]
+    "stats": {"m":"10\"","t":12,"sv":"2+","w":16,"ld":"6+","oc":5},
+    "keywords": ["VEHICLE","TRANSPORT","LAND RAIDER"],
+    "weapon_ids": ["armoured_hull","heavy_flamer","heavy_flamer_twin","heavy_flamer_twin_ir","hunter_killer_missile","multi_melta_twin","storm_bolter","twin_assault_cannon"]
+  },
+  {
+    "id": "land_raider_phobos",
+    "name": "Land Raider Phobos",
+    "points": [{"size":1,"cost":250}],
+    "role": "Vehicle",
+    "stats": {"m":"10\"","t":12,"sv":"2+","w":16,"ld":"6+","oc":5},
+    "keywords": ["VEHICLE","TRANSPORT","LAND RAIDER"],
+    "weapon_ids": ["armoured_hull","heavy_bolter","hunter_killer_missile","storm_bolter","twin_lascannon"]
   },
   {
     "id": "predator_annihilator",
     "name": "Predator Annihilator",
-    "points": [{"size": 1, "cost": 130}],
+    "points": [{"size":1,"cost":130}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 11, "ld": "7+", "oc": 3},
-    "keywords": ["VEHICLE", "TANK", "PREDATOR ANNIHILATOR"],
-    "weapon_ids": ["lascannon", "lascannon_twin"]
+    "stats": {"m":"12\"","t":10,"sv":"3+","w":11,"ld":"7+","oc":4},
+    "keywords": ["VEHICLE","TANK","PREDATOR"],
+    "weapon_ids": ["armoured_hull","hunter_killer_missile","lascannon_twin","lascannon_side"]
   },
   {
     "id": "predator_destructor",
     "name": "Predator Destructor",
-    "points": [{"size": 1, "cost": 130}],
+    "points": [{"size":1,"cost":130}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 10, "sv": "3+", "w": 11, "ld": "7+", "oc": 3},
-    "keywords": ["VEHICLE", "TANK", "PREDATOR DESTRUCTOR"],
-    "weapon_ids": ["predator_autocannon"]
+    "stats": {"m":"12\"","t":10,"sv":"3+","w":11,"ld":"7+","oc":4},
+    "keywords": ["VEHICLE","TANK","PREDATOR"],
+    "weapon_ids": ["armoured_hull","heavy_bolter_side","heavy_bolter_twin","hunter_killer_missile","predator_autocannon"]
   },
   {
     "id": "redemptor_dreadnought",
     "name": "Redemptor Dreadnought",
-    "points": [{"size": 1, "cost": 200}],
+    "points": [{"size":1,"cost":210}],
     "role": "Vehicle",
-    "stats": {"m": "8\"", "t": 10, "sv": "2+", "w": 13, "ld": "6+", "oc": 4},
-    "keywords": ["VEHICLE", "WALKER", "DREADNOUGHT", "REDEMPTOR DREADNOUGHT"],
-    "weapon_ids": ["destructor_gatling_cannon", "icarus_rocket_pod", "macro_plasma_incinerator_standard", "macro_plasma_incinerator_supercharge", "onslaught_gatling_cannon", "redemptor_fist"]
-  },
-  {
-    "id": "repulsor",
-    "name": "Repulsor",
-    "points": [{"size": 1, "cost": 190}],
-    "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "7+", "oc": 5},
-    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "REPULSOR"],
-    "weapon_ids": ["heavy_onslaught_gatling_cannon", "repulsor_defensive_array"]
+    "stats": {"m":"8\"","t":10,"sv":"2+","w":12,"ld":"6+","oc":4},
+    "keywords": ["VEHICLE","WALKER","DREADNOUGHT","REDEMPTOR DREADNOUGHT"],
+    "weapon_ids": ["fragstorm_grenade_launcher","heavy_flamer_ir","heavy_onslaught_gatling_cannon","icarus_rocket_pod","macro_plasma_incinerator_standard","macro_plasma_incinerator_supercharge","onslaught_gatling_cannon","redemptor_fist","storm_bolter"]
   },
   {
     "id": "repulsor_executioner",
     "name": "Repulsor Executioner",
-    "points": [{"size": 1, "cost": 220}],
+    "points": [{"size":1,"cost":230}],
     "role": "Vehicle",
-    "stats": {"m": "10\"", "t": 12, "sv": "2+", "w": 16, "ld": "7+", "oc": 5},
-    "keywords": ["VEHICLE", "TANK", "TRANSPORT", "REPULSOR EXECUTIONER"],
-    "weapon_ids": ["las_talon"]
+    "stats": {"m":"10\"","t":12,"sv":"3+","w":16,"ld":"7+","oc":5},
+    "keywords": ["VEHICLE","TRANSPORT","REPULSOR"],
+    "weapon_ids": ["armoured_hull","fragstorm_grenade_launcher","heavy_laser_destructor","ironhail_heavy_stubber","ironhail_stubber_twin","macro_plasma_incinerator","repulsor_executioner_power_fist","storm_bolter","twin_heavy_bolter","twin_heavy_onslaught_gatling_cannon"]
+  },
+  {
+    "id": "repulsor_tank",
+    "name": "Repulsor",
+    "points": [{"size":1,"cost":190}],
+    "role": "Vehicle",
+    "stats": {"m":"10\"","t":12,"sv":"3+","w":16,"ld":"7+","oc":5},
+    "keywords": ["VEHICLE","TRANSPORT","REPULSOR"],
+    "weapon_ids": ["armoured_hull","fragstorm_grenade_launcher","heavy_onslaught_gatling_cannon","ironhail_heavy_stubber","ironhail_stubber_twin","krak_grenade_launcher","repulsor_executioner_power_fist","storm_bolter","twin_heavy_bolter"]
   },
   {
     "id": "storm_speeder_hailstrike",
@@ -173,38 +173,29 @@
   {
     "id": "stormhawk_interceptor",
     "name": "Stormhawk Interceptor",
-    "points": [{"size": 1, "cost": 155}],
+    "points": [{"size":1,"cost":145}],
     "role": "Vehicle",
-    "stats": {"m": "20+\"", "t": 9, "sv": "3+", "w": 10, "ld": "7+", "oc": 0},
-    "keywords": ["VEHICLE", "AIRCRAFT", "STORMHAWK INTERCEPTOR"],
-    "weapon_ids": []
+    "stats": {"m":"20+\"","t":9,"sv":"3+","w":10,"ld":"7+","oc":0},
+    "keywords": ["VEHICLE","AIRCRAFT","STORMHAWK INTERCEPTOR"],
+    "weapon_ids": ["armoured_hull","heavy_bolter","heavy_bolter_twin","lascannon_twin","skyhammer_missile_launcher"]
   },
   {
     "id": "stormraven_gunship",
     "name": "Stormraven Gunship",
-    "points": [{"size": 1, "cost": 240}],
+    "points": [{"size":1,"cost":240}],
     "role": "Vehicle",
-    "stats": {"m": "20+\"", "t": 10, "sv": "2+", "w": 14, "ld": "7+", "oc": 0},
-    "keywords": ["VEHICLE", "AIRCRAFT", "TRANSPORT", "STORMRAVEN GUNSHIP"],
-    "weapon_ids": []
+    "stats": {"m":"20+\"","t":10,"sv":"2+","w":14,"ld":"7+","oc":0},
+    "keywords": ["VEHICLE","AIRCRAFT","TRANSPORT","STORMRAVEN GUNSHIP"],
+    "weapon_ids": ["armoured_hull","heavy_bolter","heavy_flamer","hurricane_bolter_twin","multi_melta","typhoon_missile_launcher","twin_heavy_bolter","twin_lascannon"]
   },
   {
     "id": "stormtalon_gunship",
     "name": "Stormtalon Gunship",
-    "points": [{"size": 1, "cost": 165}],
+    "points": [{"size":1,"cost":165}],
     "role": "Vehicle",
-    "stats": {"m": "20+\"", "t": 9, "sv": "3+", "w": 10, "ld": "7+", "oc": 0},
-    "keywords": ["VEHICLE", "AIRCRAFT", "STORMHAWK INTERCEPTOR"],
-    "weapon_ids": []
-  },
-  {
-    "id": "thunderhawk_gunship",
-    "name": "Thunderhawk Gunship",
-    "points": [{"size": 1, "cost": 840}],
-    "role": "Vehicle",
-    "stats": {"m": "20+\"", "t": 13, "sv": "2+", "w": 35, "ld": "6+", "oc": 0},
-    "keywords": ["VEHICLE", "AIRCRAFT", "TRANSPORT", "THUNDERHAWK GUNSHIP"],
-    "weapon_ids": []
+    "stats": {"m":"20+\"","t":9,"sv":"3+","w":10,"ld":"7+","oc":0},
+    "keywords": ["VEHICLE","AIRCRAFT","STORMHAWK INTERCEPTOR"],
+    "weapon_ids": ["armoured_hull","heavy_bolter_twin","heavy_flamer_twin","lascannon_twin","skyspear_missile_launcher","twin_assault_cannon"]
   },
   {
     "id": "vindicator",
@@ -218,10 +209,10 @@
   {
     "id": "whirlwind",
     "name": "Whirlwind",
-    "points": [{"size": 1, "cost": 180}],
+    "points": [{"size":1,"cost":130}],
     "role": "Vehicle",
-    "stats": {"m": "12\"", "t": 10, "sv": "3+", "w": 11, "ld": "7+", "oc": 3},
-    "keywords": ["VEHICLE", "TANK", "WHIRLWIND"],
-    "weapon_ids": []
+    "stats": {"m":"12\"","t":10,"sv":"3+","w":11,"ld":"7+","oc":4},
+    "keywords": ["VEHICLE","TANK","WHIRLWIND"],
+    "weapon_ids": ["armoured_hull","storm_bolter","whirlwind_launcher_frag","whirlwind_launcher_krak"]
   }
 ]
