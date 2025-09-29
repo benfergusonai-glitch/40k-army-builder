@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './EnhancementsModal.css';
 import { useArmy } from '../context/ArmyContext';
+import { useGameData } from '../context/GameDataContext'; // Import the new hook
 
-// The props 'show' and 'unit' are no longer needed
-function EnhancementsModal({ enhancements }) {
+// The 'enhancements' prop is no longer needed.
+function EnhancementsModal() {
   const { 
-    editingEnhancementUnit: unit, // Get the unit to edit from context
-    handleCloseEnhancementsModal: onClose, // Get the close handler from context
+    editingEnhancementUnit: unit,
+    handleCloseEnhancementsModal: onClose,
     updateUnitEnhancement 
   } = useArmy();
+  
+  // Get static game data directly from the context.
+  const { allEnhancements: enhancements } = useGameData();
   
   const [selectedEnhancement, setSelectedEnhancement] = useState(null);
 
@@ -23,6 +27,7 @@ function EnhancementsModal({ enhancements }) {
   }
 
   const isEligible = unit.role === 'Character' && !unit.keywords.includes('EPIC HERO');
+  // NOTE: This is hardcoded for now, but could be dynamic in the future.
   const currentDetachmentId = 'gladius_task_force'; 
 
   const availableEnhancements = enhancements.filter(enhancement => {

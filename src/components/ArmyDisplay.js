@@ -1,9 +1,13 @@
 import React from 'react';
 import { useArmy } from '../context/ArmyContext';
+import { useGameData } from '../context/GameDataContext'; // Import the new hook
 import UnitCard from './UnitCard';
 
-function ArmyDisplay({ weapons }) {
+// Remove props from the function signature
+function ArmyDisplay() {
   const { army, totalPoints, removeUnit, selectedChapter, selectedDetachment } = useArmy();
+  // Get static game data directly from the context
+  const { allWeapons: weapons } = useGameData();
 
   return (
     <div className="army-display">

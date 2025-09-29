@@ -1,14 +1,19 @@
 import React, { useMemo } from 'react';
 import { useArmy } from '../context/ArmyContext';
+import { useGameData } from '../context/GameDataContext'; // Import the new hook
 import './ArmyConfiguration.css';
 
-function ArmyConfiguration({ chapters, detachments }) {
+// Remove props from the function signature
+function ArmyConfiguration() {
   const {
     selectedChapter,
     selectedDetachment,
     selectChapter,
     selectDetachment,
   } = useArmy();
+  
+  // Get static game data directly from the context
+  const { allChapters: chapters, allDetachments: detachments } = useGameData();
 
   const handleChapterChange = (e) => {
     const chapterId = e.target.value;

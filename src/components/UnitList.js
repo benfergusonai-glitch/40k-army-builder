@@ -1,10 +1,15 @@
 import React, { useMemo } from 'react';
 import { useArmy } from '../context/ArmyContext';
+import { useGameData } from '../context/GameDataContext'; // Import the new hook
 import { getUnitDisplayPoints } from '../utils/pointUtils';
 import BattlefieldRoleIcon from './BattlefieldRoleIcon';
 
-function UnitList({ unitGroups }) {
+// The 'unitGroups' prop is no longer needed.
+function UnitList() {
   const { addUnit, selectedChapter } = useArmy();
+  // Get static game data directly from the context.
+  // We alias 'allUnits' to 'unitGroups' to minimize changes to the component's logic.
+  const { allUnits: unitGroups } = useGameData();
 
   const filteredUnitGroups = useMemo(() => {
     if (!selectedChapter) {
