@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './EnhancementsModal.css';
 import { useArmy } from '../context/ArmyContext';
 
-function EnhancementsModal({ show, unit, enhancements, onClose }) {
+// The props 'show' and 'unit' are no longer needed
+function EnhancementsModal({ enhancements }) {
+  const { 
+    editingEnhancementUnit: unit, // Get the unit to edit from context
+    handleCloseEnhancementsModal: onClose, // Get the close handler from context
+    updateUnitEnhancement 
+  } = useArmy();
+  
   const [selectedEnhancement, setSelectedEnhancement] = useState(null);
-  const { updateUnitEnhancement } = useArmy();
 
   useEffect(() => {
     if (unit) {
@@ -12,7 +18,7 @@ function EnhancementsModal({ show, unit, enhancements, onClose }) {
     }
   }, [unit]);
 
-  if (!show) {
+  if (!unit) {
     return null;
   }
 

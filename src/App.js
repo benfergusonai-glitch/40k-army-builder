@@ -4,37 +4,43 @@ import UnitList from './components/UnitList';
 import ArmyDisplay from './components/ArmyDisplay';
 import WargearModal from './components/WargearModal';
 import EnhancementsModal from './components/EnhancementsModal';
+import ArmyConfiguration from './components/ArmyConfiguration'; // --- NEW
+
+const formatRoleName = (filename) => { /* ... same as before ... */ };
 
 function App() {
-  const [allUnits, setAllUnits] = useState([]);
+  const [allUnits, setAllUnits] = useState({});
   const [allEnhancements, setAllEnhancements] = useState([]);
+  const [allWeapons, setAllWeapons] = useState({});
+  // --- NEW: State for chapters and detachments ---
+  const [allChapters, setAllChapters] = useState([]);
+  const [allDetachments, setAllDetachments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State for Wargear Modal
-  const [editingWargearUnit, setEditingWargearUnit] = useState(null);
-  // State for Enhancements Modal
-  const [editingEnhancementUnit, setEditingEnhancementUnit] = useState(null);
-
   useEffect(() => {
-    // This is the restored data-fetching logic
     const fetchAllData = async () => {
       try {
-        const [unitData, enhancementData] = await Promise.all([
-          fetch('/data/units/manifest.json')
-            .then(res => res.json())
-            .then(manifest => Promise.all(
-              manifest.map(file => fetch(`/data/units/${file}`).then(res => res.json()))
-            ))
-            .then(allUnitArrays => allUnitArrays.flat()),
-          
-          fetch('/data/enhancements.json').then(res => res.json())
+        const manifestRes = await fetch('/data/units/manifest.json');
+        const manifest = await manifestRes.json();
+
+        // --- NEW: Fetch all data concurrently ---
+        const [unitArrays, enhancementData, weaponData, chapterData, detachmentData] = await Promise.all([
+          Promise.all(manifest.map(file => fetch(`/data/units/${file}`).then(res => res.json()))),
+          fetch('/data/enhancements.json').then(res => res.json()),
+          fetch('/data/weapons.json').then(res => res.json()),
+          fetch('/data/chapters.json').then(res => res.json()),
+          fetch('/data/detachments.json').then(res => res.json())
         ]);
+        
+        const groupedUnits = manifest.reduce(/* ... same as before ... */);
+        const weaponsMap = weaponData.reduce(/* ... same as before ... */);
 
-        unitData.sort((a, b) => a.name.localeCompare(b.name));
-
-        setAllUnits(unitData);
+        setAllUnits(groupedUnits);
         setAllEnhancements(enhancementData);
+        setAllWeapons(weaponsMap);
+        setAllChapters(chapterData); // --- NEW
+        setAllDetachments(detachmentData); // --- NEW
 
       } catch (e) {
         setError(`Failed to load game data: ${e.message}`);
@@ -47,21 +53,101 @@ function App() {
     fetchAllData();
   }, []);
 
-  // --- Wargear Modal Handlers ---
-  const handleOpenWargearModal = (unit) => {
-    setEditingWargearUnit(unit);
-  };
-  const handleCloseWargearModal = () => {
-    setEditingWargearUnit(null);
-  };
+  if (loading) { /* ... same as before ... */ }
+  if (error) { /* ... same as before ... */ }
 
-  // --- Enhancements Modal Handlers ---
-  const handleOpenEnhancementsModal = (unit) => {
-    setEditingEnhancementUnit(unit);
-  };
-  const handleCloseEnhancementsModal = () => {
-    setEditingEnhancementUnit(null);
-  };
+  return (
+    <div className="App">
+      <header className="App-header"><h1>Warhammer 40,000 Army Builder</h1></header>
+      <main className="container">
+        <div className="roster-selection-panel">
+          <h2>Select Units</h2>
+          <UnitList unitGroups={allUnits} />
+        </div>
+        <div className="army-list-panel">
+          <h2>My Army</h2>
+          {/* --- NEW: Add configuration component and pass data --- */}
+          <ArmyConfiguration chapters={allChapters} detachments={allDetachments} />
+          <ArmyDisplay weapons={allWeapons} />
+        </div>
+      </main>
+      <WargearModal />
+      <EnhancementsModal enhancements={allEnhancements} />
+    </div>
+  );
+}
+
+// NOTE: The full code for App.js is included below for clarity.
+const FullApp = () => {
+  const [allUnits, setAllUnits] = useState({});
+  const [allEnhancements, setAllEnhancements] = useState([]);
+  const [allWeapons, setAllWeapons] = useState({});
+  const [allChapters, setAllChapters] = useState([]);
+  const [allDetachments, setAllDetachments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const formatRoleName = (filename) => {
+        const name = filename.replace('.json', '');
+        switch (name) {
+            case 'epichero': return 'Epic Hero';
+            case 'characters': return 'Character';
+            case 'battleline': return 'Battleline';
+            case 'infantry': return 'Infantry';
+            case 'mounted': return 'Mounted';
+            case 'vehicles': return 'Vehicle';
+            case 'transports': return 'Transport';
+            case 'fortifications': return 'Fortification';
+            default: return name.charAt(0).toUpperCase() + name.slice(1);
+        }
+    };
+    
+    const fetchAllData = async () => {
+      try {
+        const manifestRes = await fetch('/data/units/manifest.json');
+        const manifest = await manifestRes.json();
+
+        const [unitArrays, enhancementData, weaponData, chapterData, detachmentData] = await Promise.all([
+          Promise.all(manifest.map(file => fetch(`/data/units/${file}`).then(res => res.json()))),
+          fetch('/data/enhancements.json').then(res => res.json()),
+          fetch('/data/weapons.json').then(res => res.json()),
+          fetch('/data/chapters.json').then(res => res.json()),
+          fetch('/data/detachments.json').then(res => res.json())
+        ]);
+        
+        const groupedUnits = manifest.reduce((acc, file, index) => {
+          const roleName = formatRoleName(file);
+          const unitsWithRole = unitArrays[index].map(unit => ({ ...unit, role: roleName }));
+          if (!acc[roleName]) {
+            acc[roleName] = [];
+          }
+          acc[roleName].push(...unitsWithRole);
+          acc[roleName].sort((a, b) => a.name.localeCompare(b.name));
+          return acc;
+        }, {});
+
+        const weaponsMap = weaponData.reduce((acc, weapon) => {
+          acc[weapon.id] = weapon;
+          return acc;
+        }, {});
+
+        setAllUnits(groupedUnits);
+        setAllEnhancements(enhancementData);
+        setAllWeapons(weaponsMap);
+        setAllChapters(chapterData);
+        setAllDetachments(detachmentData);
+
+      } catch (e) {
+        setError(`Failed to load game data: ${e.message}`);
+        console.error("Fetch error:", e);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAllData();
+  }, []);
 
   if (loading) {
     return <div className="container"><h1>Loading game data...</h1></div>;
@@ -78,32 +164,18 @@ function App() {
       <main className="container">
         <div className="roster-selection-panel">
           <h2>Select Units</h2>
-          <UnitList units={allUnits} />
+          <UnitList unitGroups={allUnits} />
         </div>
         <div className="army-list-panel">
           <h2>My Army</h2>
-          <ArmyDisplay
-            onOpenWargearModal={handleOpenWargearModal}
-            onOpenEnhancementsModal={handleOpenEnhancementsModal}
-            allEnhancements={allEnhancements}
-          />
+          <ArmyConfiguration chapters={allChapters} detachments={allDetachments} />
+          <ArmyDisplay weapons={allWeapons} />
         </div>
       </main>
 
-      <WargearModal
-        show={!!editingWargearUnit}
-        unit={editingWargearUnit}
-        onClose={handleCloseWargearModal}
-      />
-      
-      <EnhancementsModal
-        show={!!editingEnhancementUnit}
-        unit={editingEnhancementUnit}
-        enhancements={allEnhancements}
-        onClose={handleCloseEnhancementsModal}
-      />
+      <WargearModal />
+      <EnhancementsModal enhancements={allEnhancements} />
     </div>
   );
-}
-
-export default App;
+};
+export default FullApp;

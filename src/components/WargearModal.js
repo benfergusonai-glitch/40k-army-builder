@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './WargearModal.css';
 import { useArmy } from '../context/ArmyContext';
 
-function WargearModal({ show, unit, onClose }) {
+// The props 'show', 'unit', and 'onClose' are no longer needed
+function WargearModal() {
+  const { 
+    editingWargearUnit: unit, // Get the unit to edit from context
+    handleCloseWargearModal: onClose, // Get the close handler from context
+    updateUnitWargear 
+  } = useArmy();
+  
   const [selectedOption, setSelectedOption] = useState(null);
-  const { updateUnitWargear } = useArmy();
 
   useEffect(() => {
     if (unit) {
@@ -12,7 +18,8 @@ function WargearModal({ show, unit, onClose }) {
     }
   }, [unit]);
 
-  if (!show) {
+  // The modal's visibility is now determined by whether 'unit' exists in the context
+  if (!unit) {
     return null;
   }
 

@@ -1,0 +1,33 @@
+.weapon-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.weapon-stats-table th,
+.weapon-stats-table td {
+  border: 1px solid #444;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.weapon-stats-table th {
+  background-color: #333;
+}
+
+.weapon-row td {
+  background-color: #2a2a2a;
+}
+
+.weapon-name {
+  text-align: left;
+  font-weight: bold;
+}
+
+.weapon-keywords {
+  text-align: left;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #ccc;
+}
