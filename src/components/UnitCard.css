@@ -79,3 +79,22 @@
 .stat-value {
     padding: 0.5rem;
 }
+
+/* --- NEW: Styles for Invalid Units --- */
+
+/* Applies a red border and a subtle red tint when the unit is invalid */
+.unit-card.invalid {
+  border-color: #e53935;
+  background-color: #3a2a2a;
+}
+
+/* The warning message box itself */
+.unit-validation-warning {
+  background-color: #e53935;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,25 +1,29 @@
 import React, { useMemo } from 'react';
 import { useArmy } from '../context/ArmyContext';
-import { useGameData } from '../context/GameDataContext'; // Import the new hook
+import { useGameData } from '../context/GameDataContext';
 import { getUnitDisplayPoints } from '../utils/pointUtils';
 import BattlefieldRoleIcon from './BattlefieldRoleIcon';
 
-// The 'unitGroups' prop is no longer needed.
 function UnitList() {
   const { addUnit, selectedChapter } = useArmy();
-  // Get static game data directly from the context.
-  // We alias 'allUnits' to 'unitGroups' to minimize changes to the component's logic.
   const { allUnits: unitGroups } = useGameData();
 
   const filteredUnitGroups = useMemo(() => {
     if (!selectedChapter) {
-      return {}; // Return empty object if no chapter is selected
+      const filtered = {};
+      Object.entries(unitGroups).forEach(([role, units]) => {
+        const nonSpecificUnits = units.filter(unit => !unit.chapter_id);
+        if (nonSpecificUnits.length > 0) {
+          filtered[role] = nonSpecificUnits;
+        }
+      });
+      return filtered;
     }
     
     const filtered = {};
     Object.entries(unitGroups).forEach(([role, units]) => {
       const chapterSpecificUnits = units.filter(unit => 
-        !unit.chapter || unit.chapter === selectedChapter.id
+        !unit.chapter_id || unit.chapter_id === selectedChapter.id
       );
 
       if (chapterSpecificUnits.length > 0) {
@@ -29,29 +33,31 @@ function UnitList() {
     return filtered;
   }, [selectedChapter, unitGroups]);
 
-  if (!selectedChapter) {
-    return <p className="selection-prompt">Please select a Chapter to see available units.</p>;
-  }
-
   return (
     <div className="unit-list">
-      {Object.entries(filteredUnitGroups).map(([role, units]) => (
+      {Object.entries(filteredUnitGroups).map(([role, units], index) => (
         <div key={role} className="role-group">
-          <h3>{role}</h3>
-          {units.map((unit) => (
-            <div key={unit.name} className="unit-entry">
-              <div className="unit-info">
-                <h4>
+          {/* Using the <details> element for a native accordion */}
+          <details open={index <= 1}> {/* Open the first two categories by default */}
+            <summary>{role}</summary>
+            {units.map((unit) => (
+              <div key={unit.name} className="unit-entry">
+                <div className="unit-info">
                   <BattlefieldRoleIcon role={unit.role} />
-                  {unit.name}
-                </h4>
-                <p>{getUnitDisplayPoints(unit)} pts</p>
+                  <h4>{unit.name}</h4>
+                </div>
+                <div className="unit-actions">
+                  <span className="unit-points">{getUnitDisplayPoints(unit)} pts</span>
+                  <button onClick={() => addUnit(unit)} className="add-button">+</button>
+                </div>
               </div>
-              <button onClick={() => addUnit(unit)} className="add-button">+</button>
-            </div>
-          ))}
+            ))}
+          </details>
         </div>
       ))}
+       {Object.keys(filteredUnitGroups).length === 0 && selectedChapter && (
+        <p className="selection-prompt">No units available for the selected chapter.</p>
+      )}
     </div>
   );
 }

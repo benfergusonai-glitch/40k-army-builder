@@ -8,15 +8,10 @@ export const useArmy = () => {
 };
 
 export const ArmyProvider = ({ children }) => {
-    // Army list state
     const [army, setArmy] = useState([]);
     const [totalPoints, setTotalPoints] = useState(0);
-
-    // --- NEW: Army configuration state ---
     const [selectedChapter, setSelectedChapter] = useState(null);
     const [selectedDetachment, setSelectedDetachment] = useState(null);
-
-    // Modal state
     const [editingWargearUnit, setEditingWargearUnit] = useState(null);
     const [editingEnhancementUnit, setEditingEnhancementUnit] = useState(null);
 
@@ -33,10 +28,9 @@ export const ArmyProvider = ({ children }) => {
         setTotalPoints(calculateTotalPoints());
     }, [army]);
 
-    // --- NEW: Functions to manage army configuration ---
     const selectChapter = (chapter) => {
         setSelectedChapter(chapter);
-        setSelectedDetachment(null); // Reset detachment when chapter changes
+        setSelectedDetachment(null); 
     };
 
     const selectDetachment = (detachment) => {
@@ -48,7 +42,9 @@ export const ArmyProvider = ({ children }) => {
         const newUnit = {
             ...deepCopiedUnit,
             id: `${deepCopiedUnit.name}-${Date.now()}`,
-            current_wargear: (deepCopiedUnit.wargear_options && deepCopiedUnit.wargear_options.length > 0) ? deepCopiedUnit.wargear_options[0] : null,
+            wargear_selection: (deepCopiedUnit.wargear_options && deepCopiedUnit.wargear_options.length > 0) 
+                ? { loadoutId: deepCopiedUnit.wargear_options[0].id, sub_selections: {} } 
+                : null,
             current_enhancement: null
         };
         setArmy(prevArmy => [...prevArmy, newUnit]);
@@ -58,12 +54,22 @@ export const ArmyProvider = ({ children }) => {
         setArmy(prevArmy => prevArmy.filter(unit => unit.id !== unitId));
     };
 
-    const updateUnitWargear = (unitId, newWargear) => {
-        setArmy(prevArmy => prevArmy.map(unit => unit.id === unitId ? { ...unit, current_wargear: newWargear } : unit));
+    const updateUnitWargearSelection = (unitId, newSelection) => {
+        setArmy(prevArmy => prevArmy.map(unit => unit.id === unitId ? { ...unit, wargear_selection: newSelection } : unit));
     };
 
     const updateUnitEnhancement = (unitId, newEnhancement) => {
         setArmy(prevArmy => prevArmy.map(unit => unit.id === unitId ? { ...unit, current_enhancement: newEnhancement } : unit));
+    };
+    
+    const isUnitValid = (unit) => {
+        if (!unit.chapter_id) {
+            return true;
+        }
+        if (selectedChapter) {
+            return unit.chapter_id === selectedChapter.id;
+        }
+        return false;
     };
 
     const handleOpenWargearModal = (unit) => setEditingWargearUnit(unit);
@@ -76,7 +82,7 @@ export const ArmyProvider = ({ children }) => {
         totalPoints,
         addUnit,
         removeUnit,
-        updateUnitWargear,
+        updateUnitWargearSelection,
         updateUnitEnhancement,
         editingWargearUnit,
         editingEnhancementUnit,
@@ -84,11 +90,11 @@ export const ArmyProvider = ({ children }) => {
         handleCloseWargearModal,
         handleOpenEnhancementsModal,
         handleCloseEnhancementsModal,
-        // --- NEW: Export configuration state and functions ---
         selectedChapter,
         selectedDetachment,
         selectChapter,
         selectDetachment,
+        isUnitValid,
     };
 
     return (

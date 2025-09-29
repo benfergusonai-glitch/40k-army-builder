@@ -3,13 +3,15 @@ import './UnitCard.css';
 import { useArmy } from '../context/ArmyContext';
 import { getUnitDisplayPoints } from '../utils/pointUtils';
 import BattlefieldRoleIcon from './BattlefieldRoleIcon';
-import WeaponStats from './WeaponStats'; 
+import WeaponStats from './WeaponStats';
 
-function UnitCard({ unit, onRemoveUnit, weapons }) {
+// The component now accepts 'isValid' as a prop
+function UnitCard({ unit, onRemoveUnit, weapons, isValid }) {
+  // It no longer needs to get isUnitValid or selectedChapter from the context
   const { handleOpenWargearModal, handleOpenEnhancementsModal } = useArmy();
 
   if (!unit) { return null; }
-
+  
   const stats = unit.stats || {};
 
   const getCardTotalPoints = (unit) => {
@@ -18,18 +20,32 @@ function UnitCard({ unit, onRemoveUnit, weapons }) {
     return baseCost + enhancementCost;
   };
 
-  const isEnhancementEligible = unit.role === 'Character' && !unit.keywords.includes('EPIC HERO');
+  const currentLoadout = unit.wargear_options?.find(
+    opt => opt.id === unit.wargear_selection?.loadoutId
+  );
 
-  // --- CORRECTED LOGIC ---
-  // 1. Get all weapon objects using the 'weapon_ids' property.
-  const allWeapons = unit.weapon_ids?.map(id => weapons[id]).filter(Boolean) || [];
-  
-  // 2. Filter weapons based on the 'range' property.
+  const getWeaponIdsFromSelection = () => {
+    if (!currentLoadout) return unit.weapon_ids || [];
+    let finalWeaponIds = [...(currentLoadout.default_items || [])];
+    if (currentLoadout.sub_options && unit.wargear_selection.sub_selections) {
+      for (const subOption of currentLoadout.sub_options) {
+        const selectedChoice = unit.wargear_selection.sub_selections[subOption.option_id];
+        if (selectedChoice) {
+          finalWeaponIds.push(selectedChoice);
+        }
+      }
+    }
+    return finalWeaponIds;
+  };
+
+  const weaponIds = getWeaponIdsFromSelection();
+  const allWeapons = weaponIds.map(id => weapons[id]).filter(Boolean);
   const rangedWeapons = allWeapons.filter(w => w.range !== 'Melee');
   const meleeWeapons = allWeapons.filter(w => w.range === 'Melee');
+  const isEnhancementEligible = unit.role === 'Character' && !unit.keywords.includes('EPIC HERO');
 
   return (
-    <div className="unit-card">
+    <div className={`unit-card ${!isValid ? 'invalid' : ''}`}>
       <div className="unit-card-header">
         <h4>
           <BattlefieldRoleIcon role={unit.role} />
@@ -42,6 +58,12 @@ function UnitCard({ unit, onRemoveUnit, weapons }) {
         </div>
       </div>
       
+      {!isValid && (
+        <div className="unit-validation-warning">
+          Warning: This unit is not a valid choice for the selected Chapter.
+        </div>
+      )}
+
       <div className="unit-stats-grid">
         <div className="stat-header">M</div>
         <div className="stat-header">T</div>
@@ -57,9 +79,9 @@ function UnitCard({ unit, onRemoveUnit, weapons }) {
         <div className="stat-value">{stats.oc || '-'}</div>
       </div>
 
-      {unit.current_wargear && (
+      {currentLoadout && (
         <div className="unit-wargear-display">
-          <strong>Wargear:</strong> {unit.current_wargear.description}
+          <strong>Wargear:</strong> {currentLoadout.description}
         </div>
       )}
       

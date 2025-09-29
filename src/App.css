@@ -4,9 +4,17 @@
 
 .App-header {
   background-color: #1a1d22;
-  padding: 20px;
+  padding: 1rem 2rem;
   color: white;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 .container {
@@ -15,6 +23,7 @@
   justify-content: space-around;
   padding: 0 2rem;
   gap: 2rem;
+  align-items: flex-start;
 }
 
 .roster-selection-panel {
@@ -23,6 +32,8 @@
   padding: 1rem;
   border-radius: 8px;
   max-width: 400px;
+  position: sticky;
+  top: 2rem;
 }
 
 .army-list-panel {
@@ -32,21 +43,72 @@
   border-radius: 8px;
 }
 
-/* Unit List Styling */
+
+/* --- UPDATED: Unit List Styling --- */
 .unit-list {
   text-align: left;
+}
+
+.role-group summary {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.75rem;
+  cursor: pointer;
+  background-color: #333842;
+  list-style: none; /* Remove default triangle */
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #4a4f5a;
+}
+
+.role-group summary::-webkit-details-marker {
+  display: none; /* Remove default triangle for Chrome */
+}
+
+.role-group summary:hover {
+  background-color: #4a4f5a;
+}
+
+.role-group summary::after {
+  content: '▼'; /* Collapsed state icon */
+  font-size: 0.8em;
+}
+
+.role-group details[open] > summary::after {
+  content: '▲'; /* Expanded state icon */
 }
 
 .unit-entry {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.75rem 0.5rem;
   border-bottom: 1px solid #4a4f5a;
 }
 
-.unit-info h4, .unit-info p {
+.unit-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-grow: 1; /* Allow it to take up available space */
+}
+
+/* Remove margin from h4 within the single-line entry */
+.unit-info h4 {
   margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.unit-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.unit-points {
+  color: #ccc;
+  font-size: 0.9em;
 }
 
 .add-button {
@@ -58,6 +120,7 @@
   height: 30px;
   font-size: 20px;
   cursor: pointer;
+  flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 .add-button:hover {

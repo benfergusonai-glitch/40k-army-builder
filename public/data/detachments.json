@@ -27,19 +27,22 @@
     "id": "unforgiven_task_force",
     "name": "Unforgiven Task Force (Dark Angels)",
     "rule": "At the start of the battle, after both players have deployed their armies, select one unit from your opponent's army to be your army's Battlefield Target. Each time a unit from your army makes an attack that targets that Battlefield Target, you can re-roll the Hit roll and you can re-roll the Wound roll.",
-    "allowed_chapters": ["dark_angels"]
+    "allowed_chapters": ["dark_angels"],
+    "chapter_id": "dark_angels"
   },
   {
     "id": "sons_of_sanguinius",
     "name": "Sons of Sanguinius (Blood Angels)",
     "rule": "Add 1 to the Attacks and Strength characteristics of melee weapons equipped by models in units from your army that made a Charge move this turn.",
-    "allowed_chapters": ["blood_angels"]
+    "allowed_chapters": ["blood_angels"],
+    "chapter_id": "blood_angels"
   },
   {
     "id": "champions_of_russ",
     "name": "Champions of Russ (Space Wolves)",
     "rule": "At the end of your opponent's turn, you can select one unit from your army that is not within Engagement Range of any enemy units to make a Saga move. To do so, that unit can either make a Normal move of up to D6\" or it can Advance. If it Advances, it can move up to 6+D6\".",
-    "allowed_chapters": ["space_wolves"]
+    "allowed_chapters": ["space_wolves"],
+    "chapter_id": "space_wolves"
   },
   {
     "id": "anvil_siege_force",
@@ -63,18 +66,21 @@
     "id": "shadowmark_talon",
     "name": "Shadowmark Talon (Raven Guard)",
     "rule": "At the start of the battle, after both players have deployed their armies, you can select up to three Phobos or Scout units from your army and redeploy them. You can place those units anywhere on the battlefield that is more than 9\" horizontally away from all enemy models.",
-    "allowed_chapters": ["raven_guard"]
+    "allowed_chapters": ["raven_guard"],
+    "chapter_id": "raven_guard"
   },
   {
     "id": "emperors_shield",
     "name": "Emperor's Shield (Imperial Fists)",
     "rule": "Each time an attack with an Armour Penetration characteristic of -1 is allocated to a model from your army, if that model's unit is within range of an objective marker you control, change the Armour Penetration characteristic of that attack to 0.",
-    "allowed_chapters": ["imperial_fists"]
+    "allowed_chapters": ["imperial_fists"],
+    "chapter_id": "imperial_fists"
   },
   {
     "id": "forgefather_seekers",
     "name": "Forgefather's Seekers (Salamanders)",
     "rule": "Each time a unit from your army makes an attack with a Melta or Torrent weapon that targets a unit within 6\", you can re-roll the Wound roll.",
-    "allowed_chapters": ["salamanders"]
+    "allowed_chapters": ["salamanders"],
+    "chapter_id": "salamanders"
   }
 ]

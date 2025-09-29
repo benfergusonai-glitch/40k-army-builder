@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './EnhancementsModal.css';
 import { useArmy } from '../context/ArmyContext';
-import { useGameData } from '../context/GameDataContext'; // Import the new hook
+import { useGameData } from '../context/GameDataContext';
 
-// The 'enhancements' prop is no longer needed.
 function EnhancementsModal() {
   const { 
     editingEnhancementUnit: unit,
     handleCloseEnhancementsModal: onClose,
-    updateUnitEnhancement 
+    updateUnitEnhancement,
+    selectedDetachment 
   } = useArmy();
   
-  // Get static game data directly from the context.
   const { allEnhancements: enhancements } = useGameData();
-  
   const [selectedEnhancement, setSelectedEnhancement] = useState(null);
 
   useEffect(() => {
@@ -22,23 +20,32 @@ function EnhancementsModal() {
     }
   }, [unit]);
 
+  const availableEnhancements = useMemo(() => {
+    // --- FIX ---
+    // Add a guard clause to ensure both a unit and a detachment are selected
+    // before attempting to filter. This prevents the 'null' error.
+    if (!unit || !selectedDetachment) {
+      return [];
+    }
+    
+    return enhancements.filter(enhancement => {
+      if (enhancement.detachment_id !== selectedDetachment.id) {
+        return false;
+      }
+      if (enhancement.prerequisites.length > 0) {
+        // Defensively check for keywords before checking prerequisites
+        return unit.keywords && enhancement.prerequisites.every(prereq => unit.keywords.includes(prereq));
+      }
+      return true;
+    });
+  }, [selectedDetachment, enhancements, unit]);
+
+
   if (!unit) {
     return null;
   }
 
   const isEligible = unit.role === 'Character' && !unit.keywords.includes('EPIC HERO');
-  // NOTE: This is hardcoded for now, but could be dynamic in the future.
-  const currentDetachmentId = 'gladius_task_force'; 
-
-  const availableEnhancements = enhancements.filter(enhancement => {
-    if (enhancement.detachment_id !== currentDetachmentId) {
-      return false;
-    }
-    if (enhancement.prerequisites.length > 0) {
-      return enhancement.prerequisites.every(prereq => unit.keywords.includes(prereq));
-    }
-    return true;
-  });
 
   const handleSelectionChange = (enhancement) => {
     setSelectedEnhancement(enhancement);
@@ -57,7 +64,9 @@ function EnhancementsModal() {
           <button onClick={onClose} className="close-button">&times;</button>
         </div>
         <div className="modal-body">
-          {!isEligible ? (
+          {!selectedDetachment ? (
+             <p>Please select a Detachment before choosing Enhancements.</p>
+          ) : !isEligible ? (
             <p>This unit is not eligible for Enhancements (it may be an Epic Hero).</p>
           ) : (
             <div className="enhancements-list">
@@ -86,6 +95,7 @@ function EnhancementsModal() {
                   </div>
                 </label>
               ))}
+              {availableEnhancements.length === 0 && <p>No enhancements available for this unit in the selected Detachment.</p>}
             </div>
           )}
         </div>

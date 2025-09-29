@@ -2,37 +2,51 @@ import React, { useState, useEffect } from 'react';
 import './WargearModal.css';
 import { useArmy } from '../context/ArmyContext';
 
-// The props 'show', 'unit', and 'onClose' are no longer needed
 function WargearModal() {
   const { 
-    editingWargearUnit: unit, // Get the unit to edit from context
-    handleCloseWargearModal: onClose, // Get the close handler from context
-    updateUnitWargear 
+    editingWargearUnit: unit, 
+    handleCloseWargearModal: onClose, 
+    updateUnitWargearSelection 
   } = useArmy();
   
-  const [selectedOption, setSelectedOption] = useState(null);
+  // State now holds the complex selection object
+  const [selection, setSelection] = useState({ loadoutId: null, sub_selections: {} });
 
   useEffect(() => {
+    // Initialize state from the unit's current selection when modal opens
     if (unit) {
-      setSelectedOption(unit.current_wargear);
+      setSelection(unit.wargear_selection || { loadoutId: unit.wargear_options[0]?.id, sub_selections: {} });
     }
   }, [unit]);
 
-  // The modal's visibility is now determined by whether 'unit' exists in the context
   if (!unit) {
     return null;
   }
 
-  const handleSelectionChange = (option) => {
-    setSelectedOption(option);
+  const handleMainOptionChange = (option) => {
+    // When main loadout changes, reset sub_selections
+    setSelection({
+      loadoutId: option.id,
+      sub_selections: {}
+    });
+  };
+
+  const handleSubOptionChange = (subOptionId, choiceItemId) => {
+    setSelection(prevSelection => ({
+      ...prevSelection,
+      sub_selections: {
+        ...prevSelection.sub_selections,
+        [subOptionId]: choiceItemId
+      }
+    }));
   };
 
   const handleConfirm = () => {
-    if (selectedOption) {
-      updateUnitWargear(unit.id, selectedOption);
-    }
+    updateUnitWargearSelection(unit.id, selection);
     onClose();
   };
+  
+  const selectedLoadout = unit.wargear_options.find(opt => opt.id === selection.loadoutId);
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -42,19 +56,43 @@ function WargearModal() {
           <button onClick={onClose} className="close-button">&times;</button>
         </div>
         <div className="modal-body">
-          {unit.wargear_options && unit.wargear_options.length > 0 ? (
+          {unit.wargear_options?.length > 0 ? (
             <div className="wargear-options-list">
+              <h4>Select Loadout:</h4>
               {unit.wargear_options.map((option) => (
                 <label key={option.id} className="wargear-option">
                   <input
                     type="radio"
-                    name="wargear"
-                    checked={selectedOption?.id === option.id}
-                    onChange={() => handleSelectionChange(option)}
+                    name="wargear-loadout"
+                    checked={selection.loadoutId === option.id}
+                    onChange={() => handleMainOptionChange(option)}
                   />
                   <span>{option.description}</span>
                 </label>
               ))}
+
+              {selectedLoadout?.sub_options?.length > 0 && (
+                <div className="wargear-sub-options">
+                  <h4>Configure Options:</h4>
+                  {selectedLoadout.sub_options.map(sub => (
+                    <div key={sub.option_id} className="sub-option-group">
+                      <label htmlFor={sub.option_id}>{sub.description}</label>
+                      <select 
+                        id={sub.option_id} 
+                        value={selection.sub_selections[sub.option_id] || ''}
+                        onChange={(e) => handleSubOptionChange(sub.option_id, e.target.value)}
+                      >
+                        <option value="" disabled>Select...</option>
+                        {sub.choices.map(choice => (
+                          <option key={choice.item_id} value={choice.item_id}>
+                            {choice.item_id.replace(/_/g, ' ').replace('captain ', '')}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ) : (
             <p>This unit has no wargear options.</p>
