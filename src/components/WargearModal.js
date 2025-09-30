@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './WargearModal.css';
 import { useArmy } from '../context/ArmyContext';
+import WargearLoadoutOption from './WargearLoadoutOption'; // Import the new component
 
 function WargearModal() {
   const { 
@@ -9,34 +10,40 @@ function WargearModal() {
     updateUnitWargearSelection 
   } = useArmy();
   
-  // State now holds the complex selection object
   const [selection, setSelection] = useState({ loadoutId: null, sub_selections: {} });
 
+  const unitWargearOptions = Array.isArray(unit?.wargear_options) ? unit.wargear_options : [];
+
   useEffect(() => {
-    // Initialize state from the unit's current selection when modal opens
-    if (unit) {
-      setSelection(unit.wargear_selection || { loadoutId: unit.wargear_options[0]?.id, sub_selections: {} });
+    if (unit && unitWargearOptions.length > 0) {
+      const initialLoadoutId = unit.wargear_selection?.loadoutId || unitWargearOptions[0].id;
+      setSelection(unit.wargear_selection || { 
+        loadoutId: initialLoadoutId, 
+        sub_selections: {} 
+      });
     }
-  }, [unit]);
+  }, [unit, unitWargearOptions]);
 
   if (!unit) {
     return null;
   }
 
-  const handleMainOptionChange = (option) => {
-    // When main loadout changes, reset sub_selections
+  const handleSelectLoadout = (loadoutId) => {
     setSelection({
-      loadoutId: option.id,
-      sub_selections: {}
+      loadoutId: loadoutId,
+      sub_selections: {} // Reset sub-selections when a new main loadout is chosen
     });
   };
 
-  const handleSubOptionChange = (subOptionId, choiceItemId) => {
+  const handleSubSelectWargear = (loadoutId, subOptionId, choiceId) => {
+    // Ensure we are only updating sub-selections for the currently active loadout
+    if (selection.loadoutId !== loadoutId) return;
+
     setSelection(prevSelection => ({
       ...prevSelection,
       sub_selections: {
         ...prevSelection.sub_selections,
-        [subOptionId]: choiceItemId
+        [subOptionId]: choiceId
       }
     }));
   };
@@ -45,8 +52,6 @@ function WargearModal() {
     updateUnitWargearSelection(unit.id, selection);
     onClose();
   };
-  
-  const selectedLoadout = unit.wargear_options.find(opt => opt.id === selection.loadoutId);
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -56,46 +61,21 @@ function WargearModal() {
           <button onClick={onClose} className="close-button">&times;</button>
         </div>
         <div className="modal-body">
-          {unit.wargear_options?.length > 0 ? (
+          {unitWargearOptions.length > 0 ? (
             <div className="wargear-options-list">
-              <h4>Select Loadout:</h4>
-              {unit.wargear_options.map((option) => (
-                <label key={option.id} className="wargear-option">
-                  <input
-                    type="radio"
-                    name="wargear-loadout"
-                    checked={selection.loadoutId === option.id}
-                    onChange={() => handleMainOptionChange(option)}
-                  />
-                  <span>{option.description}</span>
-                </label>
+              {unitWargearOptions.map((option) => (
+                <WargearLoadoutOption
+                  key={option.id}
+                  loadout={option}
+                  isSelected={selection.loadoutId === option.id}
+                  onSelectLoadout={handleSelectLoadout}
+                  onSubSelectWargear={handleSubSelectWargear}
+                  currentSubSelections={selection.sub_selections}
+                />
               ))}
-
-              {selectedLoadout?.sub_options?.length > 0 && (
-                <div className="wargear-sub-options">
-                  <h4>Configure Options:</h4>
-                  {selectedLoadout.sub_options.map(sub => (
-                    <div key={sub.option_id} className="sub-option-group">
-                      <label htmlFor={sub.option_id}>{sub.description}</label>
-                      <select 
-                        id={sub.option_id} 
-                        value={selection.sub_selections[sub.option_id] || ''}
-                        onChange={(e) => handleSubOptionChange(sub.option_id, e.target.value)}
-                      >
-                        <option value="" disabled>Select...</option>
-                        {sub.choices.map(choice => (
-                          <option key={choice.item_id} value={choice.item_id}>
-                            {choice.item_id.replace(/_/g, ' ').replace('captain ', '')}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           ) : (
-            <p>This unit has no wargear options.</p>
+            <p>This unit has no custom wargear options to select.</p>
           )}
         </div>
         <div className="modal-footer">

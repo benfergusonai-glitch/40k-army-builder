@@ -1,5 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { getUnitDisplayPoints } from '../utils/pointUtils';
+// --- FIX: Import the utility function with a new name ('alias') to prevent a naming conflict ---
+import { isUnitChapterValid as isUnitChapterValidFromRules } from '../utils/rulesUtils';
 
 const ArmyContext = createContext();
 
@@ -30,7 +32,7 @@ export const ArmyProvider = ({ children }) => {
 
     const selectChapter = (chapter) => {
         setSelectedChapter(chapter);
-        setSelectedDetachment(null); 
+        setSelectedDetachment(null);
     };
 
     const selectDetachment = (detachment) => {
@@ -42,8 +44,8 @@ export const ArmyProvider = ({ children }) => {
         const newUnit = {
             ...deepCopiedUnit,
             id: `${deepCopiedUnit.name}-${Date.now()}`,
-            wargear_selection: (deepCopiedUnit.wargear_options && deepCopiedUnit.wargear_options.length > 0) 
-                ? { loadoutId: deepCopiedUnit.wargear_options[0].id, sub_selections: {} } 
+            wargear_selection: (deepCopiedUnit.wargear_options && deepCopiedUnit.wargear_options.length > 0)
+                ? { loadoutId: deepCopiedUnit.wargear_options[0].id, sub_selections: {} }
                 : null,
             current_enhancement: null
         };
@@ -61,15 +63,10 @@ export const ArmyProvider = ({ children }) => {
     const updateUnitEnhancement = (unitId, newEnhancement) => {
         setArmy(prevArmy => prevArmy.map(unit => unit.id === unitId ? { ...unit, current_enhancement: newEnhancement } : unit));
     };
-    
-    const isUnitValid = (unit) => {
-        if (!unit.chapter_id) {
-            return true;
-        }
-        if (selectedChapter) {
-            return unit.chapter_id === selectedChapter.id;
-        }
-        return false;
+
+    const isUnitChapterValid = (unit) => {
+        // --- FIX: Call the aliased function 'isUnitChapterValidFromRules' to break the infinite loop ---
+        return isUnitChapterValidFromRules(unit, selectedChapter);
     };
 
     const handleOpenWargearModal = (unit) => setEditingWargearUnit(unit);
@@ -94,7 +91,7 @@ export const ArmyProvider = ({ children }) => {
         selectedDetachment,
         selectChapter,
         selectDetachment,
-        isUnitValid,
+        isUnitChapterValid,
     };
 
     return (

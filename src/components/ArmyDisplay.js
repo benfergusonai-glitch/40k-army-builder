@@ -4,37 +4,33 @@ import { useGameData } from '../context/GameDataContext';
 import UnitCard from './UnitCard';
 
 function ArmyDisplay() {
-  const { army, totalPoints, removeUnit, selectedChapter, selectedDetachment, isUnitValid } = useArmy();
+  // --- FIX: Destructure the correctly named 'isUnitChapterValid' function ---
+  const { army, totalPoints, removeUnit, selectedChapter, selectedDetachment, isUnitChapterValid } = useArmy();
   const { allWeapons: weapons } = useGameData();
 
-  // --- NEW: Sorting Logic ---
   const sortedArmy = useMemo(() => {
-    // Define the canonical order of battlefield roles.
     const roleOrder = [
       'Epic Hero',
       'Character',
       'Battleline',
       'Infantry',
       'Mounted',
-      'Vehicle', // Note: Corrected from 'Vehicles' to match role name in data
-      'Transport', // Note: Corrected from 'Dedicated Transports'
+      'Vehicle',
+      'Transport',
       'Fortification'
     ];
     
-    // Create a copy of the army array and sort it.
     return [...army].sort((a, b) => {
       const roleAIndex = roleOrder.indexOf(a.role);
       const roleBIndex = roleOrder.indexOf(b.role);
       
-      // If roles are the same, sort by name.
       if (roleAIndex === roleBIndex) {
         return a.name.localeCompare(b.name);
       }
       
-      // Otherwise, sort by the defined role order.
       return roleAIndex - roleBIndex;
     });
-  }, [army]); // This will re-sort only when the army array itself changes.
+  }, [army]);
 
   return (
     <div className="army-display">
@@ -47,14 +43,14 @@ function ArmyDisplay() {
       {army.length === 0 ? (
         <p>Your army is empty. Select units from the left panel to begin.</p>
       ) : (
-        // Map over the new 'sortedArmy' instead of the original 'army'
         sortedArmy.map((unit) => (
           <UnitCard
             key={unit.id}
             unit={unit}
             onRemoveUnit={removeUnit}
             weapons={weapons}
-            isValid={isUnitValid(unit)}
+            // --- FIX: Call the correctly named function here ---
+            isValid={isUnitChapterValid(unit)}
           />
         ))
       )}

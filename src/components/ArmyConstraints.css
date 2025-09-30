@@ -1,0 +1,53 @@
+/* src/components/ArmyConstraints.css */
+
+.army-constraints-display {
+    border: 1px solid #4a4a4a; /* Darker border */
+    padding: 10px 15px;
+    margin-top: 15px; /* Added margin for spacing */
+    margin-bottom: 20px;
+    background-color: #2e2e2e; /* Dark background */
+    border-radius: 8px;
+    color: #e0e0e0; /* Lighter text color */
+}
+
+.army-constraints-display h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.army-constraints-display .description {
+    font-size: 0.8em;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+}
+
+.constraints-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px 15px;
+}
+
+.constraint-item {
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.role-name {
+    font-weight: bold;
+}
+
+.limit-warning .role-count,
+.limit-warning .role-status {
+    color: #ffc107; /* Amber/Yellow for warning */
+    font-weight: bold;
+}
+
+.limit-error .role-count,
+.limit-error .role-status {
+    color: #f44336; /* Red for error */
+    font-weight: bold;
+}

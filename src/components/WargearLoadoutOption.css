@@ -1,0 +1,73 @@
+/* src/components/WargearLoadoutOption.css */
+
+.wargear-loadout-option {
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.wargear-loadout-option.selected {
+    border-color: #64ffda; /* Highlight color for selected */
+    background-color: #4a4a4a;
+}
+
+.wargear-loadout-option:hover:not(.selected) {
+    background-color: #444444;
+}
+
+.loadout-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Spacing between header and options */
+}
+
+.loadout-header input[type="radio"] {
+    margin-right: 10px;
+    /* Custom styling for radio button can go here if needed */
+}
+
+.loadout-description {
+    font-size: 0.95em;
+    color: #e0e0e0;
+    flex-grow: 1; /* Allows text to take available space */
+}
+
+.loadout-points {
+    font-weight: bold;
+    color: #64ffda;
+    white-space: nowrap; /* Prevent points from wrapping */
+    margin-left: 10px;
+}
+
+.sub-selection-options {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #555; /* Separator for sub-options */
+}
+
+.sub-selection-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.sub-selection-option label {
+    margin-right: 10px;
+    color: #e0e0e0;
+}
+
+.sub-selection-option select {
+    flex-grow: 1;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}

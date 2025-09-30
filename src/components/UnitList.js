@@ -2,10 +2,13 @@ import React, { useMemo } from 'react';
 import { useArmy } from '../context/ArmyContext';
 import { useGameData } from '../context/GameDataContext';
 import { getUnitDisplayPoints } from '../utils/pointUtils';
+// --- NEW: Import the datasheet validation function ---
+import { isDatasheetLimitValid } from '../utils/rulesUtils';
 import BattlefieldRoleIcon from './BattlefieldRoleIcon';
 
 function UnitList() {
-  const { addUnit, selectedChapter } = useArmy();
+  // --- NEW: Get the current army to pass to the validator ---
+  const { addUnit, selectedChapter, army } = useArmy();
   const { allUnits: unitGroups } = useGameData();
 
   const filteredUnitGroups = useMemo(() => {
@@ -37,21 +40,33 @@ function UnitList() {
     <div className="unit-list">
       {Object.entries(filteredUnitGroups).map(([role, units], index) => (
         <div key={role} className="role-group">
-          {/* Using the <details> element for a native accordion */}
-          <details open={index <= 1}> {/* Open the first two categories by default */}
+          <details open={index <= 1}>
             <summary>{role}</summary>
-            {units.map((unit) => (
-              <div key={unit.name} className="unit-entry">
-                <div className="unit-info">
-                  <BattlefieldRoleIcon role={unit.role} />
-                  <h4>{unit.name}</h4>
+            {units.map((unit) => {
+              // --- NEW: Check if the unit has reached its datasheet limit ---
+              const isAtLimit = !isDatasheetLimitValid(unit, army);
+
+              return (
+                <div key={unit.name} className="unit-entry">
+                  <div className="unit-info">
+                    <BattlefieldRoleIcon role={unit.role} />
+                    <h4>{unit.name}</h4>
+                  </div>
+                  <div className="unit-actions">
+                    <span className="unit-points">{getUnitDisplayPoints(unit)} pts</span>
+                    {/* --- NEW: Add the 'disabled' attribute to the button --- */}
+                    <button 
+                      onClick={() => addUnit(unit)} 
+                      className="add-button"
+                      disabled={isAtLimit}
+                      title={isAtLimit ? 'Datasheet limit reached' : 'Add unit'}
+                    >
+                      {isAtLimit ? '—' : '+'}
+                    </button>
+                  </div>
                 </div>
-                <div className="unit-actions">
-                  <span className="unit-points">{getUnitDisplayPoints(unit)} pts</span>
-                  <button onClick={() => addUnit(unit)} className="add-button">+</button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </details>
         </div>
       ))}
