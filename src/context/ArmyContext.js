@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { getUnitDisplayPoints } from '../utils/pointUtils';
-// --- FIX: Import the utility function with a new name ('alias') to prevent a naming conflict ---
 import { isUnitChapterValid as isUnitChapterValidFromRules } from '../utils/rulesUtils';
 
 const ArmyContext = createContext();
@@ -16,6 +15,9 @@ export const ArmyProvider = ({ children }) => {
     const [selectedDetachment, setSelectedDetachment] = useState(null);
     const [editingWargearUnit, setEditingWargearUnit] = useState(null);
     const [editingEnhancementUnit, setEditingEnhancementUnit] = useState(null);
+    
+    // --- NEW: State to track the currently selected unit for the detail view ---
+    const [selectedUnitId, setSelectedUnitId] = useState(null);
 
     useEffect(() => {
         const calculateTotalPoints = () => {
@@ -39,6 +41,11 @@ export const ArmyProvider = ({ children }) => {
         setSelectedDetachment(detachment);
     };
 
+    // --- NEW: Function to set the currently selected unit ---
+    const selectUnit = (unitId) => {
+        setSelectedUnitId(unitId);
+    };
+
     const addUnit = (unitData) => {
         const deepCopiedUnit = JSON.parse(JSON.stringify(unitData));
         const newUnit = {
@@ -53,7 +60,13 @@ export const ArmyProvider = ({ children }) => {
     };
 
     const removeUnit = (unitId) => {
-        setArmy(prevArmy => prevArmy.filter(unit => unit.id !== unitId));
+        setArmy(prevArmy => {
+            // If the removed unit was the selected one, deselect it.
+            if (unitId === selectedUnitId) {
+                setSelectedUnitId(null);
+            }
+            return prevArmy.filter(unit => unit.id !== unitId);
+        });
     };
 
     const updateUnitWargearSelection = (unitId, newSelection) => {
@@ -65,7 +78,6 @@ export const ArmyProvider = ({ children }) => {
     };
 
     const isUnitChapterValid = (unit) => {
-        // --- FIX: Call the aliased function 'isUnitChapterValidFromRules' to break the infinite loop ---
         return isUnitChapterValidFromRules(unit, selectedChapter);
     };
 
@@ -92,6 +104,9 @@ export const ArmyProvider = ({ children }) => {
         selectChapter,
         selectDetachment,
         isUnitChapterValid,
+        // --- NEW: Expose the new state and function to the app ---
+        selectedUnitId,
+        selectUnit,
     };
 
     return (

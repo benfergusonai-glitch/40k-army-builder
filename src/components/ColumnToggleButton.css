@@ -1,0 +1,30 @@
+/* src/components/ColumnToggleButton.css */
+
+.column-toggle-button {
+    background-color: #4a4f5a;
+    border: 1px solid #5a5f6a;
+    color: #e0e0e0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    transition: background-color 0.2s ease, transform 0.3s ease;
+}
+
+.column-toggle-button:hover {
+    background-color: #5a5f6a;
+}
+
+.toggle-arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+.column-toggle-button.collapsed .toggle-arrow {
+    transform: rotate(180deg);
+}

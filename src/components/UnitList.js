@@ -1,13 +1,12 @@
 import React, { useMemo } from 'react';
+import './UnitList.css'; // --- NEW: Import the stylesheet ---
 import { useArmy } from '../context/ArmyContext';
 import { useGameData } from '../context/GameDataContext';
 import { getUnitDisplayPoints } from '../utils/pointUtils';
-// --- NEW: Import the datasheet validation function ---
 import { isDatasheetLimitValid } from '../utils/rulesUtils';
 import BattlefieldRoleIcon from './BattlefieldRoleIcon';
 
 function UnitList() {
-  // --- NEW: Get the current army to pass to the validator ---
   const { addUnit, selectedChapter, army } = useArmy();
   const { allUnits: unitGroups } = useGameData();
 
@@ -43,7 +42,6 @@ function UnitList() {
           <details open={index <= 1}>
             <summary>{role}</summary>
             {units.map((unit) => {
-              // --- NEW: Check if the unit has reached its datasheet limit ---
               const isAtLimit = !isDatasheetLimitValid(unit, army);
 
               return (
@@ -54,7 +52,6 @@ function UnitList() {
                   </div>
                   <div className="unit-actions">
                     <span className="unit-points">{getUnitDisplayPoints(unit)} pts</span>
-                    {/* --- NEW: Add the 'disabled' attribute to the button --- */}
                     <button 
                       onClick={() => addUnit(unit)} 
                       className="add-button"

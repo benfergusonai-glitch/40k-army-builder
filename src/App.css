@@ -1,128 +1,114 @@
+/* src/App.css */
+
+/* --- Base App Styles --- */
+body {
+  background-color: #1a1d22;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
 
+/* --- UPDATED: Header styles for 3-column layout --- */
 .App-header {
-  background-color: #1a1d22;
-  padding: 1rem 2rem;
+  background-color: #282c34;
+  padding: 10px 20px;
   color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .App-header h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.5em;
+  white-space: nowrap;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 0 2rem;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.roster-selection-panel {
+.header-left {
   flex: 1;
-  background-color: #3a3f4a;
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 400px;
-  position: sticky;
-  top: 2rem;
-}
-
-.army-list-panel {
-  flex: 3;
-  background-color: #3a3f4a;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-
-/* --- UPDATED: Unit List Styling --- */
-.unit-list {
   text-align: left;
 }
 
-.role-group summary {
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 0.75rem;
-  cursor: pointer;
-  background-color: #333842;
-  list-style: none; /* Remove default triangle */
+.header-center {
+  flex: 2;
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #4a4f5a;
+  justify-content: center;
 }
 
-.role-group summary::-webkit-details-marker {
-  display: none; /* Remove default triangle for Chrome */
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.role-group summary:hover {
-  background-color: #4a4f5a;
+/* --- Styles for the 3-column grid layout --- */
+.container-grid {
+  display: grid;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0 20px 20px 20px;
+  height: calc(100vh - 120px); /* Adjusted height for smaller header */
+  transition: grid-template-columns 0.3s ease-in-out;
 }
 
-.role-group summary::after {
-  content: '▼'; /* Collapsed state icon */
-  font-size: 0.8em;
+.grid-column {
+  background-color: #1a1d22;
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
 }
 
-.role-group details[open] > summary::after {
-  content: '▲'; /* Expanded state icon */
-}
-
-.unit-entry {
+.column-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 0.5rem;
-  border-bottom: 1px solid #4a4f5a;
-}
-
-.unit-info {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-grow: 1; /* Allow it to take up available space */
-}
-
-/* Remove margin from h4 within the single-line entry */
-.unit-info h4 {
+  padding: 1rem 1.5rem;
   margin: 0;
-  font-size: 1em;
-  font-weight: normal;
+  border-bottom: 1px solid #4a4f5a;
+  background-color: #282c34;
+  border-radius: 8px 8px 0 0;
+  flex-shrink: 0;
 }
 
-.unit-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.grid-column h2 {
+  padding: 0;
+  border-bottom: none;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 1.2em;
+  margin: 0;
+  white-space: nowrap;
 }
 
-.unit-points {
-  color: #ccc;
-  font-size: 0.9em;
+.column-select .unit-list,
+.column-army .army-display {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 1rem;
 }
 
-.add-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  cursor: pointer;
-  flex-shrink: 0; /* Prevent button from shrinking */
+.column-detail .unit-detail-view {
+  overflow-y: auto;
+  flex-grow: 1;
 }
 
-.add-button:hover {
-  background-color: #45a049;
+/* --- Styles for collapsing columns --- */
+.grid-column.collapsed .unit-list,
+.grid-column.collapsed .unit-detail-view {
+  display: none;
+}
+
+.grid-column.collapsed h2 {
+  display: none;
 }

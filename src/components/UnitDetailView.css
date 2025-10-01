@@ -1,0 +1,168 @@
+/* src/components/UnitDetailView.css */
+
+.unit-detail-view {
+    padding: 1rem 1.5rem;
+    background-color: #282c34;
+    border-left: 1px solid #4a4f5a;
+    height: 100%;
+    overflow-y: auto;
+    color: #e0e0e0;
+}
+
+.unit-detail-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #888;
+    font-style: italic;
+}
+
+.detail-header {
+    border-bottom: 1px solid #4a4f5a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.detail-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- NEW: Styles for the two-column layout --- */
+.detail-columns-container {
+    display: flex;
+    gap: 20px;
+}
+
+.detail-column-main {
+    flex: 2; /* Takes up 2/3 of the space */
+    min-width: 0; /* Prevents flexbox overflow issues with tables */
+}
+
+.detail-column-sidebar {
+    flex: 1; /* Takes up 1/3 of the space */
+    min-width: 0;
+}
+
+.detail-enhancement-display {
+  background-color: #1a1d22;
+  border: 1px solid #a89447; /* Gold border to match old style */
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.detail-enhancement-display strong {
+    color: #e0e0e0;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.detail-enhancement-display p {
+    margin: 0;
+    color: #ccc;
+    font-style: italic;
+}
+
+.detail-section {
+    margin-bottom: 1.5rem;
+}
+
+.detail-section h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #4a4f5a;
+    padding-bottom: 0.5rem;
+    color: #64ffda; /* Teal accent for headers */
+}
+
+.unit-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    background-color: #1a1d22;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.stat-header {
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: #3a3f4a;
+}
+
+.stat-value {
+    padding: 0.5rem;
+}
+
+.unit-keywords-display {
+  background-color: #1a1d22;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #a0a0a0;
+}
+
+.unit-keywords-display strong {
+  font-style: normal;
+  color: #c0c0c0;
+}
+
+.weapon-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.weapon-stats-table th,
+.weapon-stats-table td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #3a3f4a;
+}
+
+.weapon-stats-table th {
+    font-weight: bold;
+}
+
+.weapon-stats-table th:not(:first-child),
+.weapon-stats-table td:not(:first-child) {
+    text-align: center;
+}
+
+.enhancements-list .enhancement-option {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #4a4f5a;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #3a3a3a;
+}
+
+.enhancements-list .enhancement-option.selected {
+    border-color: #64ffda;
+    background-color: #4a4a4a;
+}
+
+.enhancement-details {
+    margin-left: 10px;
+}
+
+.enhancement-name {
+    font-weight: bold;
+}
+
+.enhancement-rule {
+    font-size: 0.9em;
+    color: #ccc;
+    margin: 5px 0 0 0;
+}

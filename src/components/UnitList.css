@@ -1,0 +1,77 @@
+/* src/components/UnitList.css */
+
+.role-group {
+    margin-bottom: 10px;
+}
+
+.role-group summary {
+    background-color: #282c34;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #4a4f5a;
+    transition: background-color 0.2s ease;
+}
+
+.role-group summary:hover {
+    background-color: #3a3f4a;
+}
+
+.unit-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e2e2e;
+    padding: 0.5rem 1rem;
+    border: 1px solid #4a4f5a;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.unit-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.unit-info h4 {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.unit-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.unit-points {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    font-weight: bold;
+}
+
+.add-button {
+    background-color: #00796b; /* Teal-Green */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 28px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-button:hover:not(:disabled) {
+    background-color: #00897b;
+}
+
+.add-button:disabled {
+    background-color: #4a4f5a;
+    color: #888;
+    cursor: not-allowed;
+}

@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
 import { useArmy } from '../context/ArmyContext';
-import { useGameData } from '../context/GameDataContext';
-import UnitCard from './UnitCard';
+import ArmyUnitRow from './ArmyUnitRow';
+// --- NEW: Import the ArmyConstraints component ---
+import ArmyConstraints from './ArmyConstraints';
 
 function ArmyDisplay() {
-  // --- FIX: Destructure the correctly named 'isUnitChapterValid' function ---
-  const { army, totalPoints, removeUnit, selectedChapter, selectedDetachment, isUnitChapterValid } = useArmy();
-  const { allWeapons: weapons } = useGameData();
+  const { army, totalPoints, selectedChapter, selectedDetachment, selectedUnitId, isUnitChapterValid } = useArmy();
 
   const sortedArmy = useMemo(() => {
     const roleOrder = [
@@ -39,20 +38,25 @@ function ArmyDisplay() {
         {selectedDetachment && <p><strong>Detachment:</strong> {selectedDetachment.name}</p>}
         <h3>Total Points: {totalPoints}</h3>
       </div>
+
+      {/* --- NEW: ArmyConstraints component is now here --- */}
+      <ArmyConstraints />
       
       {army.length === 0 ? (
-        <p>Your army is empty. Select units from the left panel to begin.</p>
+        <p style={{textAlign: 'center', marginTop: '20px', fontStyle: 'italic'}}>
+            Your army is empty.
+        </p>
       ) : (
-        sortedArmy.map((unit) => (
-          <UnitCard
-            key={unit.id}
-            unit={unit}
-            onRemoveUnit={removeUnit}
-            weapons={weapons}
-            // --- FIX: Call the correctly named function here ---
-            isValid={isUnitChapterValid(unit)}
-          />
-        ))
+        <div style={{marginTop: '1rem'}}>
+            {sortedArmy.map((unit) => (
+            <ArmyUnitRow
+                key={unit.id}
+                unit={unit}
+                isSelected={unit.id === selectedUnitId}
+                isChapterValid={isUnitChapterValid(unit)}
+            />
+            ))}
+        </div>
       )}
     </div>
   );

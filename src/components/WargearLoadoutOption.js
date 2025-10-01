@@ -1,10 +1,9 @@
 import React from 'react';
 import './WargearLoadoutOption.css';
 
-// --- Helper function to make item_ids more readable ---
 const formatItemId = (id) => {
     if (!id) return '';
-    return id.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()); // Replace underscores and capitalize words
+    return id.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 };
 
 function WargearLoadoutOption({ 
@@ -18,10 +17,8 @@ function WargearLoadoutOption({
         onSelectLoadout(loadout.id);
     };
 
-    const handleSubSelectionChange = (e, subOptionId) => {
-        // Prevent the main box from being selected when interacting with a dropdown
-        e.stopPropagation(); 
-        onSubSelectWargear(loadout.id, subOptionId, e.target.value);
+    const handleSubSelectionChange = (subOptionId, choiceId) => {
+        onSubSelectWargear(loadout.id, subOptionId, choiceId);
     };
 
     return (
@@ -36,35 +33,31 @@ function WargearLoadoutOption({
                     value={loadout.id}
                     checked={isSelected}
                     onChange={handleRadioChange}
-                    onClick={(e) => e.stopPropagation()} // Prevent double-firing of click event
+                    onClick={(e) => e.stopPropagation()}
                 />
-                {/* --- FIX: Use loadout.description instead of loadout.name --- */}
                 <span className="loadout-description">{loadout.description}</span>
-                {/* Point cost logic has been removed as it's not present in the current data structure */}
             </div>
 
             {isSelected && loadout.sub_options && loadout.sub_options.length > 0 && (
-                <div className="sub-selection-options">
+                <div className="sub-selection-options" onClick={(e) => e.stopPropagation()}>
                     {loadout.sub_options.map(subOption => (
-                        <div key={subOption.option_id} className="sub-selection-option">
-                            {/* --- FIX: Use subOption.description for the label --- */}
-                            <label htmlFor={`sub-select-${loadout.id}-${subOption.option_id}`}>
-                                {subOption.description}
-                            </label>
-                            <select
-                                id={`sub-select-${loadout.id}-${subOption.option_id}`}
-                                value={currentSubSelections[subOption.option_id] || ''}
-                                onChange={(e) => handleSubSelectionChange(e, subOption.option_id)}
-                                onClick={(e) => e.stopPropagation()} // Prevent click from bubbling to the main div
-                            >
-                                <option value="" disabled>Select...</option>
+                        <div key={subOption.option_id} className="sub-option-group">
+                            <p className="sub-option-label">{subOption.description}</p>
+                            <div className="sub-option-choices">
+                                {/* --- UPDATED: Replaced <select> with radio buttons --- */}
                                 {subOption.choices.map(choice => (
-                                    <option key={choice.item_id} value={choice.item_id}>
-                                        {/* --- FIX: Use choice.item_id and format it --- */}
-                                        {formatItemId(choice.item_id)}
-                                    </option>
+                                    <label key={choice.item_id} className="sub-option-radio">
+                                        <input
+                                            type="radio"
+                                            name={subOption.option_id}
+                                            value={choice.item_id}
+                                            checked={currentSubSelections[subOption.option_id] === choice.item_id}
+                                            onChange={() => handleSubSelectionChange(subOption.option_id, choice.item_id)}
+                                        />
+                                        <span>{formatItemId(choice.item_id)}</span>
+                                    </label>
                                 ))}
-                            </select>
+                            </div>
                         </div>
                     ))}
                 </div>
