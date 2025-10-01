@@ -5,9 +5,7 @@ import { getUnitDisplayPoints } from '../utils/pointUtils';
 import BattlefieldRoleIcon from './BattlefieldRoleIcon';
 import WeaponStats from './WeaponStats';
 
-// The component now accepts 'isValid' as a prop
 function UnitCard({ unit, onRemoveUnit, weapons, isValid }) {
-  // It no longer needs to get isUnitValid or selectedChapter from the context
   const { handleOpenWargearModal, handleOpenEnhancementsModal } = useArmy();
 
   if (!unit) { return null; }
@@ -78,6 +76,13 @@ function UnitCard({ unit, onRemoveUnit, weapons, isValid }) {
         <div className="stat-value">{stats.ld || '-'}</div>
         <div className="stat-value">{stats.oc || '-'}</div>
       </div>
+
+      {/* --- NEW: Keywords Display Section --- */}
+      {unit.keywords && unit.keywords.length > 0 && (
+        <div className="unit-keywords-display">
+          <strong>Keywords:</strong> {unit.keywords.join(', ')}
+        </div>
+      )}
 
       {currentLoadout && (
         <div className="unit-wargear-display">

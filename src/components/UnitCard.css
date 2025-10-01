@@ -70,6 +70,22 @@
   text-align: center;
 }
 
+/* --- NEW: Styles for Keywords --- */
+.unit-keywords-display {
+  background-color: #1a1d22;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #a0a0a0;
+}
+
+.unit-keywords-display strong {
+  font-style: normal;
+  color: #c0c0c0;
+}
+
 .stat-header {
     font-weight: bold;
     padding: 0.5rem;
@@ -80,7 +96,7 @@
     padding: 0.5rem;
 }
 
-/* --- NEW: Styles for Invalid Units --- */
+/* --- Styles for Invalid Units --- */
 
 /* Applies a red border and a subtle red tint when the unit is invalid */
 .unit-card.invalid {
