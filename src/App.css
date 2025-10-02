@@ -112,3 +112,8 @@ body {
 .grid-column.collapsed h2 {
   display: none;
 }
+
+.points-over-limit {
+    color: #e53935; /* Red */
+    font-weight: bold;
+}

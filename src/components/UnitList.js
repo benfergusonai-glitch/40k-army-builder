@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import './UnitList.css'; // --- NEW: Import the stylesheet ---
+import './UnitList.css'; // --- ENSURE THIS IMPORT IS PRESENT ---
 import { useArmy } from '../context/ArmyContext';
 import { useGameData } from '../context/GameDataContext';
 import { getUnitDisplayPoints } from '../utils/pointUtils';

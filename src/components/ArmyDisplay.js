@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import { useArmy } from '../context/ArmyContext';
 import ArmyUnitRow from './ArmyUnitRow';
-// --- NEW: Import the ArmyConstraints component ---
 import ArmyConstraints from './ArmyConstraints';
+
+// --- NEW: Define the point limit for the game ---
+const GAME_POINT_LIMIT = 2000;
 
 function ArmyDisplay() {
   const { army, totalPoints, selectedChapter, selectedDetachment, selectedUnitId, isUnitChapterValid } = useArmy();
@@ -31,15 +33,25 @@ function ArmyDisplay() {
     });
   }, [army]);
 
+  // --- NEW: Calculate remaining points and check if over limit ---
+  const remainingPoints = GAME_POINT_LIMIT - totalPoints;
+  const isOverLimit = totalPoints > GAME_POINT_LIMIT;
+
   return (
     <div className="army-display">
       <div className="army-details">
         {selectedChapter && <p><strong>Chapter:</strong> {selectedChapter.name}</p>}
         {selectedDetachment && <p><strong>Detachment:</strong> {selectedDetachment.name}</p>}
-        <h3>Total Points: {totalPoints}</h3>
+        
+        {/* --- UPDATED: New points display --- */}
+        <h3 className={isOverLimit ? 'points-over-limit' : ''}>
+          Total Points: {totalPoints} / {GAME_POINT_LIMIT}
+          <span style={{ marginLeft: '15px', color: '#ccc' }}>
+            ({remainingPoints} Remaining)
+          </span>
+        </h3>
       </div>
 
-      {/* --- NEW: ArmyConstraints component is now here --- */}
       <ArmyConstraints />
       
       {army.length === 0 ? (

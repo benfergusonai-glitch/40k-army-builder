@@ -16,6 +16,8 @@ export const GameDataProvider = ({ children }) => {
     const [allWeapons, setAllWeapons] = useState({});
     const [allChapters, setAllChapters] = useState([]);
     const [allDetachments, setAllDetachments] = useState([]);
+    // --- NEW: State for stratagems ---
+    const [allStratagems, setAllStratagems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -40,12 +42,14 @@ export const GameDataProvider = ({ children }) => {
                 const manifestRes = await fetch('/data/units/manifest.json');
                 const manifest = await manifestRes.json();
 
-                const [unitArrays, enhancementData, weaponData, chapterData, detachmentData] = await Promise.all([
+                // --- UPDATED: Add stratagems to the fetch list ---
+                const [unitArrays, enhancementData, weaponData, chapterData, detachmentData, stratagemData] = await Promise.all([
                     Promise.all(manifest.map(file => fetch(`/data/units/${file}`).then(res => res.json()))),
                     fetch('/data/enhancements.json').then(res => res.json()),
                     fetch('/data/weapons.json').then(res => res.json()),
                     fetch('/data/chapters.json').then(res => res.json()),
-                    fetch('/data/detachments.json').then(res => res.json())
+                    fetch('/data/detachments.json').then(res => res.json()),
+                    fetch('/data/stratagems.json').then(res => res.json()) // Fetch the new file
                 ]);
                 
                 const groupedUnits = manifest.reduce((acc, file, index) => {
@@ -69,6 +73,8 @@ export const GameDataProvider = ({ children }) => {
                 setAllWeapons(weaponsMap);
                 setAllChapters(chapterData);
                 setAllDetachments(detachmentData);
+                // --- NEW: Set the stratagem data ---
+                setAllStratagems(stratagemData);
 
             } catch (e) {
                 setError(`Failed to load game data: ${e.message}`);
@@ -87,6 +93,8 @@ export const GameDataProvider = ({ children }) => {
         allWeapons,
         allChapters,
         allDetachments,
+        // --- NEW: Expose stratagems to the app ---
+        allStratagems,
         loading,
         error,
     };

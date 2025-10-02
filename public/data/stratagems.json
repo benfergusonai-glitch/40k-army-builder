@@ -1,0 +1,77 @@
+[
+  {
+    "id": "core_armour_of_contempt",
+    "name": "Armour of Contempt",
+    "source": "Core",
+    "cost": "1CP",
+    "type": "Battle Tactic",
+    "flavor_text": "A warrior clad in power armour is a bulwark against the foe, a living fortress of adamantium and ceramite.",
+    "rules": {
+      "when": "Your opponent’s Shooting or Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+    },
+    "detachment_id": null,
+    "keyword_requirements": []
+  },
+  {
+    "id": "core_only_in_death",
+    "name": "Only In Death Does Duty End",
+    "source": "Core",
+    "cost": "2CP",
+    "type": "Epic Deed",
+    "flavor_text": "Even as a mortal blow lands, a hero of the Adeptus Astartes can summon their final reserves of strength and retaliate, proving that even in death, they can still serve.",
+    "rules": {
+        "when": "Fight phase, just after one of your models is destroyed.",
+        "target": "One Adeptus Astartes Character model from your army that was just destroyed, if it is eligible to fight.",
+        "effect": "That model can fight. After it has resolved its attacks, it is removed from play."
+    },
+    "detachment_id": null,
+    "keyword_requirements": ["CHARACTER"]
+  },
+  {
+    "id": "gladius_art_of_war",
+    "name": "The Art of War",
+    "source": "Gladius Task Force",
+    "cost": "1CP",
+    "type": "Strategic Ploy",
+    "flavor_text": "The Codex Astartes lays down myriad tactical deployments and doctrines that can be used to blunt an enemy’s assault and press a sudden, unexpected counter-offensive.",
+    "rules": {
+        "when": "Your Command phase.",
+        "target": "One Adeptus Astartes unit from your army.",
+        "effect": "Select one of the Combat Doctrines that is not currently active for your army. Until the start of your next Command phase, that Combat Doctrine is active for that unit in addition to the Combat Doctrine that is currently active for your army."
+    },
+    "detachment_id": "gladius_task_force",
+    "keyword_requirements": []
+  },
+  {
+    "id": "stormlance_wind_swift_strike",
+    "name": "Wind-Swift Strike",
+    "source": "Stormlance Task Force",
+    "cost": "1CP",
+    "type": "Battle Tactic",
+    "flavor_text": "A perfectly timed flanking manoeuvre or lightning-fast charge can shatter an enemy battle line before they have a chance to react.",
+    "rules": {
+        "when": "Your Charge phase.",
+        "target": "One Mounted or Jump Pack unit from your army that did not declare a charge this phase.",
+        "effect": "Your unit can declare a charge, but it can only target one enemy unit that is within 18\" of it."
+    },
+    "detachment_id": "stormlance_task_force",
+    "keyword_requirements": ["MOUNTED", "JUMP PACK"]
+  },
+  {
+    "id": "firestorm_immolation_protocols",
+    "name": "Immolation Protocols",
+    "source": "Firestorm Assault Force",
+    "cost": "2CP",
+    "type": "Battle Tactic",
+    "flavor_text": "Firestorm Assault Force warriors unleash overwhelming and coordinated salvoes.",
+    "rules": {
+        "when": "Your Shooting phase.",
+        "target": "One Adeptus Astartes unit from your army that has not been selected to shoot this phase.",
+        "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability."
+    },
+    "detachment_id": "firestorm_assault_force",
+    "keyword_requirements": []
+  }
+]
