@@ -1,115 +1,342 @@
-/* src/components/UnitDetailView.css */
-
 .unit-detail-view {
-    padding: 1rem 1.5rem;
-    background-color: #282c34;
-    border-left: 1px solid #4a4f5a;
-    height: 100%;
+    background-color: #2c303a;
+    padding: 15px;
     overflow-y: auto;
-    color: #e0e0e0;
+    height: 100%;
 }
-.unit-detail-placeholder { display: flex; justify-content: center; align-items: center; height: 100%; color: #888; font-style: italic; }
-.detail-header { border-bottom: 1px solid #4a4f5a; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-.detail-header h3 { margin: 0; font-size: 1.5em; display: flex; align-items: center; gap: 10px; }
-.detail-section { margin-bottom: 1.5rem; }
-.detail-section h4 { margin-top: 0; margin-bottom: 0.75rem; border-bottom: 1px solid #4a4f5a; padding-bottom: 0.5rem; color: #64ffda; }
-.unit-stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; background-color: #1a1d22; border-radius: 4px; overflow: hidden; margin-bottom: 1rem; }
-.stat-header { font-weight: bold; padding: 0.5rem; background-color: #3a3f4a; }
-.stat-value { padding: 0.5rem; }
-.unit-keywords-display { background-color: #1a1d22; padding: 0.75rem; border-radius: 4px; font-size: 0.85em; font-style: italic; color: #a0a0a0; margin-top: 1rem; }
-.unit-keywords-display strong { font-style: normal; color: #c0c0c0; }
-.weapon-stats-table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
-.weapon-stats-table th, .weapon-stats-table td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #3a3f4a; }
-.weapon-stats-table th { font-weight: bold; }
-.weapon-stats-table th:not(:first-child), .weapon-stats-table td:not(:first-child) { text-align: center; }
-.enhancements-list .enhancement-option { display: flex; align-items: flex-start; padding: 10px; margin-bottom: 10px; border: 1px solid #4a4f5a; border-radius: 8px; cursor: pointer; background-color: #3a3a3a; }
-.enhancements-list .enhancement-option.selected { border-color: #64ffda; background-color: #4a4a4a; }
-.enhancement-details { margin-left: 10px; }
-.enhancement-name { font-weight: bold; }
-.detail-enhancement-display { background-color: #1a1d22; border: 1px solid #a89447; padding: 0.75rem; border-radius: 4px; margin-top: 1rem; font-size: 0.9rem; }
-.detail-enhancement-display strong { color: #e0e0e0; display: block; margin-bottom: 5px; }
-.detail-enhancement-display p { margin: 0; color: #ccc; font-style: italic; }
-.tab-nav { display: flex; border-bottom: 1px solid #4a4f5a; margin-bottom: 1rem; }
-.tab-button { background: none; border: none; color: #a0a0a0; padding: 0.75rem 1.5rem; cursor: pointer; font-size: 1em; font-weight: bold; border-bottom: 3px solid transparent; }
-.tab-button:hover { color: #e0e0e0; }
-.tab-button.active { color: #64ffda; border-bottom-color: #64ffda; }
 
-/* --- UPDATED: Stratagem Card Styles --- */
-.stratagem-card {
-    background-color: #1a1d22;
+.unit-detail-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #888;
+    font-style: italic;
+}
+
+.detail-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4a4f5a;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.detail-header h3 {
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overview-list {
+    background-color: #23272e;
     border: 1px solid #4a4f5a;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    border-left-width: 5px; /* Make space for the color bar */
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
 }
-.stratagem-header { display: flex; justify-content: space-between; align-items: center; background-color: #3a3f4a; padding: 0.5rem 1rem; }
-.stratagem-name { font-weight: bold; color: #e0e0e0; }
-.stratagem-cost { font-weight: bold; color: #64ffda; }
-.stratagem-body { padding: 1rem; font-size: 0.9em; }
-.stratagem-meta { display: flex; justify-content: space-between; font-style: italic; color: #a0a0a0; margin: 0 0 10px 0; }
-.stratagem-source { font-weight: bold; }
-.stratagem-rule { margin: 0; color: #ccc; white-space: pre-wrap; }
-
-/* --- NEW: Color-coding for stratagem types --- */
-.stratagem-card.type-battle-tactic { border-left-color: #4CAF50; /* Green */ }
-.stratagem-card.type-strategic-ploy { border-left-color: #2196F3; /* Blue */ }
-.stratagem-card.type-epic-deed { border-left-color: #f44336; /* Red */ }
-
-/* --- NEW: Styles for Stratagem Rule Sections --- */
-.stratagem-rule-section p {
-    margin: 0 0 10px 0;
-    color: #ccc;
-}
-
-.stratagem-rule-section p:last-child {
-    margin-bottom: 0;
-}
-
-.stratagem-rule-section strong {
-    color: #a0a0a0;
-    margin-right: 5px;
-}
-
-/* --- NEW: Style for the two-column stratagem grid --- */
-.stratagems-grid {
+.overview-item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 150px 1fr;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #3a3f4c;
 }
-
-/* --- NEW: Styles for Rule Cards --- */
-.rule-card {
-    background-color: #1a1d22;
-    border: 1px solid #4a4f5a;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    overflow: hidden;
+.overview-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
-
-.rule-card-header {
-    background-color: #3a3f4a;
-    padding: 0.5rem 1rem;
+.overview-item:first-child {
+    padding-top: 0;
+}
+.overview-label {
     font-weight: bold;
-    color: #a0a0a0;
-    font-size: 0.9em;
+    color: #a9c5e2;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+.overview-value {
+    color: #e9ecef;
+    word-wrap: break-word;
+}
+
+
+.faction-keywords-display {
+    font-size: 0.8rem;
+    color: #aaa;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
-.rule-card-body {
-    padding: 1rem;
-}
-
-.rule-name {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #e0e0e0;
-    margin: 0 0 10px 0;
-}
-
-.rule-text {
-    margin: 0;
+.unit-keywords-display {
+    font-size: 0.85rem;
     color: #ccc;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.tab-nav {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.tab-button {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #3a3f4c;
+    border: 1px solid #4a4f5a;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-button:not(:last-child) {
+    border-right: none;
+}
+.tab-button:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.tab-button:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+.tab-button.active {
+    background-color: #52596d;
+    color: #fff;
+    border-bottom-color: #52596d;
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #4a4f5a;
+}
+
+.detail-section {
+    margin-bottom: 20px;
+}
+
+.detail-section h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #a9c5e2;
+    border-bottom: 1px solid #4a4f5a;
+    padding-bottom: 5px;
+}
+
+.unit-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #23272e;
+    border: 1px solid #4a4f5a;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.stat-header {
+    background-color: #3a3f4c;
+    padding: 5px;
+    font-weight: bold;
+    color: #a9c5e2;
+}
+.stat-value {
+    padding: 8px 5px;
+    font-size: 1.1rem;
+    border-top: 1px solid #4a4f5a;
+}
+
+.option-card {
+    border: 2px solid #4a4f5a;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #3a3f4c;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+.option-card:hover {
+    border-color: #6c757d;
+}
+.option-card.selected {
+    border-color: #a9c5e2;
+    background-color: #454b59;
+}
+.option-card-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+}
+.option-card .radio-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #888;
+    margin-right: 12px;
+    flex-shrink: 0;
+    position: relative;
+}
+.option-card.selected .radio-indicator {
+    border-color: #a9c5e2;
+}
+.option-card.selected .radio-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #a9c5e2;
+}
+.option-card-titles {
+    display: flex;
+    flex-direction: column;
+}
+.option-card-title {
+    font-weight: 500;
+}
+.option-card-subtitle {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 2px;
+}
+
+.rule-card {
+    background-color: #3a3f4c;
+    border: 1px solid #4a4f5a;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+.rule-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #454b59;
+    padding: 8px 12px;
+    font-weight: bold;
+}
+.rule-card-title {
+    color: #e9ecef;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.rule-card-category {
+    font-size: 0.75rem;
     font-style: italic;
-    white-space: pre-wrap;
+    color: #adb5bd;
+}
+.rule-card-body {
+    padding: 12px;
+    background-color: #23272e;
+}
+.rule-card .rule-text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ddd;
+    line-height: 1.5;
+    white-space: pre-wrap; /* --- MODIFIED: This will render line breaks --- */
+}
+
+.detail-enhancement-display {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #23272e;
+    border: 1px solid #4a4f5a;
+    border-radius: 4px;
+}
+.detail-enhancement-display p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.stratagems-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+@media (max-width: 1200px) {
+    .stratagems-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stratagem-card {
+    background-color: #3a3f4c;
+    border: 1px solid #4a4f5a;
+    border-left: 4px solid #6c757d;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.stratagem-card.disabled {
+    opacity: 0.5;
+    filter: grayscale(70%);
+    cursor: not-allowed;
+}
+
+.stratagem-card.type-battle-tactic-stratagem, .stratagem-card.type-battle-tactic { border-left-color: #0d6efd; }
+.stratagem-card.type-strategic-ploy-stratagem, .stratagem-card.type-strategic-ploy { border-left-color: #dc3545; }
+.stratagem-card.type-epic-deed-stratagem, .stratagem-card.type-epic-deed { border-left-color: #198754; }
+.stratagem-card.type-wargear-stratagem { border-left-color: #ffc107; }
+.stratagem-card.type-psychic { border-left-color: #6f42c1; }
+
+.stratagem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #454b59;
+}
+.stratagem-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.stratagem-cost {
+    background-color: #23272e;
+    padding: 3px 9px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+.stratagem-body {
+    padding: 12px;
+}
+.stratagem-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #4a4f5a;
+}
+
+.stratagem-rule-section {
+    background-color: #23272e;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.stratagem-rule-section p {
+    margin: 0 0 8px 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+.stratagem-rule-section p:last-child {
+    margin-bottom: 0;
 }

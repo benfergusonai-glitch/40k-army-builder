@@ -1,87 +1,101 @@
-/* src/components/WargearLoadoutOption.css */
-
-.wargear-loadout-option {
-    border: 1px solid #4a4a4a;
-    border-radius: 8px;
-    padding: 10px 15px;
+.wargear-card {
+    border: 2px solid #4a4f5a;
+    border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #3a3a3a;
-    display: flex;
-    flex-direction: column;
+    background-color: #3a3f4c;
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: border-color 0.2s;
+    overflow: hidden;
 }
 
-.wargear-loadout-option.selected {
-    border-color: #64ffda; /* Highlight color for selected */
-    background-color: #4a4a4a;
+.wargear-card:hover {
+    border-color: #6c757d;
 }
 
-.wargear-loadout-option:hover:not(.selected) {
-    background-color: #444444;
+.wargear-card.selected {
+    border-color: #a9c5e2;
+    background-color: #454b59;
 }
 
-.loadout-header {
+.wargear-card-header {
     display: flex;
     align-items: center;
+    padding: 12px 15px;
 }
 
-.loadout-header input[type="radio"] {
-    margin-right: 10px;
+.radio-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #888;
+    margin-right: 12px;
+    flex-shrink: 0;
+    position: relative;
 }
 
-.loadout-description {
-    font-size: 0.95em;
-    color: #e0e0e0;
-    flex-grow: 1;
+.wargear-card.selected .radio-indicator {
+    border-color: #a9c5e2;
 }
 
-.sub-selection-options {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #555;
-    cursor: default; /* Make the sub-option area not have a pointer cursor */
+.wargear-card.selected .radio-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #a9c5e2;
 }
 
-/* --- NEW Styles for Radio Button Layout --- */
+.wargear-description {
+    font-weight: 500;
+}
+
+.wargear-card-body {
+    padding: 0px 15px 15px 45px; /* Aligns with text */
+    border-top: 1px solid #4a4f5a;
+    background-color: #2c303a;
+}
 
 .sub-option-group {
-    margin-bottom: 5px;
+    margin-top: 10px;
 }
 
-.sub-option-label {
-    font-size: 0.9em;
+.sub-option-description {
+    font-size: 0.9rem;
     color: #ccc;
     margin: 0 0 8px 0;
-    font-weight: bold;
+    font-style: italic;
 }
 
-.sub-option-choices {
+.sub-option-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding-left: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.sub-option-radio {
-    display: flex;
-    align-items: center;
-    padding: 5px;
+.sub-option-button {
+    background-color: #3a3f4c;
+    border: 1px solid #5a6270;
+    color: #ccc;
+    padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    font-size: 0.85rem;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-.sub-option-radio:hover {
-    background-color: #5a5f6a;
+.sub-option-button:hover {
+    background-color: #4a4f5a;
+    border-color: #888;
 }
 
-.sub-option-radio input[type="radio"] {
-    margin-right: 8px;
+.sub-option-button.selected {
+    background-color: #52596d;
+    border-color: #a9c5e2;
+    color: #fff;
+    font-weight: bold;
 }
-
-.sub-option-radio span {
-    font-size: 0.9em;
-}
-
-/* --- REMOVED old styles for <select> --- */

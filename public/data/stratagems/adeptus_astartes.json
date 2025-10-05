@@ -1,0 +1,17 @@
+[
+  {
+    "id": "core_armour_of_contempt",
+    "name": "Armour of Contempt",
+    "source": "Adeptus Astartes",
+    "cost": "1CP",
+    "type": "Battle Tactic",
+    "flavor_text": "A warrior clad in power armour is a bulwark against the foe, a living fortress of adamantium and ceramite.",
+    "rules": {
+      "when": "Your opponent’s Shooting or Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+    },
+    "detachment_id": null,
+    "keyword_requirements": []
+  }
+]

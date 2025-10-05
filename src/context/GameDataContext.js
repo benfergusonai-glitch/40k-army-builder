@@ -16,8 +16,8 @@ export const GameDataProvider = ({ children }) => {
     const [allWeapons, setAllWeapons] = useState({});
     const [allChapters, setAllChapters] = useState([]);
     const [allDetachments, setAllDetachments] = useState([]);
-    // --- NEW: State for stratagems ---
     const [allStratagems, setAllStratagems] = useState([]);
+    const [allCommonRules, setAllCommonRules] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -37,27 +37,73 @@ export const GameDataProvider = ({ children }) => {
             }
         };
 
+        const enrichUnitData = (unit, chapterIdToNameMap) => {
+            const newUnit = { ...unit };
+            newUnit.keywords = newUnit.keywords || [];
+            newUnit.faction_keywords = newUnit.faction_keywords || [];
+            if (!newUnit.keywords.includes('IMPERIUM')) {
+                newUnit.keywords.push('IMPERIUM');
+            }
+            if (!newUnit.faction_keywords.includes('ADEPTUS ASTARTES')) {
+                newUnit.faction_keywords.push('ADEPTUS ASTARTES');
+            }
+            if (newUnit.chapter_id) {
+                const chapterName = chapterIdToNameMap[newUnit.chapter_id];
+                if (chapterName) {
+                    const factionKeyword = chapterName.toUpperCase();
+                    if (!newUnit.faction_keywords.includes(factionKeyword)) {
+                        newUnit.faction_keywords.push(factionKeyword);
+                    }
+                }
+            }
+            return newUnit;
+        };
+
         const fetchAllData = async () => {
             try {
-                const manifestRes = await fetch('/data/units/manifest.json');
-                const manifest = await manifestRes.json();
+                // Fetch manifests first
+                const unitManifestRes = await fetch('/data/units/manifest.json');
+                const unitManifest = await unitManifestRes.json();
+                const stratManifestRes = await fetch('/data/stratagems/manifest.json');
+                const stratManifest = await stratManifestRes.json();
 
-                // --- UPDATED: Add stratagems to the fetch list ---
-                const [unitArrays, enhancementData, weaponData, chapterData, detachmentData, stratagemData] = await Promise.all([
-                    Promise.all(manifest.map(file => fetch(`/data/units/${file}`).then(res => res.json()))),
+                // Prepare promises for manifest-based files
+                const unitPromises = unitManifest.map(file => fetch(`/data/units/${file}`).then(res => res.json()));
+                const stratPromises = stratManifest.map(file => fetch(`/data/stratagems/${file}`).then(res => res.json()));
+
+                // Fetch all data in a single Promise.all call
+                const [
+                    unitArrays, 
+                    enhancementData, 
+                    weaponData, 
+                    chapterData, 
+                    detachmentData, 
+                    stratArrays,
+                    commonRulesData
+                ] = await Promise.all([
+                    Promise.all(unitPromises),
                     fetch('/data/enhancements.json').then(res => res.json()),
                     fetch('/data/weapons.json').then(res => res.json()),
                     fetch('/data/chapters.json').then(res => res.json()),
                     fetch('/data/detachments.json').then(res => res.json()),
-                    fetch('/data/stratagems.json').then(res => res.json()) // Fetch the new file
+                    Promise.all(stratPromises),
+                    fetch('/data/common_rules.json').then(res => res.json())
                 ]);
                 
-                const groupedUnits = manifest.reduce((acc, file, index) => {
+                // Process the results
+                const allStratagemsData = stratArrays.flat();
+                const chapterIdToNameMap = chapterData.reduce((acc, chapter) => {
+                    acc[chapter.id] = chapter.name;
+                    return acc;
+                }, {});
+
+                const groupedUnits = unitManifest.reduce((acc, file, index) => {
                     const roleName = formatRoleName(file);
-                    const unitsWithRole = unitArrays[index].map(unit => ({ ...unit, role: roleName }));
-                    if (!acc[roleName]) {
-                        acc[roleName] = [];
-                    }
+                    const unitsWithRole = unitArrays[index].map(unit => ({ 
+                        ...enrichUnitData(unit, chapterIdToNameMap), 
+                        role: roleName 
+                    }));
+                    if (!acc[roleName]) acc[roleName] = [];
                     acc[roleName].push(...unitsWithRole);
                     acc[roleName].sort((a, b) => a.name.localeCompare(b.name));
                     return acc;
@@ -68,13 +114,14 @@ export const GameDataProvider = ({ children }) => {
                     return acc;
                 }, {});
 
+                // Set all state
                 setAllUnits(groupedUnits);
                 setAllEnhancements(enhancementData);
                 setAllWeapons(weaponsMap);
                 setAllChapters(chapterData);
                 setAllDetachments(detachmentData);
-                // --- NEW: Set the stratagem data ---
-                setAllStratagems(stratagemData);
+                setAllStratagems(allStratagemsData);
+                setAllCommonRules(commonRulesData);
 
             } catch (e) {
                 setError(`Failed to load game data: ${e.message}`);
@@ -93,12 +140,13 @@ export const GameDataProvider = ({ children }) => {
         allWeapons,
         allChapters,
         allDetachments,
-        // --- NEW: Expose stratagems to the app ---
         allStratagems,
+        allCommonRules,
         loading,
         error,
     };
 
+    // --- CORRECTED LINE ---
     return (
         <GameDataContext.Provider value={value}>
             {children}

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "core_command_reroll",
+    "name": "Command Re-roll",
+    "source": "Core",
+    "cost": "1CP",
+    "type": "Strategic Ploy",
+    "flavor_text": "A commander can use their tactical genius to seize upon a fleeting opportunity, turning the tide of a key moment in the battle.",
+    "rules": {
+      "when": "Any phase, just after you have made a Hit roll, a Wound roll, a Damage roll, a saving throw, an Advance roll, or a Charge roll for a model or unit from your army.",
+      "target": "The model or unit for which the roll was made.",
+      "effect": "You can re-roll that roll."
+    },
+    "detachment_id": null,
+    "keyword_requirements": []
+  },
+  {
+    "id": "core_counter_offensive",
+    "name": "Counter-offensive",
+    "source": "Core",
+    "cost": "2CP",
+    "type": "Strategic Ploy",
+    "flavor_text": "A well-timed counter-attack can break an enemy's assault before it gains momentum, punishing their aggression with disciplined violence.",
+    "rules": {
+      "when": "Fight phase, just after an enemy unit has fought.",
+      "target": "One of your units that is in Engagement Range of that enemy unit and is eligible to fight.",
+      "effect": "Your unit can fight next, even if it has already fought this phase."
+    },
+    "detachment_id": null,
+    "keyword_requirements": []
+  },
+  {
+    "id": "core_epic_challenge",
+    "name": "Epic Challenge",
+    "source": "Core",
+    "cost": "1CP",
+    "type": "Epic Deed",
+    "flavor_text": "Heroes clash in duels that will be immortalised in saga and song, their every blow a testament to their martial prowess.",
+    "rules": {
+        "when": "Fight phase, just before a Character model from your army is selected to fight.",
+        "target": "That Character model.",
+        "effect": "Until the end of the phase, that model can only make attacks that target enemy Character models. Each time that model makes a Melee attack, add 1 to the Hit roll and add 1 to the Wound roll."
+    },
+    "detachment_id": null,
+    "keyword_requirements": ["CHARACTER"]
+  },
+  {
+    "id": "core_go_to_ground",
+    "name": "Go to Ground",
+    "source": "Core",
+    "cost": "1CP",
+    "type": "Wargear Stratagem",
+    "flavor_text": "Warriors dive for the scantest cover, hugging the ground as enemy fire tears the air above them.",
+    "rules": {
+      "when": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One Infantry unit from your army that was selected as the target of one or more of the attacking unit’s attacks and is receiving the Benefit of Cover.",
+      "effect": "Until the end of the phase, your unit has a 6+ Feel No Pain."
+    },
+    "detachment_id": null,
+    "keyword_requirements": ["INFANTRY"]
+  },
+  {
+    "id": "core_grenade",
+    "name": "Grenade",
+    "source": "Core",
+    "cost": "1CP",
+    "type": "Strategic Ploy",
+    "flavor_text": "With a well-thrown explosive, a squad can blast an enemy from a fortified position, the shrapnel and concussive force sowing chaos.",
+    "rules": {
+      "when": "Your Shooting phase.",
+      "target": "One Grenades unit from your army that has not been selected to shoot this phase.",
+      "effect": "Select one enemy unit that is not in Engagement Range of your unit and is within 8\" of and visible to your unit. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound."
+    },
+    "detachment_id": null,
+    "keyword_requirements": ["GRENADES"]
+  },
+  {
+    "id": "core_only_in_death",
+    "name": "Only In Death Does Duty End",
+    "source": "Core",
+    "cost": "2CP",
+    "type": "Epic Deed",
+    "flavor_text": "Imminent death does not prevent a Space Marine from enacting his final justice upon the enemies of the Imperium.",
+    "rules": {
+        "when": "Fight phase, just after an enemy unit has selected its targets.",
+        "target": "One Adeptus Astartes unit from your army that was selected as the target of one or more of the attacking unit's attacks. In the Fight phase, each time a model in your unit is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model's unit has finished making its attacks, and is then removed from play.",
+        "effect": ""
+    },
+    "detachment_id": null,
+    "keyword_requirements": []
+  },
+  {
+    "id": "core_tank_shock",
+    "name": "Tank Shock",
+    "source": "Core",
+    "cost": "1CP",
+    "type": "Wargear Stratagem",
+    "flavor_text": "The thunderous impact of an armoured vehicle ploughing into enemy ranks is a terrifying sight, its metallic bulk crushing bodies and shattering morale.",
+    "rules": {
+      "when": "Your Charge phase, just after a Vehicle or Monster model from your army ends a Charge move.",
+      "target": "That Vehicle or Monster model.",
+      "effect": "Select one enemy unit that is in Engagement Range of your model. Roll a number of D6 equal to your model’s Strength characteristic. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds)."
+    },
+    "detachment_id": null,
+    "keyword_requirements": ["VEHICLE", "MONSTER"]
+  }
+]

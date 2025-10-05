@@ -1,0 +1,77 @@
+[
+  {
+    "id": "anvil_siege_force_no_threat_too_great",
+    "name": "No Threat Too Great",
+    "source": "Anvil Siege Force",
+    "cost": "2CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "To combat an entrenched force of Space Marines, foes resort to armoured vehicles or packs of murderous monstrosities. Even the greatest of behemoths has a chink in its armour and the Adeptus Astartes are well versed in exploiting such weaknesses.",
+    "rules": {
+      "when": "Your Shooting phase.",
+      "target": "One Adeptus Astartes unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets a Monster or Vehicle unit, you can re-roll the Wound roll."
+    },
+    "detachment_id": "anvil_siege_force",
+    "keyword_requirements": []
+  },
+  {
+    "id": "anvil_siege_force_battle_drill_recall",
+    "name": "Battle Drill Recall",
+    "source": "Anvil Siege Force",
+    "cost": "1CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "Space Marines train for countless hours to master their weapons and in the heat of battle can trigger mnemonic patterning to recall their ritual drills and ensure the foe's destruction.",
+    "rules": {
+      "when": "Your Shooting phase.",
+      "target": "One Adeptus Astartes unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. If your unit Remained Stationary this turn, until the end of the phase, each time a model in your unit makes a ranged attack, a successful unmodified Hit roll of 5+ scores a Critical Hit."
+    },
+    "detachment_id": "anvil_siege_force",
+    "keyword_requirements": []
+  },
+  {
+    "id": "anvil_siege_force_rigid_discipline",
+    "name": "Rigid Discipline",
+    "source": "Anvil Siege Force",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Cleaving to duty, the Adeptus Astartes refuse to be drawn out of position. Instead they secure ground to establish new fire lines to the enemy.",
+    "rules": {
+      "when": "End of the Fight phase.",
+      "target": "One Adeptus Astartes unit from your army that is within Engagement Range of one or more enemy units.",
+      "effect": "Your unit can immediately make a Fall Back move of up to 6\"."
+    },
+    "detachment_id": "anvil_siege_force",
+    "keyword_requirements": []
+  },
+  {
+    "id": "anvil_siege_force_not_one_backwards_step",
+    "name": "Not One Backwards Step",
+    "source": "Anvil Siege Force",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Siege warfare is incomparably brutal. Space Marines battle with the fiercest determination to achieve victory, and will fight unto death to hold every defensive line or to secure gains they have wrested from the enemy.",
+    "rules": {
+      "when": "Your Command phase.",
+      "target": "One Adeptus Astartes Infantry unit from your army within range of an objective marker.",
+      "effect": "Until the end of the turn, double the Objective Control characteristic of models in your unit, but it must Remain Stationary this turn."
+    },
+    "detachment_id": "anvil_siege_force",
+    "keyword_requirements": ["INFANTRY"]
+  },
+  {
+    "id": "anvil_siege_force_hail_of_vengeance",
+    "name": "Hail of Vengeance",
+    "source": "Anvil Siege Force",
+    "cost": "2CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Space Marines' incredible battlefield awareness enables them to instinctively identify the origin of any enemy fire and punish their attackers.",
+    "rules": {
+      "when": "Your opponent's Shooting phase, just after an enemy unit has resolved its attacks.",
+      "target": "One Adeptus Astartes unit from your army that had one or more of its models destroyed as a result of the attacking unit's attacks.",
+      "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target."
+    },
+    "detachment_id": "anvil_siege_force",
+    "keyword_requirements": []
+  }
+]

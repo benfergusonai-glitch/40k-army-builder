@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1st_company_duty_and_honour",
+    "name": "Duty and Honour",
+    "source": "1st Company Task Force",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Adeptus Astartes veterans claim critical objectives in daring strikes, annihilating resistance in their Chapter's name before sweeping onto their next target.",
+    "rules": {
+      "when": "Your Movement phase.",
+      "target": "One Adeptus Astartes Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army within range of an objective marker you control.",
+      "effect": "That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn."
+    },
+    "detachment_id": "1st_company_task_force",
+    "keyword_requirements": ["TERMINATOR", "BLADEGUARD VETERAN SQUAD", "STERNGUARD VETERAN SQUAD", "VANGUARD VETERAN SQUAD"]
+  },
+  {
+    "id": "1st_company_heroes_of_the_chapter",
+    "name": "Heroes of the Chapter",
+    "source": "1st Company Task Force",
+    "cost": "1CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "When the fighting is at its fiercest, the veteran warriors of the Chapter truly show their quality.",
+    "rules": {
+      "when": "Your Shooting phase or the Fight phase.",
+      "target": "One Adeptus Astartes Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Hit roll. If your unit is Below Half-strength, add 1 to the Wound roll as well."
+    },
+    "detachment_id": "1st_company_task_force",
+    "keyword_requirements": ["TERMINATOR", "BLADEGUARD VETERAN SQUAD", "STERNGUARD VETERAN SQUAD", "VANGUARD VETERAN SQUAD"]
+  },
+  {
+    "id": "1st_company_orbital_teleportarium",
+    "name": "Orbital Teleportarium",
+    "source": "1st Company Task Force",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Teleportarium chambers within orbiting strike cruisers are able to perform short-range ether-displocations for Terminator-armoured battle-brothers in extremis.",
+    "rules": {
+      "when": "End of your opponent's Fight phase.",
+      "target": "One Adeptus Astartes Terminator unit from your army.",
+      "effect": "Remove your unit from the battlefield and place it into Strategic Reserves. It will arrive back on the battlefield in the Reinforcements step of your next Movement phase using the Deep Strike ability."
+    },
+    "detachment_id": "1st_company_task_force",
+    "keyword_requirements": ["TERMINATOR"]
+  },
+  {
+    "id": "1st_company_terrifying_proficiency",
+    "name": "Terrifying Proficiency",
+    "source": "1st Company Task Force",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "The 1st Company's veterans unleash their skills with an efficiency that is harrowing to witness.",
+    "rules": {
+      "when": "Your Fight phase.",
+      "target": "One Adeptus Astartes Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army that made a Charge move this turn and destroyed one or more enemy units this phase.",
+      "effect": "In your opponent's next Command phase, each enemy unit within 6\" of your unit must take a Battle-shock test. If the unit taking that test is Below Half-strength, subtract 1 from that test. Enemy units affected by this Stratagem do not need to take any other Battle-shock tests in the same phase."
+    },
+    "detachment_id": "1st_company_task_force",
+    "keyword_requirements": ["TERMINATOR", "BLADEGUARD VETERAN SQUAD", "STERNGUARD VETERAN SQUAD", "VANGUARD VETERAN SQUAD"]
+  },
+  {
+    "id": "1st_company_legendary_fortitude",
+    "name": "Legendary Fortitude",
+    "source": "1st Company Task Force",
+    "cost": "1CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "Many are the legendary tales of the 1st Company holding their ground against the odds, weathering assaults that would have swept away lesser warriors.",
+    "rules": {
+      "when": "Your opponent's Charge phase, just after an enemy unit ends a Charge move.",
+      "target": "One Adeptus Astartes Terminator, Bladeguard Veteran Squad, Sternguard Veteran Squad or Vanguard Veteran Squad unit from your army within Engagement Range of that enemy unit.",
+      "effect": "Until the end of the turn, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack."
+    },
+    "detachment_id": "1st_company_task_force",
+    "keyword_requirements": ["TERMINATOR", "BLADEGUARD VETERAN SQUAD", "STERNGUARD VETERAN SQUAD", "VANGUARD VETERAN SQUAD"]
+  }
+]

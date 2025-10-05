@@ -5,7 +5,7 @@
     "points": [{"size": 3, "cost": 95}, {"size": 6, "cost": 190}],
     "role": "Mounted",
     "stats": {"m": "12\"", "t": 5, "sv": "3+", "w": 3, "ld": "7+", "oc": 2},
-    "keywords": ["MOUNTED", "OUTRIDER SQUAD"],
+    "keywords": ["GRENADES", "MOUNTED", "OUTRIDER SQUAD"],
     "weapon_ids": []
   },
   {
@@ -14,7 +14,7 @@
     "points": [{"size": 1, "cost": 70}],
     "role": "Mounted",
     "stats": {"m": "12\"", "t": 5, "sv": "3+", "w": 4, "ld": "7+", "oc": 2},
-    "keywords": ["MOUNTED", "INVADER ATV"],
+    "keywords": ["GRENADES", "MOUNTED", "INVADER ATV"],
     "weapon_ids": []
   }
 ]

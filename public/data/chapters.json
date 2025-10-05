@@ -1,15 +1,50 @@
 [
   { "id": "black_templars", "name": "Black Templars" },
-  { "id": "blood_angels", "name": "Blood Angels" },
+  { 
+    "id": "blood_angels", 
+    "name": "Blood Angels",
+    "army_rules": [
+      {
+        "name": "The Sons of Sanguinius",
+        "definition": "If an ADEPTUS ASTARTES unit has a second Faction keyword on its datasheet, that Faction keyword is the name of that unit's Chapter. You cannot include units from more than one Chapter in your army."
+      }
+    ]
+  },
   { "id": "crimson_fists", "name": "Crimson Fists" },
-  { "id": "dark_angels", "name": "Dark Angels" },
+  { 
+    "id": "dark_angels", 
+    "name": "Dark Angels",
+    "army_rules": [
+      {
+        "name": "The Unforgiven",
+        "definition": "If an ADEPTUS ASTARTES unit has a second Faction keyword on its datasheet, that Faction keyword is the name of that unit's Chapter. You cannot include units from more than one Chapter in your army."
+      }
+    ]
+  },
   { "id": "deathwatch", "name": "Deathwatch" },
   { "id": "Flesh Tearers", "name": "Flesh Tearers" },
   { "id": "imperial_fists", "name": "Imperial Fists" },
   { "id": "iron_hands", "name": "Iron Hands" },
   { "id": "raven_guard", "name": "Raven Guard" },
   { "id": "salamanders", "name": "Salamanders" },
-  { "id": "space_wolves", "name": "Space Wolves" },
+  { 
+    "id": "space_wolves", 
+    "name": "Space Wolves",
+    "army_rules": [
+      {
+        "name": "Sons of Russ",
+        "definition": "If an ADEPTUS ASTARTES unit has a second Faction keyword on its datasheet, that Faction keyword is the name of that unit's Chapter. You cannot include units from more than one Chapter in your army."
+      },
+      {
+        "name": "Curse of the Wulfen",
+        "definition": "Only while fighting at the side of their battle-brothers can the feral Wulfen control their frenzied aggression. While this unit is within 6\" of one or more friendly SPACE WOLVES CHARACTER models (excluding WULFEN models) or within 12\" of one or more friendly WOLF PRIEST models, if it is not Battle-shocked, add 1 to the Objective Control characteristic of INFANTRY models in it and add 3 to the Objective Control characteristic of VEHICLE models in it."
+      },
+      {
+        "name": "Sagas",
+        "definition": "The battles fought and glorious victories won by the Great Companies of Fenris are retold in mighty sagas. Each Detachment rule in this book includes a Saga you can complete, with additional effects that apply once you have done so."
+      }
+    ]
+  },
   { "id": "ultramarines", "name": "Ultramarines" },
   { "id": "white_scars", "name": "White Scars" }
 ]

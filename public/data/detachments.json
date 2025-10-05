@@ -1,86 +1,15 @@
 [
-  {
-    "id": "gladius_task_force",
-    "name": "Gladius Task Force",
-    "rule": "At the start of each turn, you must select one of the Combat Doctrines (Devastator, Tactical, or Assault) to be active for your army. Each Doctrine can only be selected once per battle. Units from your army are affected by the selected Doctrine's rule for that turn.",
-    "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]
-  },
-  {
-    "id": "stormlance_task_force",
-    "name": "Stormlance Task Force",
-    "rule": "Units from your army are eligible to declare a charge in a turn in which they Advanced.",
-    "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]
-  },
-  {
-    "id": "vanguard_spearhead",
-    "name": "Vanguard Spearhead",
-    "rule": "Each time you target a unit from your army with a Stratagem, if that unit is more than 12\" away from all enemy models, the CP cost of that Stratagem is reduced by 1.",
-    "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]
-  },
-  {
-    "id": "1st_company_task_force",
-    "name": "1st Company Task Force",
-    "rule": "At the start of the battle, select one objective marker in No Man's Land to be your Vowed Objective. Each time a Veteran unit from your army makes an attack that targets an enemy unit within range of your Vowed Objective, you can re-roll the Hit roll.",
-    "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]
-  },
-  {
-    "id": "unforgiven_task_force",
-    "name": "Unforgiven Task Force (Dark Angels)",
-    "rule": "At the start of the battle, after both players have deployed their armies, select one unit from your opponent's army to be your army's Battlefield Target. Each time a unit from your army makes an attack that targets that Battlefield Target, you can re-roll the Hit roll and you can re-roll the Wound roll.",
-    "allowed_chapters": ["dark_angels"],
-    "chapter_id": "dark_angels"
-  },
-  {
-    "id": "sons_of_sanguinius",
-    "name": "Sons of Sanguinius (Blood Angels)",
-    "rule": "Add 1 to the Attacks and Strength characteristics of melee weapons equipped by models in units from your army that made a Charge move this turn.",
-    "allowed_chapters": ["blood_angels"],
-    "chapter_id": "blood_angels"
-  },
-  {
-    "id": "champions_of_russ",
-    "name": "Champions of Russ (Space Wolves)",
-    "rule": "At the end of your opponent's turn, you can select one unit from your army that is not within Engagement Range of any enemy units to make a Saga move. To do so, that unit can either make a Normal move of up to D6\" or it can Advance. If it Advances, it can move up to 6+D6\".",
-    "allowed_chapters": ["space_wolves"],
-    "chapter_id": "space_wolves"
-  },
-  {
-    "id": "anvil_siege_force",
-    "name": "Anvil Siege Force",
-    "rule": "Each time a unit from your army makes a ranged attack that targets a unit that is within its own deployment zone, you can re-roll the Hit roll.",
-    "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]
-  },
-  {
-    "id": "ironstorm_spearhead",
-    "name": "Ironstorm Spearhead",
-    "rule": "Each time a Vehicle model from your army makes an attack, you can re-roll the Hit roll. Each time a Techmarine from your army makes an attack, you can re-roll the Hit roll and you can re-roll the Wound roll.",
-    "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]
-  },
-  {
-    "id": "firestorm_assault_force",
-    "name": "Firestorm Assault Force",
-    "rule": "Ranged weapons equipped by models in units from your army have the [ASSAULT] ability. Melee weapons equipped by models in those units have the [LANCE] ability.",
-    "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]
-  },
-  {
-    "id": "shadowmark_talon",
-    "name": "Shadowmark Talon (Raven Guard)",
-    "rule": "At the start of the battle, after both players have deployed their armies, you can select up to three Phobos or Scout units from your army and redeploy them. You can place those units anywhere on the battlefield that is more than 9\" horizontally away from all enemy models.",
-    "allowed_chapters": ["raven_guard"],
-    "chapter_id": "raven_guard"
-  },
-  {
-    "id": "emperors_shield",
-    "name": "Emperor's Shield (Imperial Fists)",
-    "rule": "Each time an attack with an Armour Penetration characteristic of -1 is allocated to a model from your army, if that model's unit is within range of an objective marker you control, change the Armour Penetration characteristic of that attack to 0.",
-    "allowed_chapters": ["imperial_fists"],
-    "chapter_id": "imperial_fists"
-  },
-  {
-    "id": "forgefather_seekers",
-    "name": "Forgefather's Seekers (Salamanders)",
-    "rule": "Each time a unit from your army makes an attack with a Melta or Torrent weapon that targets a unit within 6\", you can re-roll the Wound roll.",
-    "allowed_chapters": ["salamanders"],
-    "chapter_id": "salamanders"
-  }
+  {"id": "1st_company_task_force", "name": "1st Company Task Force", "rules": [{"name": "Extremis-level Threat", "definition": "Once per battle, in your Command phase, you can use this ability. If you do, until the start of your next Command phase, each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll as well."}], "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]},
+  {"id": "anvil_siege_force", "name": "Anvil Siege Force", "rules": [{"name": "Shield of the Imperium", "definition": "Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [HEAVY] ability. If such a weapon already has this ability, each time an attack is made with that weapon, if the attacking model’s unit Remained Stationary this turn, add 1 to the Wound roll."}], "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]},
+  {"id": "saga_of_the_hunter", "name": "Saga of the Hunter (Space Wolves)", "rules": [{"name": "Pack’s Quarry", "definition": "Each time a model in a SPACE WOLVES unit from your army makes a melee attack that targets an enemy unit, if that enemy unit is within Engagement Range of one or more other ADEPTUS ASTARTES units from your army, or if the attacking unit contains more models than that enemy unit:\n■ Add 1 to the Hit roll.\n■ If your Saga is completed, add 1 to the Wound roll as well."}, {"name": "Saga of the Hunter", "definition": "At the start of the first battle round, your Quarry Tally is 0. Each time an ADEPTUS ASTARTES unit from your army fights, after all of those attacks have been resolved, add 1 to your Quarry Tally for each enemy unit destroyed by those attacks. Once your Quarry Tally is equal to or greater than the number shown below, your Saga is Completed.\nBATTLE SIZE -> QUARRY TALLY\nIncursion -> 2\nStrike Force -> 3\nOnslaught -> 4"}], "allowed_chapters": ["space_wolves"], "chapter_id": "space_wolves"},
+  {"id": "emperors_shield", "name": "Emperor's Shield (Imperial Fists)", "rules": [{"name": "Wrath of Dorn", "definition": "Each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll a Wound roll of 1. Each time a model in a DARNATH LYSANDER unit from your army makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll."}], "allowed_chapters": ["imperial_fists"], "chapter_id": "imperial_fists"},
+  {"id": "firestorm_assault_force", "name": "Firestorm Assault Force", "rules": [{"name": "Close-range Eradication", "definition": "If your Army Faction is ADEPTUS ASTARTES, at the start of your Command phase, select one unit from your opponent’s army. Until the start of your next Command phase, that enemy unit is your Oath of Moment target. Each time a model with this ability makes an attack that targets your Oath of Moment target: you can re-roll the Hit roll. If you are using a Codex: Space Marines Detachment and your army does not include one or more units with the BLACK TEMPLARS keywords, add 1 to the Wound roll as well."}], "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]},
+  {"id": "forgefather_seekers", "name": "Forgefather's Seekers (Salamanders)", "rules": [{"name": "Vulkan’s Quest", "definition": "Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12\", add 1 to the Strength characteristic of that attack.\n\n**Seeker's Companions**\nIf your army includes VULKAN HE’STAN, during your turn, each INFERNUS SQUAD unit from your army is eligible to do one of the following: Start to perform an Action in a turn in which it Advanced; Shoot in a turn in which it started to perform an Action."}], "allowed_chapters": ["salamanders"], "chapter_id": "salamanders"},
+  {"id": "gladius_task_force", "name": "Gladius Task Force", "rules": [{"name": "Combat Doctrines", "definition": "At the start of your Command phase, you can select one of the Combat Doctrines listed below. Until the start of your next Command phase, that Combat Doctrine is active. You can only select each Combat Doctrine once per battle.\n\n**Devastator Doctrine:** This unit is eligible to shoot in a turn in which it Advanced.\n\n**Tactical Doctrine:** This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.\n\n**Assault Doctrine:** This unit is eligible to declare a charge in a turn in which it Advanced."}], "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]},
+  {"id": "ironstorm_spearhead", "name": "Ironstorm Spearhead", "rules": [{"name": "Armoured Wrath", "definition": "Once per phase for each ADEPTUS ASTARTES unit in your army, you can re-roll one Hit roll, one Wound roll or one Damage roll made for a model in that unit."}], "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]},
+  {"id": "shadowmark_talon", "name": "Shadowmark Talon (Raven Guard)", "rules": [{"name": "Masters of Shadow", "definition": "Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12\", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack."}, {"name": "Unparalleled Tactician", "definition": "Once per battle round, if an AETHON SHAAN model from your army is on the battlefield, you can use the Into Darkness Stratagem for 0CP."}, {"name": "Restrictions", "definition": "Your army can include RAVEN GUARD units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."}], "allowed_chapters": ["raven_guard"], "chapter_id": "raven_guard"},
+  {"id": "liberator_assault_group", "name": "Liberator Assault Group (Blood Angels)", "rules": [{"name": "Red Thirst", "definition": "Each time an Adeptus Astartes unit from your army is selected to fight, if that unit made a Charge move this turn, until the end of the phase, add 1 to the Attacks characteristic and add 2 to the Strength characteristic of melee weapons equipped by models in that unit."}, {"name": "Restrictions", "definition": "Your army can include BLOOD ANGELS units, but it cannot include any Adeptus Astartes units drawn from any other Chapter."}], "allowed_chapters": ["blood_angels"], "chapter_id": "blood_angels"},
+  {"id": "stormlance_task_force", "name": "Stormlance Task Force", "rules": [{"name": "Lightning Assault", "definition": "ADEPTUS ASTARTES units from your army are eligible to declare a charge in a turn in which they Advanced or Fell Back."}], "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]},
+  {"id": "unforgiven_task_force", "name": "Unforgiven Task Force (Dark Angels)", "rules": [{"name": "Grim Resolve", "definition": "While an ADEPTUS ASTARTES unit from your army is Battle-shocked, change the Objective Control characteristic of models in that unit to 1, instead of 0. In your Command phase, select one ADEPTUS ASTARTES unit from your army; until the start of your next Command phase, add 1 to the Objective Control characteristic of models in that unit."}, {"name": "Restrictions", "definition": "Your army can include DARK ANGELS units, but it cannot include any other Chapter."}], "allowed_chapters": ["dark_angels"], "chapter_id": "dark_angels"},
+  {"id": "vanguard_spearhead", "name": "Vanguard Spearhead", "rules": [{"name": "Shadow Masters", "definition": "Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12\", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack."}], "allowed_chapters": ["imperial_fists", "iron_hands", "raven_guard", "salamanders", "ultramarines", "white_scars", "blood_angels", "dark_angels", "space_wolves", "black_templars", "crimson_fists", "flesh_tearers"]}
 ]

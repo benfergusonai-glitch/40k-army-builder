@@ -1,0 +1,77 @@
+[
+  {
+    "id": "vanguard_a_deadly_prize",
+    "name": "A Deadly Prize",
+    "source": "Vanguard Spearhead",
+    "cost": "1CP",
+    "type": "Wargear Stratagem",
+    "flavor_text": "Warriors of a Vanguard Spearhead will rig critical objectives with explosives to deny them to the enemy.",
+    "rules": {
+      "when": "Start of the Command phase.",
+      "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army within range of an objective marker you control.",
+      "effect": "That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds."
+    },
+    "detachment_id": "vanguard_spearhead",
+    "keyword_requirements": ["INFANTRY", "MOUNTED"]
+  },
+  {
+    "id": "vanguard_strike_from_the_shadows",
+    "name": "Strike From the Shadows",
+    "source": "Vanguard Spearhead",
+    "cost": "1CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "To evade one's enemies and sow confusion can be a deadly weapon in itself.",
+    "rules": {
+      "when": "Your Shooting phase.",
+      "target": "One Adeptus Astartes Infantry unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12\" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model's unit must take a Battle-shock test."
+    },
+    "detachment_id": "vanguard_spearhead",
+    "keyword_requirements": ["INFANTRY"]
+  },
+  {
+    "id": "vanguard_surgical_strikes",
+    "name": "Surgical Strikes",
+    "source": "Vanguard Spearhead",
+    "cost": "2CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "Every tyrant must fear the assassin's blade, and the vanguard spring ambushes with precision coordination.",
+    "rules": {
+      "when": "When: Fight phase.",
+      "target": "One Adeptus Astartes Infantry unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability."
+    },
+    "detachment_id": "vanguard_spearhead",
+    "keyword_requirements": ["INFANTRY"]
+  },
+  {
+    "id": "vanguard_calculated_feint",
+    "name": "Calculated Feint",
+    "source": "Vanguard Spearhead",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "A feigned retreat can be used to overextend eager foes or draw them into deadly arcs of fire.",
+    "rules": {
+      "when": "Your opponent's Charge phase, just after an enemy unit declares a Charge.",
+      "target": "One Adeptus Astartes Infantry unit from your army that was selected as a target of that charge.",
+      "effect": "Your unit can make a Normal move of up to D6\", or up to 6\" instead if it is a Phobos or Scout Squad unit."
+    },
+    "detachment_id": "vanguard_spearhead",
+    "keyword_requirements": ["INFANTRY", "PHOBOS", "SCOUT SQUAD"]
+  },
+  {
+    "id": "vanguard_guerilla_tactics",
+    "name": "Guerilla Tactics",
+    "source": "Vanguard Spearhead",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "At the opportune moment, Space Marine infiltration units slip away from battle, only to relocate ready to strike the foe again.",
+    "rules": {
+      "when": "End of your opponent's Fight phase.",
+      "target": "Up to two Phobos and/or Scout Squad units from your army, or one other Adeptus Astartes Infantry unit from your army.",
+      "effect": "Remove those units from the battlefield and place them into Strategic Reserves."
+    },
+    "detachment_id": "vanguard_spearhead",
+    "keyword_requirements": ["PHOBOS", "SCOUT SQUAD", "INFANTRY"]
+  }
+]

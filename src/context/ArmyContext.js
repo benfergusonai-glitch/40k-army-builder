@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, useMemo } from 'react';
 import { getUnitDisplayPoints } from '../utils/pointUtils';
 import { isUnitChapterValid as isUnitChapterValidFromRules } from '../utils/rulesUtils';
 
@@ -15,13 +15,66 @@ export const ArmyProvider = ({ children }) => {
     const [selectedDetachment, setSelectedDetachment] = useState(null);
     const [editingWargearUnit, setEditingWargearUnit] = useState(null);
     const [editingEnhancementUnit, setEditingEnhancementUnit] = useState(null);
-    
-    // --- NEW: State to track the currently selected unit for the detail view ---
     const [selectedUnitId, setSelectedUnitId] = useState(null);
+
+    // --- NEW: Logic to dynamically process the army for conditional keywords ---
+    const processedArmy = useMemo(() => {
+        if (!selectedChapter) return army;
+
+        // Dark Angels: Add RAVENWING and DEATHWING keywords
+        if (selectedChapter.id === 'dark_angels') {
+            const deathwingKeywords = [
+                'TERMINATOR', 'BLADEGUARD ANCIENT', 'BLADEGUARD VETERAN SQUAD', 
+                'STERNGUARD VETERAN SQUAD', 'VANGUARD VETERAN SQUAD WITH JUMP PACKS',
+                'LAND RAIDER', 'LAND RAIDER CRUSADER', 'LAND RAIDER REDEEMER', 
+                'REPULSOR', 'REPULSOR EXECUTIONER', 'DREADNOUGHT'
+            ];
+
+            return army.map(unit => {
+                // Create a mutable copy of keywords to avoid side effects
+                const newKeywords = [...unit.keywords];
+                let keywordsDidChange = false;
+
+                // Check for RAVENWING criteria
+                const isRavenwing = unit.keywords.includes('MOUNTED') || (unit.keywords.includes('VEHICLE') && unit.keywords.includes('FLY'));
+                if (isRavenwing && !newKeywords.includes('RAVENWING')) {
+                    newKeywords.push('RAVENWING');
+                    keywordsDidChange = true;
+                }
+
+                // Check for DEATHWING criteria
+                const isDeathwing = deathwingKeywords.some(dk => unit.keywords.includes(dk));
+                if (isDeathwing && !newKeywords.includes('DEATHWING')) {
+                    newKeywords.push('DEATHWING');
+                    keywordsDidChange = true;
+                }
+
+                // If keywords were added, return a new unit object
+                if (keywordsDidChange) {
+                    return { ...unit, keywords: newKeywords };
+                }
+                
+                // Otherwise, return the original unit
+                return unit;
+            });
+        }
+
+        // If another chapter is selected, ensure no DA keywords are present
+        return army.map(unit => {
+            if (unit.keywords.includes('RAVENWING') || unit.keywords.includes('DEATHWING')) {
+                return {
+                    ...unit,
+                    keywords: unit.keywords.filter(kw => kw !== 'RAVENWING' && kw !== 'DEATHWING')
+                };
+            }
+            return unit;
+        });
+    }, [army, selectedChapter]);
+
 
     useEffect(() => {
         const calculateTotalPoints = () => {
-            return army.reduce((total, unit) => {
+            return processedArmy.reduce((total, unit) => {
                 let unitCost = getUnitDisplayPoints(unit);
                 if (unit.current_enhancement) {
                     unitCost += unit.current_enhancement.cost;
@@ -30,7 +83,7 @@ export const ArmyProvider = ({ children }) => {
             }, 0);
         };
         setTotalPoints(calculateTotalPoints());
-    }, [army]);
+    }, [processedArmy]);
 
     const selectChapter = (chapter) => {
         setSelectedChapter(chapter);
@@ -41,7 +94,6 @@ export const ArmyProvider = ({ children }) => {
         setSelectedDetachment(detachment);
     };
 
-    // --- NEW: Function to set the currently selected unit ---
     const selectUnit = (unitId) => {
         setSelectedUnitId(unitId);
     };
@@ -61,7 +113,6 @@ export const ArmyProvider = ({ children }) => {
 
     const removeUnit = (unitId) => {
         setArmy(prevArmy => {
-            // If the removed unit was the selected one, deselect it.
             if (unitId === selectedUnitId) {
                 setSelectedUnitId(null);
             }
@@ -87,7 +138,7 @@ export const ArmyProvider = ({ children }) => {
     const handleCloseEnhancementsModal = () => setEditingEnhancementUnit(null);
 
     const value = {
-        army,
+        army: processedArmy,
         totalPoints,
         addUnit,
         removeUnit,
@@ -104,7 +155,6 @@ export const ArmyProvider = ({ children }) => {
         selectChapter,
         selectDetachment,
         isUnitChapterValid,
-        // --- NEW: Expose the new state and function to the app ---
         selectedUnitId,
         selectUnit,
     };

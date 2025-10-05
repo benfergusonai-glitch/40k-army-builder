@@ -1,0 +1,72 @@
+[
+  {
+    "id": "lag_angelic_grace",
+    "name": "Angelic Grace",
+    "source": "Liberator Assault Group",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "rules": {
+      "when": "Any phase, just after an Adeptus Astartes unit from your army has a mortal wound allocated to it.",
+      "target": "That Adeptus Astartes unit.",
+      "effect": "Until the end of the phase, models in your unit have the Feel No Pain 5+ ability against mortal wounds."
+    },
+    "detachment_id": "liberator_assault_group",
+    "keyword_requirements": []
+  },
+  {
+    "id": "lag_savage_echoes",
+    "name": "Savage Echoes",
+    "source": "Liberator Assault Group",
+    "cost": "1CP",
+    "type": "Battle Tactic Stratagem",
+    "rules": {
+      "when": "Your opponent's Charge phase, just charged by an enemy unit.",
+      "target": "One Blood Angels unit from your army.",
+      "effect": "Select either the Strength or Attacks characteristic of melee weapons equipped by models in your unit. Until the end of the turn, add 1 to the selected characteristic. You can instead choose for your unit to give in to the Red Thirst; if it does, it becomes Battle-shocked (but the effects of this Stratagem still apply to it) and until the end of the phase, add 1 to the Strength and Attacks characteristics of melee weapons equipped by models in your unit."
+    },
+    "detachment_id": "liberator_assault_group",
+    "keyword_requirements": ["BLOOD ANGELS"]
+  },
+  {
+    "id": "lag_red_rampage",
+    "name": "Red Rampage",
+    "source": "Liberator Assault Group",
+    "cost": "1CP",
+    "type": "Battle Tactic Stratagem",
+    "rules": {
+      "when": "When: Fight phase.",
+      "target": "One Adeptus Astartes unit from your army that has not been selected to fight this phase.",
+      "effect": "Select either the [LANCE] or [LETHAL HITS] abilities. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability. You can instead choose for your unit to give in to the Red Thirst; if it does, then it becomes Battle-shocked (but the effects of this Stratagem still apply to it) and until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] and [LETHAL HITS] abilities."
+    },
+    "detachment_id": "liberator_assault_group",
+    "keyword_requirements": []
+  },
+  {
+    "id": "lag_aggressive_onslaught",
+    "name": "Aggressive Onslaught",
+    "source": "Liberator Assault Group",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "rules": {
+      "when": "Your Movement phase, just after an Adeptus Astartes unit from your army has Advanced.",
+      "target": "That Adeptus Astartes unit.",
+      "effect": "Until the end of the turn, your unit is eligible to shoot or declare a charge, even though it Advanced. You can instead choose for your unit to give in to the Red Thirst; if it does, it becomes Battle-shocked (but the effects of this Stratagem still apply to it) and until the end of the phase, your unit is eligible to both shoot and declare a charge, even though it Advanced."
+    },
+    "detachment_id": "liberator_assault_group",
+    "keyword_requirements": []
+  },
+  {
+    "id": "lag_relentless_assault",
+    "name": "Relentless Assault",
+    "source": "Liberator Assault Group",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "rules": {
+      "when": "Your Movement phase, just after an Adeptus Astartes unit from your army Falls Back.",
+      "target": "That Adeptus Astartes unit.",
+      "effect": "Until the end of the turn, your unit is eligible to shoot or declare a charge even though it Fell Back. You can instead choose for your unit to give in to the Red Thirst; if it does, it becomes Battle-shocked (but the effects of this Stratagem still apply to it) and until the end of the phase, your unit is eligible to both shoot and declare a charge, even though it Fell Back."
+    },
+    "detachment_id": "liberator_assault_group",
+    "keyword_requirements": []
+  }
+]

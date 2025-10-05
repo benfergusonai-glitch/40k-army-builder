@@ -5,7 +5,7 @@
     "points": [{"size": 1, "cost": 50}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "ANCIENT"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "ANCIENT"],
     "weapon_ids": []
   },
   {
@@ -23,7 +23,7 @@
     "points": [{"size": 1, "cost": 50}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "7+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "APOTHECARY"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "APOTHECARY"],
     "weapon_ids": []
   },
   {
@@ -41,7 +41,7 @@
     "points": [{"size": 1, "cost": 45}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "ANCIENT", "BLADEGUARD ANCIENT"],
+    "keywords": ["INFANTRY", "CHARACTER", "ANCIENT", "GRENADES", "BLADEGUARD ANCIENT"],
     "weapon_ids": []
   },
   {
@@ -50,7 +50,7 @@
     "points": [{"size": 1, "cost": 80}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
-    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "TACTICUS"],
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "GRENADES", "TACTICUS"],
     "weapon_ids": [],
     "wargear_options": [
       {
@@ -64,9 +64,9 @@
             "description": "Choose Melee Weapon:",
             "type": "choose_one",
             "choices": [
-              { "item_id": "captain_close_combat_weapon" },
-              { "item_id": "captain_master_crafted_power_weapon" },
-              { "item_id": "captain_power_fist" }
+              { "item_id": "captain_close_combat_weapon", "item_name": "Close combat weapon" },
+              { "item_id": "captain_master_crafted_power_weapon", "item_name": "Master-crafted power weapon" },
+              { "item_id": "captain_power_fist", "item_name": "Power fist" }
             ]
           }
         ]
@@ -89,9 +89,20 @@
             "description": "Choose Pistol:",
             "type": "choose_one",
             "choices": [
-              { "item_id": "captain_heavy_bolt_pistol" },
-              { "item_id": "captain_plasma_pistol_standard" },
-              { "item_id": "captain_neo_volkite_pistol" }
+              { 
+            "item_id": "captain_heavy_bolt_pistol",
+            "item_name": "Heavy bolt pistol"
+          },
+              { 
+                "item_id": "plasma_pistol",
+                "item_name": "Plasma pistol",
+                "stat_overrides": { "BS": "2+" }
+              },
+              { 
+                "item_id": "neo_volkite_pistol",
+                "item_name": "Neo-volkite pistol",
+                "stat_overrides": { "BS": "2+" }
+              }
             ]
           },
           {
@@ -99,13 +110,27 @@
             "description": "Choose Melee Weapon:",
             "type": "choose_one",
             "choices": [
-              { "item_id": "captain_master_crafted_power_weapon" },
-              { "item_id": "captain_power_fist" }
+              { "item_id": "captain_master_crafted_power_weapon", "item_name": "Master-crafted power weapon" },
+              { "item_id": "captain_power_fist", "item_name": "Power fist" }
             ]
           }
         ]
       }
-    ]
+    ],
+    "abilities": {
+      "core": [ "devastating_wounds", "leader" ],
+      "faction": [ "oath_of_moment" ],
+      "other": [
+        {
+          "name": "Rites of Battle",
+          "rule": "Once per battle round, you can target one unit from your army with this ability with a Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+        },
+        {
+          "name": "Finest Hour",
+          "rule": "Once per battle, at the start of the Fight phase, this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability."
+        }
+      ]
+    }
   },
   {
     "id": "captain_in_gravis_armour",
@@ -114,7 +139,21 @@
     "role": "Character",
     "stats": {"m": "5\"", "t": 6, "sv": "3+", "w": 6, "ld": "6+", "oc": 1},
     "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "GRAVIS"],
-    "weapon_ids": []
+    "weapon_ids": [],
+    "abilities": {
+      "core": [ "devastating_wounds", "leader" ],
+      "faction": [ "oath_of_moment" ],
+      "other": [
+  {
+    "name": "Rites of Battle",
+    "rule": "Once per battle round, you can target one unit from your army with this ability with a Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+  },
+  {
+    "name": "Refuse to Yield",
+    "rule": "Each time an attack is allocated to this model, halve the Damage characteristic of that attack."
+  }
+]
+  }
   },
   {
     "id": "captain_in_phobos_armour",
@@ -122,7 +161,7 @@
     "points": [{"size": 1, "cost": 70}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "PHOBOS"],
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "GRENADES", "PHOBOS"],
     "weapon_ids": []
   },
   {
@@ -132,7 +171,21 @@
     "role": "Character",
     "stats": {"m": "5\"", "t": 5, "sv": "2+", "w": 6, "ld": "6+", "oc": 1, "inv": "4+"},
     "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "TERMINATOR"],
-    "weapon_ids": []
+    "weapon_ids": [],
+    "abilities": {
+      "core": [ "deep_strike", "leader" ],
+      "faction": [ "oath_of_moment" ],
+      "other": [
+  {
+    "name": "Rites of Battle",
+    "rule": "Once per battle round, you can target one unit from your army with this ability with a Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+  },
+  {
+    "name": "Finest Hour",
+    "rule": "Once per battle, at the start of the Fight phase, this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability."
+  }
+      ]
+    }
   },
   {
     "id": "captain_with_jump_pack",
@@ -140,7 +193,7 @@
     "points": [{"size": 1, "cost": 75}],
     "role": "Character",
     "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 5, "ld": "6+", "oc": 1, "inv": "4+"},
-    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "JUMP PACK"],
+    "keywords": ["INFANTRY", "CHARACTER", "CAPTAIN", "GRENADES", "JUMP PACK"],
     "weapon_ids": []
   },
   {
@@ -149,7 +202,7 @@
     "points": [{"size": 1, "cost": 60}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
-    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "CHAPLAIN"],
     "weapon_ids": []
   },
   {
@@ -167,7 +220,7 @@
     "points": [{"size": 1, "cost": 75}],
     "role": "Character",
     "stats": {"m": "12\"", "t": 5, "sv": "3+", "w": 5, "ld": "6+", "oc": 2, "inv": "4+"},
-    "keywords": ["MOUNTED", "CHARACTER", "CHAPLAIN"],
+    "keywords": ["MOUNTED", "CHARACTER", "GRENADES", "CHAPLAIN"],
     "weapon_ids": []
   },
   {
@@ -176,7 +229,7 @@
     "points": [{"size": 1, "cost": 75}],
     "role": "Character",
     "stats": {"m": "12\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
-    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN", "JUMP PACK"],
+    "keywords": ["INFANTRY", "CHARACTER", "CHAPLAIN", "GRENADES", "JUMP PACK"],
     "weapon_ids": []
   },
   {
@@ -185,7 +238,7 @@
     "points": [{"size": 1, "cost": 70}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "JUDICIAR"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "JUDICIAR"],
     "weapon_ids": []
   },
   {
@@ -194,7 +247,7 @@
     "points": [{"size": 1, "cost": 65}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1, "inv": "4+"},
-    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "PSYKER", "LIBRARIAN"],
     "weapon_ids": []
   },
   {
@@ -203,7 +256,7 @@
     "points": [{"size": 1, "cost": 70}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "PSYKER", "LIBRARIAN", "PHOBOS"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "PSYKER", "LIBRARIAN", "PHOBOS"],
     "weapon_ids": []
   },
   {
@@ -221,7 +274,7 @@
     "points": [{"size": 1, "cost": 65}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "LIEUTENANT"],
     "weapon_ids": []
   },
   {
@@ -230,7 +283,7 @@
     "points": [{"size": 1, "cost": 55}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "LIEUTENANT", "PHOBOS"],
     "weapon_ids": []
   },
   {
@@ -239,7 +292,7 @@
     "points": [{"size": 1, "cost": 55}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "LIEUTENANT", "PHOBOS"],
     "weapon_ids": []
   },
   {
@@ -248,7 +301,7 @@
     "points": [{"size": 1, "cost": 70}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "3+", "w": 4, "ld": "6+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "LIEUTENANT", "PHOBOS"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "LIEUTENANT", "PHOBOS"],
     "weapon_ids": []
   },
   {
@@ -257,7 +310,7 @@
     "points": [{"size": 1, "cost": 55}],
     "role": "Character",
     "stats": {"m": "6\"", "t": 4, "sv": "2+", "w": 4, "ld": "7+", "oc": 1},
-    "keywords": ["INFANTRY", "CHARACTER", "TECHMARINE"],
+    "keywords": ["INFANTRY", "CHARACTER", "GRENADES", "TECHMARINE"],
     "weapon_ids": []
   }
 ]

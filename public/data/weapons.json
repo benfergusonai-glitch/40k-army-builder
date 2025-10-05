@@ -108,6 +108,18 @@
     "keywords": null
   },
   {
+    "id": "captain_bolt_pistol",
+    "name": "Bolt pistol",
+    "range": "12\"",
+    "A": 1,
+    "BS": "2+",
+    "WS": null,
+    "S": 4,
+    "AP": 0,
+    "D": 1,
+    "keywords": "Pistol"
+  },
+  {
     "id": "captain_heavy_bolt_pistol",
     "name": "Heavy bolt pistol",
     "range": "18\"",
@@ -612,6 +624,20 @@
     "keywords": "Melta 2"
   },
   {
+    "id": "missile_launcher",
+    "name": "Missile launcher",
+    "profiles": [
+      {
+        "name": "Frag",
+        "range": "48\"", "A": "D6", "BS": "3+", "WS": null, "S": 4, "AP": 0, "D": 1, "keywords": "Blast, Heavy"
+      },
+      {
+        "name": "Krak",
+        "range": "48\"", "A": 1, "BS": "3+", "WS": null, "S": 9, "AP": -2, "D": "D6", "keywords": "Heavy"
+      }
+    ]
+  },
+  {
     "id": "multi_melta_infantry",
     "name": "Multi-melta (Infantry)",
     "range": "18\"",
@@ -650,14 +676,12 @@
   {
     "id": "neo_volkite_pistol",
     "name": "Neo-volkite pistol",
-    "range": "12\"",
-    "A": 1,
-    "BS": "2+",
-    "WS": null,
-    "S": 5,
-    "AP": 0,
-    "D": 2,
-    "keywords": "Devastating Wounds, Pistol"
+    "profiles": [
+        {
+            "name": "",
+            "range": "12\"", "A": 1, "BS": "3+", "WS": null, "S": 5, "AP": 0, "D": 2, "keywords": "Devastating Wounds, Pistol"
+        }
+    ]
   },
   {
     "id": "onslaught_gatling_cannon",
@@ -708,28 +732,18 @@
     "keywords": "Hazardous, Rapid Fire 1"
   },
   {
-    "id": "plasma_pistol_standard",
-    "name": "Plasma pistol - standard",
-    "range": "12\"",
-    "A": 1,
-    "BS": "3+",
-    "WS": null,
-    "S": 7,
-    "AP": -2,
-    "D": 1,
-    "keywords": "Pistol"
-  },
-  {
-    "id": "plasma_pistol_supercharge",
-    "name": "Plasma pistol - supercharge",
-    "range": "12\"",
-    "A": 1,
-    "BS": "3+",
-    "WS": null,
-    "S": 8,
-    "AP": -3,
-    "D": 2,
-    "keywords": "Hazardous, Pistol"
+    "id": "plasma_pistol",
+    "name": "Plasma pistol",
+    "profiles": [
+        {
+            "name": "Standard",
+            "range": "12\"", "A": 1, "BS": "3+", "WS": null, "S": 7, "AP": -2, "D": 1, "keywords": "Pistol"
+        },
+        {
+            "name": "Supercharge",
+            "range": "12\"", "A": 1, "BS": "3+", "WS": null, "S": 8, "AP": -3, "D": 2, "keywords": "Hazardous, Pistol"
+        }
+    ]
   },
   {
     "id": "power_fist",

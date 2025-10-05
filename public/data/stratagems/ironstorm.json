@@ -1,0 +1,77 @@
+[
+  {
+    "id": "ironstorm_spearhead_unbowed_conviction",
+    "name": "Unbowed Conviction",
+    "source": "Ironstorm Spearhead",
+    "cost": "1CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "Space Marines exemplify obdurate tenacity. Even injured, they will never abandon their oaths.",
+    "rules": {
+      "when": "Command phase.",
+      "target": "One Adeptus Astartes unit from your army that is below its Starting Strength.",
+      "effect": "Until the end of the turn, your unit can ignore any or all modifiers to its characteristics and/or to any roll or test made for it (excluding modifiers to saving throws)."
+    },
+    "detachment_id": "ironstorm_spearhead",
+    "keyword_requirements": []
+  },
+  {
+    "id": "ironstorm_spearhead_vengeful_animus",
+    "name": "Vengeful Animus",
+    "source": "Ironstorm Spearhead",
+    "cost": "1CP",
+    "type": "Epic Deed Stratagem",
+    "flavor_text": "Carefully cognated bio-rhythms can focus a machine spirit's ire into neuro-obsessive hatred of its slayers, ensuring that vengeance is meted out even in death.",
+    "rules": {
+      "when": "Any phase, just after an Adeptus Astartes Vehicle model from your army with the Deadly Demise ability is destroyed.",
+      "target": "That Adeptus Astartes Vehicle model. You can use this Stratagem on that model even though it was just destroyed.",
+      "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model's Deadly Demise ability. Instead, mortal wounds are automatically inflicted."
+    },
+    "detachment_id": "ironstorm_spearhead",
+    "keyword_requirements": ["VEHICLE"]
+  },
+  {
+    "id": "ironstorm_spearhead_mercy_is_weakness",
+    "name": "Mercy is Weakness",
+    "source": "Ironstorm Spearhead",
+    "cost": "2CP",
+    "type": "Battle Tactic Stratagem",
+    "flavor_text": "Once a foe is marked for destruction, the Angels of Death must not relent until the target is annihilated.",
+    "rules": {
+      "when": "Your Shooting phase or the Fight phase.",
+      "target": "One Adeptus Astartes unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets a unit that is below its Starting Strength, that attack has the [SUSTAINED HITS 1] ability, and when making such an attack, if the attacking model is a Vehicle, a successful unmodified Hit roll of 5+ scores a Critical Hit."
+    },
+    "detachment_id": "ironstorm_spearhead",
+    "keyword_requirements": []
+  },
+  {
+    "id": "ironstorm_spearhead_ancient_fury",
+    "name": "Ancient Fury",
+    "source": "Ironstorm Spearhead",
+    "cost": "1CP",
+    "type": "Epic Deed Stratagem",
+    "flavor_text": "The heroes entombed within Dreadnoughts have fought across countless war zones throughout their extended existences, perfecting their martial prowess beyond mortal limits.",
+    "rules": {
+      "when": "Your Command phase.",
+      "target": "One Adeptus Astartes Walker model from your army.",
+      "effect": "Until the start of your next Command phase, improve your model's Move, Toughness, Leadership and Objective Control characteristics by 1 and each time your model makes an attack, add 1 to the Hit roll."
+    },
+    "detachment_id": "ironstorm_spearhead",
+    "keyword_requirements": ["WALKER"]
+  },
+  {
+    "id": "ironstorm_spearhead_power_of_the_machine_spirit",
+    "name": "Power of the Machine Spirit",
+    "source": "Ironstorm Spearhead",
+    "cost": "1CP",
+    "type": "Epic Deed Stratagem",
+    "flavor_text": "There are many tales of machine spirits wreaking havoc on the foe, even after the crew of their vehicle are slain and critical systems are failing.",
+    "rules": {
+      "when": "Your opponent's Shooting phase, just after an enemy unit has resolved its attacks.",
+      "target": "One Adeptus Astartes Vehicle unit from your army that was reduced to Below Half-strength as a result of the attacking unit's attacks.",
+      "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target."
+    },
+    "detachment_id": "ironstorm_spearhead",
+    "keyword_requirements": ["VEHICLE"]
+  }
+]

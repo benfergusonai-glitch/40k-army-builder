@@ -1,0 +1,77 @@
+[
+  {
+    "id": "librarius_conclave_sensory_assault",
+    "name": "Sensory Assault",
+    "source": "Librarius Conclave",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Paranoia, confusion and panic are heightened to a debilitating degree as the Librarius alters his foes' perceptions.",
+    "rules": {
+      "when": "Command phase.",
+      "target": "One Adeptus Astartes Psyker unit from your army.",
+      "effect": "Select one enemy unit that is within 18\" of and visible to one Psyker model in your unit. Until the start of your next turn, that enemy unit is pinned. While a unit is pinned, subtract 2 from that unit's Move characteristic and subtract 2 from Charge rolls made for it. In addition, if the Telepathy Discipline is active for your army, that enemy unit must take a Battle-shock test, subtracting 1 from the result."
+    },
+    "detachment_id": "librarius_conclave",
+    "keyword_requirements": ["PSYKER"]
+  },
+  {
+    "id": "librarius_conclave_iron_arm",
+    "name": "Iron Arm",
+    "source": "Librarius Conclave",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "This Librarian lends skull-shattering weight and impact to melee strikes by transmuting flesh into unyielding metal.",
+    "rules": {
+      "when": "Fight phase.",
+      "target": "One Adeptus Astartes Infantry unit from your army that is within 18\" of one or more Adeptus Astartes Psyker models from your army and has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in that unit, or add 2 if the Biomancy Discipline is active for your army."
+    },
+    "detachment_id": "librarius_conclave",
+    "keyword_requirements": ["INFANTRY", "PSYKER"]
+  },
+  {
+    "id": "librarius_conclave_fiery_shield",
+    "name": "Fiery Shield",
+    "source": "Librarius Conclave",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "As the enemy closes in for the kill, the psyker manifests his psychic will in a raging inferno that obscures imperilled allies and threatens to immolate any who come close enough to land a blow upon them.",
+    "rules": {
+      "when": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 18\" of one or more friendly Adeptus Astartes Psyker models, and that was selected as the target of one or more of the attacking unit's attacks.",
+      "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll, and if the Pyromancy Discipline is active for your army, weapons that target your unit have the [HAZARDOUS] ability."
+    },
+    "detachment_id": "librarius_conclave",
+    "keyword_requirements": ["INFANTRY", "MOUNTED", "PSYKER"]
+  },
+  {
+    "id": "librarius_conclave_assail",
+    "name": "Assail",
+    "source": "Librarius Conclave",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Using nothing but the power of his mind, a Librarian can rip rubble, boulders and other debris from the surrounding terrain and hurl them at the foe.",
+    "rules": {
+      "when": "Your Shooting phase.",
+      "target": "One Adeptus Astartes Psyker unit from your army that is eligible to shoot.",
+      "effect": "Select one enemy unit within 18\" of and visible to one or more Psyker models in your unit (excluding units with the Lone Operative ability), and roll six D6, adding 1 to each result if the Telekinesis Discipline is active for your army: for each 4+, that enemy unit suffers 1 mortal wound."
+    },
+    "detachment_id": "librarius_conclave",
+    "keyword_requirements": ["PSYKER"]
+  },
+  {
+    "id": "librarius_conclave_prescient_precision",
+    "name": "Prescient Precision",
+    "source": "Librarius Conclave",
+    "cost": "1CP",
+    "type": "Strategic Ploy Stratagem",
+    "flavor_text": "Sharing some of his prescience with his battle-brothers, a Librarian can guide their fire.",
+    "rules": {
+      "when": "Your Shooting phase.",
+      "target": "One Adeptus Astartes Psyker unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack, that attack has the [LETHAL HITS] ability, and if the Divination Discipline is active for your army, that weapon has the [IGNORES COVER] ability as well."
+    },
+    "detachment_id": "librarius_conclave",
+    "keyword_requirements": ["PSYKER"]
+  }
+]
